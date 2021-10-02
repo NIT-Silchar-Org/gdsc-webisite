@@ -7,13 +7,13 @@ let scrapeData = {
 
 /* Scrapper Schedule set to 1200 hrs */
 (() => {
-  cron.schedule("12 19 * * *", () => {
+  cron.schedule("00 12 * * *", () => {
     scrapeSite({ scrapeData });
   });
 })();
 
+scrapeSite({ scrapeData }); //Initial Scrape
 async function scrapeSite({ scrapeData }) {
-  console.log("scraper run");
   try {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
