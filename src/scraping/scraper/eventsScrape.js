@@ -1,18 +1,5 @@
 const puppeteer = require("puppeteer");
-const cron = require("node-cron");
 
-let scrapeData = {
-  data: null,
-};
-
-/* Scrapper Schedule set to 1200 hrs */
-(() => {
-  cron.schedule("00 12 * * *", () => {
-    scrapeSite({ scrapeData });
-  });
-})();
-
-scrapeSite({ scrapeData }); //Initial Scrape
 async function scrapeSite({ scrapeData }) {
   try {
     const browser = await puppeteer.launch({ headless: true });
@@ -71,4 +58,4 @@ async function scrapeSite({ scrapeData }) {
   }
 }
 
-module.exports = { scrapeData };
+module.exports = { scrapeSite };
