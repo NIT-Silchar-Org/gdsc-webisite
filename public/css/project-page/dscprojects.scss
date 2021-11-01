@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+main {
+  min-height: 100vh; /*Temporary*/
+
+  margin-top: 10vh;
+  font-family: 'Poppins', sans-serif;
+  color: #353535;
+  
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding-top: 5vh;
+
+    .project-card {
+      position: relative;
+      border: 0.1vh solid #D9D9D9;
+  
+      height: 75vh;
+      width: 32%;
+      min-width: 345px;
+
+      border-radius: 3vh;
+      margin: 1vh 0;
+
+      display: flex;
+      flex-direction: column;
+
+      transition: 0.3s ease-in-out;
+
+      div.go-back {
+        position: absolute;
+        top: 2vh;
+        right: 4vh;
+        font-size: 4vh;
+        cursor: pointer;
+        color: #4F4F4F;
+      }
+
+      .top {
+        height: 40%;
+        width: 100%;
+
+        // display: flex;
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 3vh 7vh 5vh;
+        box-sizing: border-box;
+        align-items: flex-end;
+
+        .left {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-start;
+          height: 70%;
+
+
+          .title {
+            font-size: 5.3vh;
+            line-height: 5vh;
+          }
+
+          .status {
+            padding: 1vh 2vh;
+            border-radius: 1vh;
+            box-sizing: border-box;
+            text-align: center;
+            color: white;
+          }
+
+          .completed {
+            background-color: #4A90E2;
+          }
+
+          .ongoing {
+            background-color: #3CBA54;
+          }
+        }
+
+        .right {
+          position: relative;
+          width: 30%;
+          height: 95%;
+
+          img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+          }
+        }
+      }
+      .tech-stack-top {
+        height: 30%;
+      }
+
+      .mid {
+        height: 40%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 2vh 4vh;
+        // display: flex;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+        font-size: 2.65vh;
+      }
+      .members-mid {
+        // display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 0 7vh;
+
+        .member {
+          a {
+            text-decoration: none;
+            color: #353535;
+          }
+        }
+      }
+      .tech-stack-mid {
+        height: calc(80% - 30%);
+        padding: 1vh;
+        // display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .tech {
+          margin: 1vh;
+          height: 14vh;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          font-size: 2vh;
+          word-wrap: normal;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 1vh;
+          box-sizing: border-box;
+        }
+
+        /* Tech Colors */
+        .nodejs {
+          background-color: #F1FEBE;
+        }
+
+        .mongodb {
+          background-color: #E4F5C8;
+        }
+
+        .html {
+          background-color: #FFD8D8;
+        }
+
+        .css {
+          background-color: #E0EEFF;
+        }
+
+        .javascript {
+          background-color: #FEFFCB;
+        }
+      }
+
+      .bottom {
+        height: 20%;
+        width: 90%;
+        margin: 0 auto;
+
+        border-top: 0.1vh solid #D9D9D9;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 7vh;
+        box-sizing: border-box;
+
+        .icon {
+          color: #4F4F4F;
+          cursor: pointer;
+          height: 8vh;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          box-sizing: border-box;
+
+          border: 0.2vh solid rgba(0, 0, 0, 0);
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 4.75vh;
+          transition: 0.3s ease-in-out;
+        }
+
+        .link {
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #4F4F4F;
+            text-decoration: none;
+          }
+        }
+
+        .icon:hover, .link:hover {
+          background-color: #FFF3CA;
+          transition: 0.3s ease-in-out;
+        }
+
+        .active {
+          background-color: #FFF3CA !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  
+  main {
+    margin-top: 8%;
+    
+    .projects {
+      width: 95%;
+      padding-top: 5vh;
+      margin: 0 auto;
+
+      .project-card {
+        height: 60vh;
+
+        border-radius: 2vh;
+        margin: 2vw 0;
+
+        div.go-back {
+          top: 2vw;
+          right: 4vw;
+          font-size: 7vw;
+        }
+
+        .top {
+          padding: 0 5vw 5vw 5vw;
+
+          .left {
+            height: 80%;
+
+            .title {
+              font-size: 8vw;
+              line-height: 8vw;
+            }
+
+            .status {
+              padding: 2vw 3vw;
+            }
+          }
+        }
+        .tech-stack-top {
+          height: 25%;
+        }
+        .more-info-top {
+          height: 25%;
+        }
+        .members-top {
+          height: 20%;
+        }
+
+        .mid {
+          height: 40%;
+          padding: 2vw 6vw;
+          font-size: 4vw;
+        }
+        .more-info-mid {
+          height: 55%;
+        }
+        .members-mid {
+          height: 60%;
+
+          .member {
+            a {
+              text-decoration: none;
+              color: #353535;
+            }
+          }
+        }
+        .tech-stack-mid {
+          height: calc(80% - 25%);
+          padding: 1vw;
+          justify-content: center;
+          align-items: space-evenly;
+
+          .tech {
+            margin: 1vw;
+            height: 20vw;
+            font-size: 3vw;
+            padding: 1vw;
+          }
+
+          /* Tech Colors */
+          .nodejs {
+            background-color: #F1FEBE;
+          }
+
+          .mongodb {
+            background-color: #E4F5C8;
+          }
+
+          .html {
+            background-color: #FFD8D8;
+          }
+
+          .css {
+            background-color: #E0EEFF;
+          }
+
+          .javascript {
+            background-color: #FEFFCB;
+          }
+        }
+
+        .bottom {
+          height: 20%;
+          width: 90%;
+          margin: 0 auto;
+
+          border-top: 0.1vh solid #D9D9D9;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          padding: 0 7vh;
+          box-sizing: border-box;
+
+          .icon {
+            color: #4F4F4F;
+            cursor: pointer;
+            height: 8vh;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            box-sizing: border-box;
+
+            border: 0.2vh solid rgba(0, 0, 0, 0);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4.75vh;
+            transition: 0.3s ease-in-out;
+          }
+
+          .link {
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: #4F4F4F;
+              text-decoration: none;
+            }
+          }
+
+          .icon:hover, .link:hover {
+            background-color: #FFF3CA;
+            transition: 0.3s ease-in-out;
+          }
+
+          .active {
+            background-color: #FFF3CA !important;
+          }
+        }
+      }
+    }
+  }
+}
