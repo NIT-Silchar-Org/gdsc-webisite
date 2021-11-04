@@ -1,0 +1,145 @@
+<%
+  let events = [
+    {
+      name: "Android Study Jams",
+      duration: "26th Sept - 27th Sept",
+      category: "android"
+    },
+    {
+      name: "Web Blitz",
+      duration: "26th Sept - 27th Sept",
+      category: "web"
+    },
+    {
+      name: "Flutter Bootcamp",
+      duration: "26th Sept - 27th Sept",
+      category: "flutter"
+    },
+    {
+      name: "30 Days of Cloud",
+      duration: "26th Sept - 27th Sept",
+      category: "gcp"
+    },
+    {
+      name: "Prototype Plenary",
+      duration: "26th Sept - 27th Sept",
+      category: "uiux"
+    },
+    {
+      name: "Android Study Jams",
+      duration: "26th Sept - 27th Sept",
+      category: "android"
+    },
+    {
+      name: "Web Blitz",
+      duration: "26th Sept - 27th Sept",
+      category: "web"
+    },
+    {
+      name: "Flutter Bootcamp",
+      duration: "26th Sept - 27th Sept",
+      category: "flutter"
+    },
+    {
+      name: "30 Days of Cloud",
+      duration: "26th Sept - 27th Sept",
+      category: "gcp"
+    },
+    {
+      name: "Prototype Plenary",
+      duration: "26th Sept - 27th Sept",
+      category: "uiux"
+    },
+  ]
+%> 
+
+<section id="schedule" class="section">
+  <div class="title">Timeline</div>
+  
+  <!--Left and Right buttons-->
+  <div class="navigation">
+    <div class="navigation-item go-left">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="navigation-item go-right">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+
+  <div id="timeline-wrapper">
+    <div class="timeline">
+      <div class="timeline-container up-container">
+  
+        <!--Alternate Items at Top-->
+        <% for(let i = 0; i<events.length; i++) { %>
+
+          <% if(i%2 == 0) {%>
+            <div class="timeline-item up up-item">
+            
+              <div class="logo logo-<%= events[i].category %>">
+                <img src="/img/project-icons/<%= events[i].category %>.svg" alt="<%= events[i].name %> ">
+              </div>
+              
+              <div class="text">
+                <div class="name"><%= events[i].name%></div>
+                <div class="duration"><%= events[i].duration %></div>
+              </div>
+              
+              <div class="line-to-timeline <%= events[i].category %>"></div>
+    
+            </div>
+          <% } else { %>
+            <div class="timeline-item blank up-blank"></div>
+          <% } %>
+
+        <% } %> 
+  
+  
+      </div>
+  
+      <!-- Line of Timeline -->
+      <div class="line">
+  
+        <div class="new-session">
+          <img src="/img/logo/DSC-trans-new.png" alt="DSC"/>
+  
+          <div class="text">
+            Start of new session
+          </div>
+        </div>
+  
+        <% for(let i = 0; i<events.length; i++) { %>
+          <div class="line-item">
+            <div class="line-circle <%= events[i].category %>"></div>
+          </div>
+        <% } %>
+      </div>
+  
+      <div class="timeline-container down-container">
+        
+        <!--Alternate Items at Botthom--> 
+        <% for(let i = 0; i<events.length; i++) { %>
+          <% if(i%2 == 1) {%>
+            <div class="timeline-item down down-item">
+  
+              <div class="line-to-timeline <%= events[i].category %>"></div>
+    
+              <div class="logo logo-<%= events[i].category %>">
+                <img src="/img/project-icons/<%= events[i].category %>.svg" alt="<%= events[i].name %> ">
+              </div>
+              
+              <div class="text">
+                <div class="name"><%= events[i].name%></div>
+                <div class="duration"><%= events[i].duration %></div>
+              </div>
+            </div>
+          <% } else { %> 
+            <div class="timeline-item blank down-blank"></div>
+          <% } %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/js/index/timeline.js"></script>

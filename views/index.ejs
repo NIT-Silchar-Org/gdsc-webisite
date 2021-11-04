@@ -49,6 +49,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
     <!-- JQuery for navbar -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
@@ -394,121 +395,7 @@
       <!-- Features End -->
       <!-- ##############################EVENT SCHEDULE#################################### -->
 
-      <section id="schedule" class="section">
-        <!-- container -->
-        <div class="container">
-          <!-- row -->
-          <div class="row">
-            <!-- section title -->
-            <div class="section-title">
-              <h1 class="video__secondary intersect">Event Schedule</h1>
-            </div>
-            <!-- /section title -->
-
-            <div class="col-md-8 col-md-offset-2">
-              <div class="events-wrapper">
-                <!-- event -->
-                <div class="event">
-                  <div class="event-day">
-                    <div>
-                      <span class="day">25</span>
-                      <span class="year">Nov, 2020</span>
-                    </div>
-                  </div>
-                  <div class="event-content">
-                    <h3 class="event-time">Android Study Jam</h3>
-                    <p class="event-time">
-                      <i class="fa fa-clock-o"></i> 25th Nov 2020
-                    </p>
-                    <br />
-                    <h3 class="event-title">Start Day</h3>
-                    <p class="cont"></p>
-                    <h3 class="event-time">First Weekly Session</h3>
-                  </div>
-                </div>
-                <!-- /event -->
-
-                <div class="event">
-                  <div class="event-hour"></div>
-                  <div class="event-content">
-                    <p class="event-time">
-                      <i class="fa fa-clock-o"></i> 23rd Jan, 2021
-                    </p>
-                    <h3 class="event-title">End day</h3>
-                    <p class="cont">Last Day to complete the tracks</p>
-                  </div>
-                </div>
-
-
-                <!-- event 1-->
-                <div class="event">
-                  <div class="event-day">
-                    <div>
-                      <span class="day">24</span>
-                      <span class="year">Jan, 2021</span>
-                    </div>
-                  </div>
-                  <div class="event-hour"></div>
-                  <div class="event-content">
-                    <h3 class="event-title">Web Blitz</h3>
-                    <p class="event-time">
-                      <i class="fa fa-clock-o"></i> 24th Jan 2021
-                    </p>
-                    <br />
-                    <!-- <h3 class="event-title">Web Blitz</h3> -->
-                    <p class="cont">Workshop on Web Development</p>
-                    <!-- <p>
-                      Front-end development, basics of back-end<br />
-                      git version control and web hosting
-                    </p> -->
-                    
-                  </div>
-
-                </div>
-                <div class="event">
-                  <div class="event-hour"></div>
-                  <div class="event-content">
-                    <p class="event-time">
-                      <i class="fa fa-clock-o"></i> 13th Feb, 2021
-                    </p>
-                    <h3 class="event-title">End day</h3>
-                    <p class="cont">Last Session of Workshop</p>
-                  </div>
-                </div>
-                <!-- /event1 -->
-                <!-- event2 -->
-                <div class="event">
-                  <div class="event-day">
-                    <div>
-                      <span class="day">11</span>
-                      <span class="year">Apr, 2021</span>
-                    </div>
-                  </div>
-                  <div class="event-hour"></div>
-                  <div class="event-content">
-                    <h3 class="event-title">Building APIs with Node.js & Open Source</h3>
-                    <p class="event-time">
-                      <i class="fa fa-clock-o"></i> 17th Apr, 2021
-                    </p>
-                    <br />
-                    <!-- <h3 class="event-title">Web Blitz</h3> -->
-                    <p class="cont">Session on building APIs in collaboration with Postman</p>
-                    <!-- <p>
-                      Front-end development, basics of back-end<br />
-                      git version control and web hosting
-                    </p> -->
-                    
-                  </div>
-
-                </div>
-                <!-- /event2 -->
-              </div>
-            </div>
-          </div>
-          <!-- /row -->
-        </div>
-        <!-- /container -->
-      </section>
+      <%- include('partials/Timeline.ejs') %> 
       <!-- ################################/Event Schedule #####################################-->
 
       <!--Video Gallery Section Starts-->
