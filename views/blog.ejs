@@ -41,264 +41,90 @@
     <link rel="stylesheet" href="/css/blogs/blogs.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
-    <style>
-      .pointer {
-        cursor: pointer;
-      }
-      .clapper {
-        width: 30px !important;
-      }
-      @media screen and (max-width: 740px) {
-        .clapper {
-          width: 20px !important;
-        }
-        .cards .card .socialactivity {
-          padding: 15px;
-        }
-      }
-      /* .cards .card .content .images .image-container img {
-        height: 100%;
-      }
-      .cards .card .content .images {
-        width: 90%;
-      } */
-      .pagination {
-        padding: 3rem 0;
-        text-align: center;
-        color: var(--Grey-light-1);
-      }
-
-      .pagination a {
-        padding: 1rem 0.8rem;
-        color: var(--primary-dark);
-        background-color: var(--Grey-dark-1);
-        transition: all 0.2s;
-      }
-
-      .pagination a:hover {
-        opacity: 0.8;
-      }
-      @media (max-width: 700px) {
-      .cards .card {
-        margin: 1rem 0;
-
-      }
-    }
-    @media screen and (max-width: 740px) {
-        .cards .card .content p {
-          font-size: 16px;
-        }
-      }
-    </style>
+ 
   </head>
 
-  <body
-    style="
-      font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial,
-        sans-serif;
-    "
-  >
+  <body>
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
     <!----------------------------- Main Site Section ------------------------------>
-    <main>
-      <section class="cards">
-        <% if(newBlogs.length==0){%>
 
-        <div class="card-container" style="justify-content: center">
-          <div class="card-details">
-            <div class="card-text">
-              <p style="text-align: center">
-                Community Blogs will be shown here.
-              </p>
-            </div>
-          </div>
+    <div class="blog-banner">
+        <img class="blog-backdrop" src="/img/illustrations/blogs-backdrop.svg">
+        <div class="blog-search-bar">
+          <img src="/img/icons/search-2.png">
+          <input type=text placeholder="Search Blogs">
         </div>
-        <% }%> <% var num =0 %> <% newBlogs.forEach(function(blog){%>
-        <div class="card">
-          <div class="socialactivity">
-            <% if(blog.author.profileImageLocation){ %>
-            <a href="/user/public-profile/<%= blog.author.dscHandle %>">
-              <img
-                src="/upload/<%= blog.author.profileImageLocation%>"
-                alt="author image"
-                style="cursor: pointer"
-              />
-            </a>
-            <% }else{%>
-          <a href="/user/public-profile/<%= blog.author.dscHandle %>">
-            <img src="/img/profile/person.png" alt="default avatar" style="cursor: pointer"/>
-          </a>
-            <% }%>
-
-            <form action="/blog/appreciate/<%=blog._id%>" method="POST">
-              <button
-                type="submit"
-                style="
-                  border: none;
-                  outline: none !important;
-                  cursor: pointer;
-                  background-color: transparent;
-                  font-size: 18px;
-                  color: var(--Grey-dark-1);
-                "
-              >
-                <% if (user) {%> <% if (user.likes &&
-                user.likes.includes(blog._id)) {%>
-                <img src="/img/logo/clap.png" style="width: 30px" alt="" />
-                <br /><%= blog.appreciateCount || 0%> <% } else {%>
-                <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
-                <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
-                <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
-                <br /><%= blog.appreciateCount || 0%> <% } %>
-              </button>
-            </form>
-          </div>
-          <div class="content">
-            <h3 class="topic"><%= blog.title %></h3>
-            <p style="margin-top: 0.2rem">by <a href="/user/public-profile/<%= blog.author.dscHandle %>" style="color:inherit;text-decoration: none !important;outline: none !important;"><%= blog.author.name%></a></p>
-            <p>
-              <% if(blog.tags.length!=0){%>
-              <div class="tagsss">
-               <% for(var i=0;i<blog.tags.length;i++){ %>
-                <button class="display-tags"><%= blog.tags[i] %></button>
-               <% } %>
-             </div>
-             <%}else{%>
-              <br>
-              <button class="display-tags"> <%- blog.category.split(' ')[0]%></button>
-             <% } %>
-            </p>
-            <p class="place">
-              <%- blog.author.createdAt.toString().substring(0,16)%>
-            </p>
-
-            <div class="description"><%- blog.summary%>...</div>
-            <a href="/blog/view/<%= blog.slug%>">Read more</a>
-            <div class="images">
-              <div class="image-container">
-                <img
-                  class="post-images"
-                  src="<%= blog.cover%>"
-                  alt="blog cover"
-                  data-original="<%= blog.cover%>"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="sidebarblog">
-            <% if (user) {%>
-            <div class="moreblogoption">
-              <form action="/blog/bookmark/<%= blog._id %>" method="POST">
-                <button
-                  type="submit"
-                  style="
-                    background-color: transparent;
-                    border: none;
-                    outline: none !important;
-                    cursor: pointer;
-                  "
-                >
-                  <% if (user.bookmarkBlogs
-                  &&user.bookmarkBlogs.includes(blog._id)) {%>
-                  <i
-                    class="fas fa-bookmark pointer"
-                    style="font-size: 20px; color: var(--Grey-dark-1)"
-                  ></i>
-                  <% } else {%>
-                  <i
-                    class="far fa-bookmark pointer"
-                    style="font-size: 20px; color: var(--Grey-dark-1)"
-                  ></i>
-                  <% } %>
-                </button>
-              </form>
-            </div>
-            <% } %>
-
-            <i
-              class="fas fa-eye"
-              style="font-size: 15px; color: var(--Grey-dark-1)"
-            >
-              <%= blog.views %></i
-            >
-          </div>
-        </div>
-        <%})%>
-      </section>
-      <section class="blog-search">
-        <% if(user){ %>
-        <div class="inner-search">
-          <div class="blog-search-row">
-            <a href="/blog/bookmarks" style="text-decoration: none">
-              <div class="fndp">Your Bookmarks</div>
-            </a>
-          </div>
-          <div class="blog-search-row">
-            <a href="/blog/create" style="text-decoration: none">
-              <div class="fndp">Create Blog</div>
-            </a>
-          </div>
-        </div>
-        <% }else{ %>
-        <div class="inner-search">
-          <div class="blog-search-row">
-            <a href="/user/register?type=login" style="text-decoration: none">
-              <div class="fndp">Login to Add a Blog</div>
-            </a>
-          </div>
-        </div>
-        <% } %>
-      </section>
-      <section class="popular">
-        <% var i=1 %>
-        <div id="popular-post">
-          <h2 id="heading">Popular Posts</h2>
-          <div>
-            <hr />
-            <br />
-            <% if(popularBlogs.length==0){%>
-            <div class="popular-posts">
-              <div class="content">
-                <p>Nothing to show.</p>
-              </div>
-            </div>
-
-            <% }%> <% popularBlogs.forEach(function(blog){%>
-            <div class="popular-posts">
-              <div class="content">
-                <div class="title">
-                  <span class="numbering"> <%= i++ %> </span>
-                  <a
-                    style="font-family: 'Open Sans', sans-serif"
-                    href="/blog/view/<%= blog.slug%>"
-                  >
-                    <%= blog.title%>
-                  </a>
-                </div>
-                <br />
-                <span class="intro"> <%- blog.summary%>...</span>
-                <a href="/blog/view/<%= blog.slug%>">Read more</a>
-                <br />
-                <span class="date"> 20 sept, 2020 </span>
-              </div>
-            </div>
-            <%})%>
-          </div>
-        </div>
-      </section>
-    </main>
-    <div class="pagination">
-      <% if(page !== 1) {%>
-      <a href="/blog/?page=<%= page-1 %>"> Prev Page</a>
-      <% } %> <% if (nextPageExists) { %>
-      <a href="/blog/?page=<%= page + 1 %>">Next Page</a>
-      <% } %>
     </div>
-    <!---------------x------------- Main Site Section ---------------x-------------->
+    <div class="best-blogs-container">
+      <div class="best-blogs-header">
+          <img src="/img/icons/create.png">
+          <h3>Best Blogs</h3>
+      </div>
+      <div class="best-blogs-list-box">
 
+        <div class="best-blogs-list-item">
+          <div class="blog-rank">01</div>
+          <div class="blog-profile">
+            <img src="/img/profile/profile_demo.png">
+            <a>Profile 1</a>
+          </div>
+          <div class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vero error corrupti expedita sunt saepe quisquam architecto sint nemo odit.</div>
+          <div class="blog-date">7 Oct 2021</div>
+        </div>
+
+        <div class="best-blogs-list-item">
+          <div class="blog-rank">02</div>
+          <div class="blog-profile">
+            <img src="/img/profile/profile_demo.png">
+            <a>Profile 2</a>
+          </div>
+          <div class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, odio! Ipsam commodi laborum nemo cum?</div>
+          <div class="blog-date">14 Nov 2021</div>
+        </div>
+
+        <div class="best-blogs-list-item">
+          <div class="blog-rank">03</div>
+          <div class="blog-profile">
+            <img src="/img/profile/profile_demo.png">
+            <a>Profile 3</a>
+          </div>
+          <div class="blog-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, maiores!</div>
+          <div class="blog-date">3 Jun 2021</div>
+        </div>
+
+        <div class="best-blogs-list-item">
+          <div class="blog-rank">04</div>
+          <div class="blog-profile">
+            <img src="/img/profile/profile_demo.png">
+            <a>Profile 4</a>
+          </div>
+          <div class="blog-title">Lor elit. Saepe, aut?</div>
+          <div class="blog-date">10 Apr 2021</div>
+        </div>
+
+        <div class="best-blogs-list-item">
+          <div class="blog-rank">05</div>
+          <div class="blog-profile">
+            <img src="/img/profile/profile_demo.png">
+            <a>Profile 5</a>
+          </div>
+          <div class="blog-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, eius.</div>
+          <div class="blog-date">05 Jan 2021</div>
+        </div>
+
+      </div>
+    </div>
+    <hr/>
+    <div class="blog-container">
+
+    </div>
+
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+   
     <!-- --------------------------- Footer ---------------------------------------- -->
     <%-include('partials/footer')%>
 
