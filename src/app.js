@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
 const session = require("express-session");
 const app = express();
+const { scrapeData } = require('./scraping/eventsData');
 app.use(express.json());
 
 // using dotenv module for environment
