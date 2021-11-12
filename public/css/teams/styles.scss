@@ -1,0 +1,468 @@
+main {
+  margin-top: 11vh;
+  min-height: 89vh;
+  padding: 5vh 0;
+
+  .dev-search {
+    position: relative;
+    height: 50vh;
+    width: 85%;
+    margin: 0 auto;
+
+    overflow: hidden;
+    border-radius: 4vh;
+
+    div.bg-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        border-radius: 4vh;
+      }
+    }
+
+    form {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      label {
+        position: absolute;
+        height: 7.5vh;
+        width: 45%;
+
+        i {
+          position: absolute;
+          top: 50%;
+          left: 4.5vh; //Same as half of left padding of input
+          transform: translate(-50%, -50%);
+          font-size: 3.5vh;
+          color: #B4B4B4;
+        }
+
+        input {
+          height: 100%;
+          width: 100%;
+          outline: none;
+          border-radius: 5vh;
+          padding: 0 4vh 0 9vh;
+          box-sizing: border-box;
+
+          box-shadow: 0.5vh 0.5vh 1.5vh 0.5vh rgba(0, 0, 0, 0.1);
+  
+          font-size: 3vh;
+          color: #636363;
+
+          border: none;
+
+          &::placeholder {
+            color: #B4B4B4; // Same as icon
+          }
+        }
+      }
+
+    }
+  }
+
+  .members {
+    margin: 10vh auto 5vh auto;
+    width: 90%;
+    
+    #tab-titles {
+      width: 100%;
+      height: 6vh;
+      border-bottom: 0.4vh solid #EEEEEE;
+      
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      
+      .tab-year {
+        height: 100%;
+        padding: 0 4vh;
+        font-size: 2.75vh;
+        cursor: pointer;
+        border: 0.4vh solid #eeeeee00; //Invisible border to prevent shifting when active
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .active-tab-year {
+        border-radius: 1.5vh 1.5vh 0 0;
+        border: 0.4vh solid #EEEEEE;
+        border-bottom: 0.4vh solid #ffffff;
+        color: #4885ED;
+      }
+    }
+      
+    #disciplines {
+      margin: 10vh auto 2vh auto;
+      background-color: #F1F1F1;
+      display: flex;
+      flex-direction: row;
+      border-radius: 1.5vh;
+      overflow: hidden;
+      border: 0.1vh solid #E2E2E2;
+      flex-basis: content;
+      width: min-content;
+
+      .discipline {
+        padding: 1vh 4vh;
+        font-size: 2.5vh;
+        border-left: 0.1vh solid #E2E2E2;
+        border-right: 0.1vh solid #E2E2E2;
+        cursor: pointer;
+      }
+
+      .active-discipline {
+        background-color: #616DD9;
+        color: #FFFFFF;
+      }
+    }
+
+    #tab-content {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+}
+
+.member {
+  position: relative;
+  height: 55vh;
+  width: 30%;
+  min-width: 200px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 2vh;
+  border: 0.3vh solid #EEEEEE;
+
+  &:hover {
+    .middle-hover {
+      transform: translate(0, 0);
+    }
+  }
+
+  .top {
+    position: relative;
+    height: 50%;
+    overflow: hidden;
+    width: 100%;
+
+    .background-img {
+      position: absolute;
+      box-sizing: border-box;
+      margin-top: 2vh;
+      height: 60%;
+      width: 90%;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      img.background-img-pic {
+        border-radius: 2vh;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .profile-pic {
+        position: absolute;
+        height: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        overflow: hidden;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1vh solid #FFFFFF;
+        
+        img {
+          position: absolute;
+          height: auto;
+          max-width: 100%;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  .name {
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bolder;
+    padding: 0 1vh;
+  }
+
+  .middle {
+    font-size: 2.4vh;
+    height: 28%;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+
+    .position {
+      margin: 1vh 0;
+    }
+  }
+
+  .middle-hover {
+    position: absolute;
+    height: 28%;
+    width: 100%;
+    top: 60%;
+    left: 0;
+    transform: translate(-100%, 0);
+    transition: 0.2s ease-in-out;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  .profile {
+    a {
+      padding: 2vh 4vh;
+      background-color: #1E1E1E;
+      border-radius: 1vh;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+  }
+  .profile-not-found {
+    font-size: 2.3vh;
+    color: grey;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 12%;
+    border-top: 0.2vh solid #F3F5F8;
+
+    a.social {
+      margin: 0 1.5vh;
+      height: 5vh;
+      width: 5vh;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #717981;
+      border: 0.1vh solid #E2E2E2;
+      transition: 0.2s ease-in-out;
+    }
+
+    a.facebook:hover {
+      background-color: #1877f2;
+      color: #FFFFFF;
+    }
+
+    a.github:hover {
+      background-color: #14171a;
+      color: #FFFFFF;
+    }
+
+    a.linkedin:hover {
+      background-color: #0a66c2;
+      color: #FFFFFF;
+    }
+  }
+}
+
+#search-results {
+  width: 90%;
+  margin: 10vh auto 5vh auto;
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 560px) {
+  main {
+    margin-top: 11vw;
+    padding: 5vw 0;
+  
+    .dev-search {
+      height: 30vh;
+      width: 90%;
+      border-radius: 2vw;
+  
+      div.bg-img {
+        img {
+          border-radius: 2vw;
+        }
+      }
+  
+      form {
+        label {
+          position: absolute;
+          height: 5vh;
+          width: 70%;
+  
+          i {
+            left: 4vw; //Same as half of left padding of input
+            font-size: 3vw;
+          }
+  
+          input {
+            border-radius: 5vw;
+            padding: 0 4vw 0 8vw;
+            font-size: 3vw;
+          }
+        }
+      }
+    }
+  
+
+    .members {
+      margin: 10vw auto 5vw auto;
+      width: 95%;
+      
+      #tab-titles {
+        width: 100%;
+        height: 7.5vw;
+        border-bottom: 0.4vw solid #EEEEEE;
+        
+        .tab-year {
+          padding: 0 4vw;
+          font-size: 3vw;
+        }
+    
+        .active-tab-year {
+          border-radius: 2vw 2vw 0 0;
+          border: 0.4vw solid #EEEEEE;
+          border-bottom: 0.4vw solid #ffffff;
+        }
+      }
+        
+      #disciplines {
+        margin: 10vw auto 2vw auto;
+        border-radius: 3vw;
+        border: 0.1vw solid #E2E2E2;
+    
+        .discipline {
+          padding: 1vw 4vw;
+          font-size: 3.5vw;
+          border-left: 0.1vw solid #E2E2E2;
+          border-right: 0.1vw solid #E2E2E2;
+        }
+      }
+    
+      #tab-content {
+        width: 100%;
+      }
+    }
+  }
+
+  .member {
+    height: 55vh;
+    width: 45%;
+    margin: 1vw;
+    border-radius: 3vw;
+    border: 0.3vw solid #EEEEEE;
+
+    .top {
+
+      .background-img {
+        margin-top: 2vw;
+        width: 95%;
+
+        img.background-img-pic {
+          border-radius: 2vw;
+        }
+
+        .profile-pic {
+          border: 1vw solid #FFFFFF;
+        }
+      }
+    }
+
+    .name {
+      font-size: 4vw;
+      padding: 0 1vw;
+    }
+
+    .middle {
+      font-size: 3vw;
+
+      .position {
+        margin: 1vw 0;
+      }
+    }
+
+    .profile {
+      a {
+        padding: 3vw 5vw;
+        border-radius: 2vw;
+      }
+    }
+    .profile-not-found {
+      font-size: 2.3vw;
+    }
+
+    .socials {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 12%;
+      border-top: 0.2vw solid #F3F5F8;
+
+      a.social {
+        margin: 0 1.5vw;
+        height: 7vw;
+        width: 7vw;
+        border: 0.2vw solid #E2E2E2;
+      }
+    }
+  }
+
+  #search-results {
+    width: 95%;
+    margin: 10vw auto 5vw auto;
+  }
+}
+  
