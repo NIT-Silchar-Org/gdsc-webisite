@@ -873,7 +873,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : "/img/teams_potraits/satyik-pritam-yogi.jpg",
+      img : "/img/teams_potraits/aditya-agarwal.jpg",
       socials : {
         facebook: "https://www.facebook.com/profile.php?id=100009177385701",
         github: "https://github.com/aditya2712",
@@ -892,7 +892,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : "/img/teams_potraits/rishi-raj-kalita.jpg",
+      img : "/img/teams_potraits/rishiraj-kalita.jpg",
       socials : {
         facebook: "https://www.facebook.com/rishiraj.talukdar.1",
         github: "https://github.com/Rishi-Raj-Kalita",
@@ -994,25 +994,6 @@ let members = [
         linkedin: "https://www.linkedin.com/in/sahil-sarwar-4296631aa",
       },
       branch: "ECE",
-      domain: "Android",
-    },
-    {
-      name: {
-        firstName: "Mriganka",
-        lastName: "Bharali"
-      },
-      username: "mriga14",
-      positions: [
-        "Member",
-        "Android Developer"
-      ],
-      img : "/img/teams_potraits/mriganka-bharali.jpg",
-      socials : {
-        facebook: "https://www.facebook.com/mriganka.bharali.547",
-        github: "https://github.com/glitch-droid",
-        linkedin: "https://www.linkedin.com/in/mriganka-bharali-4230b41a5",
-      },
-      branch: "EIE",
       domain: "Android",
     },
     {
