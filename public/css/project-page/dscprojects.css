@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 main {
   min-height: 100vh;
   /*Temporary*/
@@ -94,6 +93,10 @@ main .projects .project-card .top .left .title {
   line-height: 5vh;
 }
 
+main .projects .project-card .top .left .small {
+  font-size: 4vh !important;
+}
+
 main .projects .project-card .top .left .status {
   padding: 1vh 2vh;
   border-radius: 1vh;
@@ -155,17 +158,28 @@ main .projects .project-card .members-mid {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 0 7vh;
+  padding: 0 3vh;
+  font-size: 2vh;
 }
 
 main .projects .project-card .members-mid .member a {
   text-decoration: none;
   color: #353535;
+  margin: 0 0.5vh;
+  text-align: left;
+}
+
+main .projects .project-card .members-mid .small {
+  width: 49%;
+}
+
+main .projects .project-card .members-mid .large {
+  width: 95%;
 }
 
 main .projects .project-card .tech-stack-mid {
@@ -206,23 +220,51 @@ main .projects .project-card .tech-stack-mid .tech {
 }
 
 main .projects .project-card .tech-stack-mid .nodejs {
-  background-color: #F1FEBE;
+  background-color: #D9FF80;
 }
 
 main .projects .project-card .tech-stack-mid .mongodb {
-  background-color: #E4F5C8;
+  background-color: #99E6AF;
 }
 
 main .projects .project-card .tech-stack-mid .html {
-  background-color: #FFD8D8;
+  background-color: #F1A28E;
 }
 
 main .projects .project-card .tech-stack-mid .css {
-  background-color: #E0EEFF;
+  background-color: #8EA2F1;
 }
 
-main .projects .project-card .tech-stack-mid .javascript {
-  background-color: #FEFFCB;
+main .projects .project-card .tech-stack-mid .js, main .projects .project-card .tech-stack-mid .python {
+  background-color: #FBED84;
+}
+
+main .projects .project-card .tech-stack-mid .sql, main .projects .project-card .tech-stack-mid .sqlite {
+  background-color: #82D4FD;
+}
+
+main .projects .project-card .tech-stack-mid .firebase {
+  background-color: #FFE080;
+}
+
+main .projects .project-card .tech-stack-mid .java, main .projects .project-card .tech-stack-mid .expressjs {
+  background-color: #F58A8C;
+}
+
+main .projects .project-card .tech-stack-mid .kotlin {
+  background-color: #92BDEC;
+}
+
+main .projects .project-card .tech-stack-mid .reactjs {
+  background-color: #80EBFF;
+}
+
+main .projects .project-card .tech-stack-mid .flutter {
+  background-color: #84D5FB;
+}
+
+main .projects .project-card .tech-stack-mid .ts {
+  background-color: #99BDE6;
 }
 
 main .projects .project-card .bottom {
@@ -350,7 +392,6 @@ main .projects .project-card .bottom .active {
   }
   main .projects .project-card .members-mid .member a {
     text-decoration: none;
-    color: #353535;
   }
   main .projects .project-card .tech-stack-mid {
     height: calc(80% - 25%);
@@ -361,28 +402,12 @@ main .projects .project-card .bottom .active {
     -webkit-box-align: space-evenly;
         -ms-flex-align: space-evenly;
             align-items: space-evenly;
-    /* Tech Colors */
   }
   main .projects .project-card .tech-stack-mid .tech {
     margin: 1vw;
     height: 20vw;
     font-size: 3vw;
     padding: 1vw;
-  }
-  main .projects .project-card .tech-stack-mid .nodejs {
-    background-color: #F1FEBE;
-  }
-  main .projects .project-card .tech-stack-mid .mongodb {
-    background-color: #E4F5C8;
-  }
-  main .projects .project-card .tech-stack-mid .html {
-    background-color: #FFD8D8;
-  }
-  main .projects .project-card .tech-stack-mid .css {
-    background-color: #E0EEFF;
-  }
-  main .projects .project-card .tech-stack-mid .javascript {
-    background-color: #FEFFCB;
   }
   main .projects .project-card .bottom {
     height: 20%;

@@ -32,7 +32,7 @@
   <div class="top info-top">
     <div class="left">
 
-      <div class="title">
+      <div class="title <%= (project.title.length > 20 ? 'small' : 'large')%>">
         <% let projectTitleArray = project.title.split(" ") %>
 
         <!--Making last word of title bold-->
@@ -89,15 +89,14 @@
 
   <div class="mid members-mid">
     <% project.members.forEach(member => { %>
-      <div class="member">
+      <div class="member <%= (project.members.length > 9 ? 'small' : 'large') %>"> <!--Smaller if more members-->
         <a href="/user/public-profile/<%= member.username %> ">
           <%= member.name %>
         </a>
       </div>
     <% }) %>
   </div>
-
-  <!--TODO: Make layouts like 2,2 or 3,2 or 3,3, etc. for tech stacks-->
+  
   <div class="mid tech-stack-mid">
     <% project.techStack.forEach((tech, techIndex) => { %>
       <div class="tech <%= tech.toLowerCase().replace(/\s/g, "") %>">
