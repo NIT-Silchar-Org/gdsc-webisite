@@ -49,7 +49,7 @@ let members = [
       },
       username: "tukan",
       positions: [
-        "Former DSC Lead",
+        "DSC Lead",
         "Founder, DSC Club"
       ],
       img : "/img/teams_potraits/tukan-dutta.png",
@@ -68,7 +68,7 @@ let members = [
       },
       username: "ank21",
       positions: [
-        "Former DSC Moderator",
+        "DSC Moderator",
         "Founder, DSC Club"
       ],
       img : "/img/teams_potraits/ankit-srivastava.png",
@@ -87,7 +87,7 @@ let members = [
       },
       username: null,
       positions: [
-        "Former DSC Moderator",
+        "DSC Moderator",
         "Founder, DSC Club"
       ],
       img : "/img/teams_potraits/manish-upadhyaya.png",
@@ -106,7 +106,7 @@ let members = [
       },
       username: null,
       positions: [
-        "Former DSC Moderator",
+        "DSC Moderator",
         "Founder, DSC Club"
       ],
       img : "/img/teams_potraits/tapan-saikia.jpg",
@@ -125,7 +125,7 @@ let members = [
       },
       username: null,
       positions: [
-        "Former DSC Moderator",
+        "DSC Moderator",
         "Founder, DSC Club"
       ],
       img : "/img/teams_potraits/sourav-saikia.png",
@@ -144,7 +144,7 @@ let members = [
       },
       username: null,
       positions: [
-        "Former DSC Moderator",
+        "DSC Moderator",
         "Founder, DSC Club"
       ],
       img : "/img/teams_potraits/mairingdao-hojai.png",
@@ -163,7 +163,7 @@ let members = [
       },
       username: null,
       positions: [
-        "Former DSC Moderator",
+        "DSC Moderator",
         "Founder, DSC Club"
       ],
       img : "/img/teams_potraits/nazimul-hoque.png",
@@ -182,7 +182,7 @@ let members = [
       },
       username: null,
       positions: [
-        "Former DSC Moderator",
+        "DSC Moderator",
         "Founder, DSC Club"
       ],
       img : "/img/teams_potraits/anurag-thapad.png",
@@ -201,26 +201,7 @@ let members = [
       },
       username: null,
       positions: [
-        "Former DSC Moderator",
-        "Founder, DSC Club"
-      ],
-      img : "/img/teams_potraits/makarand-patil.png",
-      socials : {
-        facebook: "https://www.facebook.com/makarand.patil.7583",
-        github: "https://github.com/Scimac",
-        linkedin: "https://www.linkedin.com/in/makarand-patil-1a9ab5173",
-      },
-      branch: null,
-      domain: null,
-    },
-    {
-      name: {
-        firstName: "Makarand",
-        lastName: "Patil"
-      },
-      username: null,
-      positions: [
-        "Former DSC Moderator",
+        "DSC Moderator",
         "Founder, DSC Club"
       ],
       img : "/img/teams_potraits/makarand-patil.png",
@@ -241,7 +222,8 @@ let members = [
       },
       username: "getoxdev",
       positions: [
-        "DSC Lead"
+        "DSC Lead",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/rishiraj-paul-chowdhury.jpg",
       socials : {
@@ -259,7 +241,8 @@ let members = [
       },
       username: "yash.srivastava",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/yash-srivastava.jpg",
       socials : {
@@ -277,7 +260,8 @@ let members = [
       },
       username: "nand_20",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/nandini-agarwal.jpeg",
       socials : {
@@ -295,7 +279,8 @@ let members = [
       },
       username: "trishna_kalita",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/trishna-kalita.png",
       socials : {
@@ -313,7 +298,8 @@ let members = [
       },
       username: "elvisr",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/elvis-rahman.jpg",
       socials : {
@@ -331,7 +317,8 @@ let members = [
       },
       username: "kazi",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/kazi-sahariar-rahi.jpg",
       socials : {
@@ -349,7 +336,8 @@ let members = [
       },
       username: "ujjawal-1999",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/ujjawal-jain.jpg",
       socials : {
@@ -367,7 +355,8 @@ let members = [
       },
       username: "anuva",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/anuva-bhattacharjee.jpg",
       socials : {
@@ -385,7 +374,8 @@ let members = [
       },
       username: "pathikrit",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/pathikrit-chanda.jpg",
       socials : {
@@ -403,7 +393,8 @@ let members = [
       },
       username: "sameer46",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/sameer-shrivastava.jpg",
       socials : {
@@ -421,7 +412,8 @@ let members = [
       },
       username: "arshita_narayan",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/arshita-narayan.jpg",
       socials : {
@@ -439,25 +431,8 @@ let members = [
       },
       username: "nabanita",
       positions: [
-        "Moderator"
-      ],
-      img : "/img/teams_potraits/nabanita-bania.jpeg",
-      socials : {
-        facebook: "https://www.facebook.com/payal.bania.35/",
-        github: "https://github.com/nabanitabania",
-        linkedin: "https://www.linkedin.com/in/nabanita-bania-27b141169/",
-      },
-      branch: "CSE",
-      domain: "Web",
-    },
-    {
-      name: {
-        firstName: "Nabanita",
-        lastName: "Bania"
-      },
-      username: "nabanita",
-      positions: [
-        "Moderator"
+        "Moderator",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/nabanita-bania.jpeg",
       socials : {
@@ -475,7 +450,8 @@ let members = [
       },
       username: "technisrahulk",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/rahul-gupta.jpg",
       socials : {
@@ -493,7 +469,8 @@ let members = [
       },
       username: "imsubhra",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/subhra-sankha-sarma.jpg",
       socials : {
@@ -511,7 +488,8 @@ let members = [
       },
       username: "scortier",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/aditya-singh-sisodiya.jpg",
       socials : {
@@ -529,7 +507,8 @@ let members = [
       },
       username: "manzilhoque",
       positions: [
-        "Moderator"
+        "Moderator",
+        "Designer"
       ],
       img : "/img/teams_potraits/manzil-hoque.jpg",
       socials : {
@@ -547,7 +526,8 @@ let members = [
       },
       username: "moderator", // TODO: Recheck this username
       positions: [
-        "Moderator"
+        "Moderator",
+        "Designer"
       ],
       img : "/img/teams_potraits/srinjoy-dutta.jpg",
       socials : {
@@ -567,7 +547,8 @@ let members = [
       },
       username: "iamthedarwin",
       positions: [
-        "Member"
+        "Member",
+        "Full Stack Web Developer"
       ],
       img : "/img/teams_potraits/shashwat-priyadarshy.png",
       socials : {
@@ -585,7 +566,8 @@ let members = [
       },
       username: "vishalpandeynits",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/vishal-pandey.jpg",
       socials : {
@@ -603,7 +585,8 @@ let members = [
       },
       username: "biley02",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/biley-roy.jpeg",
       socials : {
@@ -621,7 +604,8 @@ let members = [
       },
       username: "reeya",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/reeya-hazarika.jpg",
       socials : {
@@ -639,9 +623,10 @@ let members = [
       },
       username: "kashyaparka",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
-      img : "/img/teams_potraits/reeya-hazarika.jpg",
+      img : "/img/teams_potraits/arkadeep-kashyap.jpg",
       socials : {
         facebook: "https://www.facebook.com/arko.kashyap",
         github: "https://github.com/kashyaparka",
@@ -657,7 +642,8 @@ let members = [
       },
       username: "milibar",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/milind-barman.jpg",
       socials : {
@@ -675,7 +661,8 @@ let members = [
       },
       username: "debojyoti1915001",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/debojyoti-das.jpg",
       socials : {
@@ -693,7 +680,8 @@ let members = [
       },
       username: "sd15",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/siddhartha-das.jpeg",
       socials : {
@@ -711,7 +699,8 @@ let members = [
       },
       username: "shivaomdsc02",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/shivam-kumar.jpg",
       socials : {
@@ -729,25 +718,8 @@ let members = [
       },
       username: "__saurav",
       positions: [
-        "Member"
-      ],
-      img : "/img/teams_potraits/saurav-das.png",
-      socials : {
-        facebook: "https://www.facebook.com/profile.php?id=100006213496099",
-        github: "https://github.com/Saurav1905",
-        linkedin: "https://www.linkedin.com/in/saurav-das-0819591a0/",
-      },
-      branch: "CSE",
-      domain: "Web",
-    },
-    {
-      name: {
-        firstName: "Saurav",
-        lastName: "Das"
-      },
-      username: "__saurav",
-      positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/saurav-das.png",
       socials : {
@@ -765,7 +737,8 @@ let members = [
       },
       username: "nishi_sekhani",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/nishi-sekhani.jpg",
       socials : {
@@ -783,7 +756,8 @@ let members = [
       },
       username: "rajdeeppauldscnits",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/rajdeep-paul.jpg",
       socials : {
@@ -801,7 +775,8 @@ let members = [
       },
       username: "dhritiraj1",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/dhritiraj-borah.jpeg",
       socials : {
@@ -819,7 +794,8 @@ let members = [
       },
       username: "grvb15",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/gaurav-bhattacharjee.jpg",
       socials : {
@@ -837,7 +813,8 @@ let members = [
       },
       username: "gauravdas",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/gaurav-das.jpeg",
       socials : {
@@ -855,7 +832,8 @@ let members = [
       },
       username: "daniyal",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/daniyal-mahmood.jpg",
       socials : {
@@ -873,7 +851,8 @@ let members = [
       },
       username: "satyik",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/satyik-pritam-yogi.jpg",
       socials : {
@@ -891,7 +870,8 @@ let members = [
       },
       username: "aditya",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/satyik-pritam-yogi.jpg",
       socials : {
@@ -909,7 +889,8 @@ let members = [
       },
       username: "rishiraj",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/rishi-raj-kalita.jpg",
       socials : {
@@ -927,7 +908,8 @@ let members = [
       },
       username: "sujata_baroi",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/sujata-baroi.jpg",
       socials : {
@@ -945,7 +927,8 @@ let members = [
       },
       username: "pranjal123",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/pranjal-das.jpg",
       socials : {
@@ -963,7 +946,8 @@ let members = [
       },
       username: "jitulteron7",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/jitul-teron.jpg",
       socials : {
@@ -981,7 +965,8 @@ let members = [
       },
       username: "verticallychallenged",
       positions: [
-        "Member"
+        "Member",
+        "Web Developer"
       ],
       img : "/img/teams_potraits/anusha-hazarika.jpg",
       socials : {
@@ -999,7 +984,8 @@ let members = [
       },
       username: "im_sahil",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/sahil-sarwar.jpg",
       socials : {
@@ -1017,7 +1003,8 @@ let members = [
       },
       username: "mriga14",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/mriganka-bharali.jpg",
       socials : {
@@ -1035,7 +1022,8 @@ let members = [
       },
       username: "mriga14",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/mriganka-bharali.jpg",
       socials : {
@@ -1053,7 +1041,8 @@ let members = [
       },
       username: "arjunsah",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/arjun-kumar.jpg",
       socials : {
@@ -1071,7 +1060,8 @@ let members = [
       },
       username: "rajkishan04",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/raj-kishan.JPG",
       socials : {
@@ -1089,7 +1079,8 @@ let members = [
       },
       username: "shristi923",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/shristi-sarma.png",
       socials : {
@@ -1107,7 +1098,8 @@ let members = [
       },
       username: "jyotimoy-kashyap",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/jyotimoy-kashyap.jpeg",
       socials : {
@@ -1125,7 +1117,8 @@ let members = [
       },
       username: "android-developer",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/snehashish-karmakar.jpg",
       socials : {
@@ -1143,7 +1136,8 @@ let members = [
       },
       username: "_sanchayita_",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/sanchayita-purkayastha.jpg",
       socials : {
@@ -1161,7 +1155,8 @@ let members = [
       },
       username: "aman_aryan",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/aman-aryan.jpg",
       socials : {
@@ -1179,7 +1174,8 @@ let members = [
       },
       username: "aadarsh_apoorv",
       positions: [
-        "Member"
+        "Member",
+        "Android Developer"
       ],
       img : "/img/teams_potraits/apoorv-aadarsh.jpg",
       socials : {
@@ -1197,7 +1193,8 @@ let members = [
       },
       username: "lovepreet",
       positions: [
-        "Member"
+        "Member",
+        "Designer"
       ],
       img : "/img/teams_potraits/lovepreet-singh.jpg",
       socials : {
@@ -1215,7 +1212,8 @@ let members = [
       },
       username: "sharmistha412",
       positions: [
-        "Member"
+        "Member",
+        "Designer"
       ],
       img : "/img/teams_potraits/sharmistha-das.jpeg",
       socials : {
@@ -1233,7 +1231,8 @@ let members = [
       },
       username: "sharmistha412",
       positions: [
-        "Member"
+        "Member",
+        "Designer"
       ],
       img : "/img/teams_potraits/milind-barman.jpg",
       socials : {
@@ -1251,7 +1250,8 @@ let members = [
       },
       username: "nightfury",
       positions: [
-        "Member"
+        "Member",
+        "Designer"
       ],
       img : "/img/teams_potraits/nihar-jyoti-basisth.jpg",
       socials : {
@@ -1264,12 +1264,13 @@ let members = [
     },
     {
       name: {
-        firstName: "Nihar Jyoti",
-        lastName: "Basistha"
+        firstName: "Rishav",
+        lastName: "Anand"
       },
       username: "rishav17",
       positions: [
-        "Member"
+        "Member",
+        "Designer"
       ],
       img : "/img/teams_potraits/rishav-anand.jpg",
       socials : {
@@ -1287,7 +1288,8 @@ let members = [
       },
       username: "iamsrm",
       positions: [
-        "Member"
+        "Member",
+        "Designer"
       ],
       img : "/img/teams_potraits/soumya-ranjan-mohapatro.jpg",
       socials : {
@@ -1305,7 +1307,8 @@ let members = [
       },
       username: "digantdixit",
       positions: [
-        "Member"
+        "Member",
+        "Designer"
       ],
       img : "/img/teams_potraits/digant-pawan-dixit.jpg",
       socials : {
@@ -1323,7 +1326,8 @@ let members = [
       },
       username: "mayur726",
       positions: [
-        "Member"
+        "Member",
+        "Designer"
       ],
       img : "/img/teams_potraits/mayur-mulchandani.png",
       socials : {
@@ -1336,9 +1340,8 @@ let members = [
     },
   ],
   [
-
   ]
-]
+];
 
 let years = ["2017-21", "2018-22", "2019-23", "2020-24"];
 
@@ -1395,7 +1398,7 @@ function changeMembers(discipline, i) {
   
   let people = members[i].filter(member => {
     if(discipline == "All" || member.domain == discipline)
-    return member;
+      return member;
   });
   
   tabContent.innerHTML = "";
