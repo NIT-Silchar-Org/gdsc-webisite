@@ -27,7 +27,7 @@ let disciplines = [
   ["All", ],
   ["All", "Android", "Web", "UI/UX", ],
   ["All", "Android", "Web", "Flutter", "UI/UX", "Cloud"],
-  ["All", "Android", "Web", "UI/UX", "Cloud", ],
+  ["All", "Android", "Web", "Flutter", "UI/UX", ],
 ];
 
 let members = [
@@ -1414,7 +1414,7 @@ let members = [
       username: null,
       positions: [
         "Member",
-        "Android Developer"
+        "Flutter Developer"
       ],
       img : null,
       socials : {
@@ -1423,7 +1423,7 @@ let members = [
         github: "https://github.com/UniMan420",
       },
       branch: "ECE",
-      domain: "Android",
+      domain: "Flutter",
     },
     {
       name: {
@@ -1642,7 +1642,7 @@ let members = [
       username: null,
       positions: [
         "Member",
-        "Cloud Developer"
+        "Flutter Developer"
       ],
       img : null,
       socials : {
@@ -1651,7 +1651,7 @@ let members = [
         github: "https://github.com/ManashX",
       },
       branch: "CSE",
-      domain: "Cloud",
+      domain: "Flutter",
     },
     {
       name: {
@@ -1946,7 +1946,7 @@ let members = [
       username: null,
       positions: [
         "Member",
-        "Web Developer"
+        "Flutter Developer"
       ],
       img : null,
       socials : {
@@ -1955,7 +1955,7 @@ let members = [
         github: "https://github.com/vikas528",
       },
       branch: "CSE",
-      domain: "Web",
+      domain: "Flutter",
     },
     {
       name: {
