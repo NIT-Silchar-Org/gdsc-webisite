@@ -551,6 +551,25 @@ let members = [
   [
     {
       name: {
+        firstName: "Jyotimoy",
+        lastName: "Kashyap"
+      },
+      username: "jyotimoy-kashyap",
+      positions: [
+        "GDSC Lead",
+        "Android Developer"
+      ],
+      img : "/img/teams_potraits/jyotimoy-kashyap.jpeg",
+      socials : {
+        facebook: "https://www.facebook.com/jyotimoy.kashyap.33",
+        github: "https://github.com/JyotimoyKashyap",
+        linkedin: "https://www.linkedin.com/in/jyotimoy-kashyap-62a792190/",
+      },
+      branch: "CSE",
+      domain: "Android",
+    },
+    {
+      name: {
         firstName: "Aditya",
         lastName: "Agarwal"
       },
@@ -1231,25 +1250,6 @@ let members = [
         linkedin: "https://www.linkedin.com/in/raj-kishan-0a02491b8/",
       },
       branch: "ECE",
-      domain: "Android",
-    },
-    {
-      name: {
-        firstName: "Jyotimoy",
-        lastName: "Kashyap"
-      },
-      username: "jyotimoy-kashyap",
-      positions: [
-        "Member",
-        "Android Developer"
-      ],
-      img : "/img/teams_potraits/jyotimoy-kashyap.jpeg",
-      socials : {
-        facebook: "https://www.facebook.com/jyotimoy.kashyap.33",
-        github: "https://github.com/JyotimoyKashyap",
-        linkedin: "https://www.linkedin.com/in/jyotimoy-kashyap-62a792190/",
-      },
-      branch: "CSE",
       domain: "Android",
     },
     {
