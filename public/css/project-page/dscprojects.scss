@@ -277,7 +277,7 @@ main {
       margin: 0 auto;
 
       .project-card {
-        height: 60vh;
+        height: 70vh;
 
         border-radius: 2vh;
         margin: 2vw 0;
@@ -289,14 +289,17 @@ main {
         }
 
         .top {
-          padding: 0 5vw 5vw 5vw;
+          padding: 5vw;
 
           .left {
             height: 80%;
 
             .title {
               font-size: 8vw;
-              line-height: 8vw;
+              line-height: 7.5vw;
+            }
+            .small {
+              font-size: 6vw !important;
             }
 
             .status {
@@ -324,11 +327,22 @@ main {
         }
         .members-mid {
           height: 60%;
+          font-size: 3.2vw;
+          padding: 0 2vw;
 
           .member {
+
             a {
               text-decoration: none;
             }
+          }
+          .small {
+            margin: 1vw;
+            width: 49%;
+          }
+          .large {
+            margin: 0.5vw;
+            width: 95%;
           }
         }
         .tech-stack-mid {

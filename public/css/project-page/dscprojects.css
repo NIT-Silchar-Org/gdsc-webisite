@@ -348,7 +348,7 @@ main .projects .project-card .bottom .active {
     margin: 0 auto;
   }
   main .projects .project-card {
-    height: 60vh;
+    height: 70vh;
     border-radius: 2vh;
     margin: 2vw 0;
   }
@@ -358,14 +358,17 @@ main .projects .project-card .bottom .active {
     font-size: 7vw;
   }
   main .projects .project-card .top {
-    padding: 0 5vw 5vw 5vw;
+    padding: 5vw;
   }
   main .projects .project-card .top .left {
     height: 80%;
   }
   main .projects .project-card .top .left .title {
     font-size: 8vw;
-    line-height: 8vw;
+    line-height: 7.5vw;
+  }
+  main .projects .project-card .top .left .small {
+    font-size: 6vw !important;
   }
   main .projects .project-card .top .left .status {
     padding: 2vw 3vw;
@@ -389,9 +392,19 @@ main .projects .project-card .bottom .active {
   }
   main .projects .project-card .members-mid {
     height: 60%;
+    font-size: 3.2vw;
+    padding: 0 2vw;
   }
   main .projects .project-card .members-mid .member a {
     text-decoration: none;
+  }
+  main .projects .project-card .members-mid .small {
+    margin: 1vw;
+    width: 49%;
+  }
+  main .projects .project-card .members-mid .large {
+    margin: 0.5vw;
+    width: 95%;
   }
   main .projects .project-card .tech-stack-mid {
     height: calc(80% - 25%);
