@@ -98,7 +98,7 @@ section#schedule div.timeline {
       -ms-flex-align: center;
           align-items: center;
   height: 90%;
-  width: 150vw;
+  width: calc(15vw * 11);
   padding: 0 10vw;
 }
 
@@ -170,6 +170,10 @@ section#schedule div.timeline .timeline-item .text .name {
   font-size: 2.4vh;
 }
 
+section#schedule div.timeline .timeline-item .text .small {
+  font-size: 2.2vh !important;
+}
+
 section#schedule div.timeline .timeline-item .text .duration {
   font-size: 2vh;
 }
@@ -191,7 +195,7 @@ section#schedule div.timeline .down-item .line-to-timeline {
 section#schedule div.timeline .line {
   position: relative;
   height: 3vh;
-  width: 130vw;
+  width: calc(13vw * 11);
   border-radius: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -298,6 +302,10 @@ section#schedule div.timeline .gcp {
   background-color: #4885ED;
 }
 
+section#schedule div.timeline .misc {
+  background-color: #434343;
+}
+
 @media screen and (max-width: 875px) {
   section#schedule {
     position: relative;
@@ -312,7 +320,7 @@ section#schedule div.timeline .gcp {
     display: none;
   }
   section#schedule div.timeline {
-    width: 300vw;
+    width: calc(30vw * 11);
     padding: 0 25vw;
     -webkit-box-sizing: content-box;
             box-sizing: content-box;
@@ -358,7 +366,7 @@ section#schedule div.timeline .gcp {
   }
   section#schedule div.timeline .line {
     height: 3vw;
-    width: 280vw;
+    width: calc(28vw * 11);
     margin: 10vh 0;
   }
   section#schedule div.timeline .line .new-session {

@@ -1,54 +1,59 @@
 <%
   let events = [
     {
-      name: "Android Study Jams",
-      duration: "26th Sept - 27th Sept",
-      category: "android"
-    },
-    {
-      name: "Web Blitz",
-      duration: "26th Sept - 27th Sept",
+      name: "Intro to Git & Github",
+      duration: "Aug 18 - Aug 19, 2021",
       category: "web"
     },
     {
       name: "Flutter Bootcamp",
-      duration: "26th Sept - 27th Sept",
+      duration: "Sept 2 - Sept 4, 2021",
       category: "flutter"
     },
     {
-      name: "30 Days of Cloud",
-      duration: "26th Sept - 27th Sept",
+      name: "Intro to Cloud",
+      duration: "Sept 11 - Sept 12, 2021",
       category: "gcp"
     },
     {
-      name: "Prototype Plenary",
-      duration: "26th Sept - 27th Sept",
+      name: "Info Session on Google Cloud",
+      duration: "Sept 27, 2021",
+      category: "misc"
+    },
+    {
+      name: "30 Days of Google Cloud",
+      duration: "Sept 27 - Oct 29 , 2021",
+      category: "gcp"
+    },
+    {
+      name: "Info Session on Spark AR",
+      duration: "Oct 12, 2021",
       category: "uiux"
     },
     {
-      name: "Android Study Jams",
-      duration: "26th Sept - 27th Sept",
-      category: "android"
+      name: "Design Challenge",
+      duration: "Oct 13 - Oct 21, 2021",
+      category: "uiux"
     },
     {
-      name: "Web Blitz",
-      duration: "26th Sept - 27th Sept",
+      name: "Switch to Backend",
+      duration: "Oct 19 - Oct 21, 2021",
       category: "web"
     },
     {
-      name: "Flutter Bootcamp",
-      duration: "26th Sept - 27th Sept",
+      name: "Android Study Jams",
+      duration: "Oct 29 - Dec 29, 2021",
       category: "flutter"
     },
     {
-      name: "30 Days of Cloud",
-      duration: "26th Sept - 27th Sept",
-      category: "gcp"
+      name: "Orientation for Batch",
+      duration: "Dec 1st Week (Tentative), 2021",
+      category: "misc"
     },
     {
-      name: "Prototype Plenary",
-      duration: "26th Sept - 27th Sept",
-      category: "uiux"
+      name: "GSDC Explore 2022",
+      duration: "Jan 12 - Jan 15, 2022",
+      category: "misc"
     },
   ]
 %> 
@@ -81,7 +86,7 @@
               </div>
               
               <div class="text">
-                <div class="name"><%= events[i].name%></div>
+                <div class="name <%= (events[i].name.length > 15) ? 'small' : 'large' %>"><%= events[i].name%></div>
                 <div class="duration"><%= events[i].duration %></div>
               </div>
               
@@ -129,7 +134,7 @@
               </div>
               
               <div class="text">
-                <div class="name"><%= events[i].name%></div>
+                <div class="name <%= (events[i].name.length > 15) ? 'small' : 'large' %>"><%= events[i].name%></div>
                 <div class="duration"><%= events[i].duration %></div>
               </div>
             </div>
