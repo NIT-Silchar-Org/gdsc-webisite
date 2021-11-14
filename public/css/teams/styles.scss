@@ -185,16 +185,18 @@ main {
       width: 90%;
       left: 50%;
       transform: translate(-50%, 0);
+      background-color: rgba(0, 0, 0, 0.5); //TODO: Make a gradient
+      border-radius: 2vh;
 
-      img.background-img-pic {
-        border-radius: 2vh;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
+      // img.background-img-pic {
+      //   border-radius: 2vh;
+      //   position: absolute;
+      //   height: 100%;
+      //   width: 100%;
+      //   left: 50%;
+      //   top: 50%;
+      //   transform: translate(-50%, -50%);
+      // }
 
       .profile-pic {
         position: absolute;
@@ -223,9 +225,14 @@ main {
     width: 100%;
     height: 10%;
     text-align: center;
-    font-size: 3vh;
     font-weight: bolder;
     padding: 0 1vh;
+  }
+  .large {
+    font-size: 3vh;
+  }
+  .small {
+    font-size: 2.5vh;
   }
 
   .middle {
@@ -237,6 +244,10 @@ main {
 
     .position {
       margin: 1vh 0;
+    }
+    .lead {
+      font-weight: bolder;
+      color: #4885ED;
     }
   }
 
@@ -329,11 +340,11 @@ main {
       width: 90%;
       border-radius: 2vw;
   
-      div.bg-img {
-        img {
-          border-radius: 2vw;
-        }
-      }
+      // div.bg-img {
+        // img {
+        //   border-radius: 2vw;
+        // }
+      // }
   
       form {
         label {
@@ -420,8 +431,13 @@ main {
     }
 
     .name {
-      font-size: 4vw;
       padding: 0 1vw;
+    }
+    .large {
+      font-size: 4vw;
+    }
+    .small {
+      font-size: 3vw;
     }
 
     .middle {
