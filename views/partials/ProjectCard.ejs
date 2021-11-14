@@ -1,0 +1,143 @@
+<!--
+  ! README
+  ! Ignore Errors, it's because of EJS
+  Project Cards Are like This
+
+  - Top -----
+  - Mid -----
+  - Bottom --
+
+  Top has:
+  - Left -- Right -
+
+  Left has:
+  - Title ---
+  - Status --
+
+  All the "top" elements are written together, JS toggles the visibility of
+  the ones required. Same for mid and bottom.
+
+  The classes are named like info-top, more-info-top, members-top, tech-stack-top,
+  info-mid, etc.
+
+-->
+
+<div class="project-card">
+
+  <!--Button to go back to start view of card-->
+  <div class="go-back" onclick="toggle(<%=projectIndex%>, 0)">
+    <i class="fas fa-chevron-circle-left"></i>
+  </div>
+  
+  <div class="top info-top">
+    <div class="left">
+
+      <div class="title <%= (project.title.length > 15 ? 'small' : 'large')%>">
+        <% let projectTitleArray = project.title.split(" ") %>
+
+        <!--Making last word of title bold-->
+        <%= projectTitleArray.slice(0, projectTitleArray.length - 1).join(" ") %>
+        <br/>
+        <strong><%= projectTitleArray[projectTitleArray.length - 1] %></strong>
+      </div>
+
+      <br>
+
+      <!--Status-->
+      <% if (project.status) { %>
+        <div class="status completed">Completed</div>
+      <% } else { %>
+        <div class="status ongoing">Ongoing</div>
+      <% } %> 
+
+    </div>
+
+    <div class="right">
+      <img src="<%= project.img %>" alt="<%= project.title %>">
+    </div>
+
+  </div>
+
+  <div class="top more-info-top">
+    <div class="left">
+      <div class="title">More<br><strong>Details</strong></div>
+    </div>
+  </div>
+
+  <div class="top members-top">
+    <div class="left">
+      <div class="title"><strong>Members</strong></div>
+    </div>
+  </div>
+
+  <div class="top tech-stack-top">
+    <div class="left">
+      <div class="title">Tech<br><strong>Stack</strong></div>
+    </div>
+  </div>
+
+
+
+
+  <div class="mid info-mid">
+    <%= project.description[0] %>
+  </div>
+
+  <div class="mid more-info-mid">
+    <%= project.description.slice(1, project.description.length).join(" ") %>
+  </div>
+
+  <div class="mid members-mid">
+    <% project.members.forEach(member => { %>
+      <div class="member <%= (project.members.length > 9 ? 'small' : 'large') %>"> <!--Smaller if more members-->
+        <a href="/user/public-profile/<%= member.username %> ">
+          <%= member.name %>
+        </a>
+      </div>
+    <% }) %>
+  </div>
+  
+  <div class="mid tech-stack-mid">
+    <% project.techStack.forEach((tech, techIndex) => { %>
+      <div class="tech <%= tech.toLowerCase().replace(/\s/g, "") %>">
+        <%= tech %>
+      </div>
+    <% }) %>
+    <!--?The Reg Ex in Replace removes all spaces in the word -->
+  </div>
+
+
+
+
+  <div class="bottom">
+
+    <!--
+      Icon Click class is for click toggle in JS
+
+      toggle(n, m) takes in n as the card number, m as:
+      0 -> Original View
+      1 -> More Info
+      2 -> Members
+      3 -> Tech Stack
+    -->
+    <div class="icon icon-click more-info" onclick="toggle(<%=projectIndex%>, 1)">
+      <span class="iconify-inline" data-icon="uil:info"></span>
+    </div>
+
+    <div class="icon icon-click members" onclick="toggle(<%=projectIndex%>, 2)">
+      <span class="iconify-inline" data-icon="mdi:account-group"></span>
+    </div>
+
+    <div class="icon icon-click tech-stack" onclick="toggle(<%=projectIndex%>, 3)">
+      <span class="iconify-inline" data-icon="eva:code-outline"></span>
+    </div>
+
+    <div class="icon link">
+      <a href="<%= project.link %>" rel="noreferrer" target="_blank">
+        <span class="iconify-inline" data-icon="eva:link-fill"></span>
+      </a>
+    </div>
+
+  </div>
+
+</div>
