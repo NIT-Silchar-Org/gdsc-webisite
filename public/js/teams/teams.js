@@ -1378,7 +1378,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/aditya_verma.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/aditya-verma-554b42217",
         facebook: "https://github.com/Adrita2002",
@@ -1397,7 +1397,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/adrita_buragohain.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/adrita-buragohain-460080219",
         facebook: "https://www.facebook.com/adrita.buragohain.7",
@@ -1416,7 +1416,7 @@ let members = [
         "Member",
         "Flutter Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/aman_singh.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/aman-singh-967897214",
         facebook: "https://m.facebook.com/profile.php?ref=bookmarks",
@@ -1435,7 +1435,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/aniruddha_dutta.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/aniruddha-dutta-naz/",
         facebook: "https://www.facebook.com/aniruddha.dutta.naz/",
@@ -1452,9 +1452,9 @@ let members = [
       username: null,
       positions: [
         "Member",
-        "Flutter Developer"
+        "Android Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/anurag_pathak.jpg",
       socials : {
         linkedin: "http://linkedin.com/in/anuragthepathak",
         facebook: "http://facebook.com/realAnuragPathak",
@@ -1471,28 +1471,9 @@ let members = [
       username: null,
       positions: [
         "Member",
-        "Flutter Developer"
-      ],
-      img : null,
-      socials : {
-        linkedin: "https://www.linkedin.com/in/astha-das-658415222",
-        facebook: "https://www.facebook.com/astha.das.712161",
-        github: "https://github.com/Astha-12o",
-      },
-      branch: "ECE",
-      domain: "Android",
-    },
-    {
-      name: {
-        firstName: "Astha",
-        lastName: "Das"
-      },
-      username: null,
-      positions: [
-        "Member",
         "Android Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/astha_das.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/astha-das-658415222",
         facebook: "https://www.facebook.com/astha.das.712161",
@@ -1511,7 +1492,7 @@ let members = [
         "Member",
         "Android Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/ayush_gupta.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/gupta--ayush/",
         facebook: "https://www.facebook.com/profile.php?id=100058445922286",
@@ -1530,7 +1511,7 @@ let members = [
         "Member",
         "Android Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/ayushman_paul.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/ayushman-paul-82123b1b3/",
         facebook: "https://www.facebook.com/profile.php?id=100021481925647",
@@ -1549,7 +1530,7 @@ let members = [
         "Member",
         "Designer"
       ],
-      img : null,
+      img : "/img/teams_potraits/bhaskar_wary.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/bhaskar-wary-50586a1b3/",
         facebook: "https://www.facebook.com/bhaskar.wary.100",
@@ -1568,7 +1549,7 @@ let members = [
         "Member",
         "Android Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/biju_borah.jpeg",
       socials : {
         linkedin: "https://www.linkedin.com/in/biju-borah-1bb78620a/",
         facebook: "https://www.facebook.com/biju.borah.77582",
@@ -1587,7 +1568,7 @@ let members = [
         "Member",
         "Designer"
       ],
-      img : null,
+      img : "/img/teams_potraits/diya_karmakar.png",
       socials : {
         linkedin: "https://www.linkedin.com/in/diya-karmakar-5a4b14190/",
         facebook: "https://www.facebook.com/diya.karmakar.37625/",
@@ -1606,7 +1587,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/eisha_halder.jfif",
       socials : {
         linkedin: "https://www.linkedin.com/in/eisha-halder-a42367200",
         facebook: "https://www.facebook.com/eisha.halder.16",
@@ -1625,7 +1606,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/jyotishka_bhattacharjee.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/jyotishka-b-32995712b/",
         facebook: "https://www.facebook.com/profile.php?id=100005647038947",
@@ -1644,7 +1625,7 @@ let members = [
         "Member",
         "Flutter Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/manash_borah.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/manashborah/",
         facebook: "https://www.facebook.com/anurag.chakrawarti.3/",
@@ -1663,26 +1644,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
-      socials : {
-        linkedin: "https://www.linkedin.com/in/neha-pramanik-808919202",
-        facebook: "https://www.facebook.com/profile.php?id=100011385968596",
-        github: "https://github.com/NehaPramanik/",
-      },
-      branch: "CSE",
-      domain: "Web",
-    },
-    {
-      name: {
-        firstName: "Neha",
-        lastName: "Pramanik",
-      },
-      username: null,
-      positions: [
-        "Member",
-        "Web Developer"
-      ],
-      img : null,
+      img : "/img/teams_potraits/neha_pramanik.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/neha-pramanik-808919202",
         facebook: "https://www.facebook.com/profile.php?id=100011385968596",
@@ -1701,7 +1663,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/netrakamal_barua.jpeg",
       socials : {
         linkedin: "https://www.linkedin.com/in/netrakamal-barua-377485219/",
         facebook: "https://www.facebook.com/netrakamal.barua/",
@@ -1720,7 +1682,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/nikita_roy.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/nikita-roy-615220192",
         facebook: "https://www.facebook.com/profile.php?id=100017110333190",
@@ -1739,7 +1701,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/olindam_sarma.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/olindam-sarma-477ab620b",
         facebook: "https://www.facebook.com/olindam.sarma",
@@ -1758,14 +1720,14 @@ let members = [
         "Member",
         "Designer"
       ],
-      img : null,
+      img : "/img/teams_potraits/partha_pratim_bhuyan.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/parthapratim-bhuyan-138925204/",
         facebook: "https://www.facebook.com/parthapratim.bhuyan.77",
         github: "https://github.com/Novice1414",
       },
       branch: "EIE",
-      domain: "Design",
+      domain: "UI/UX",
     },
     {
       name: {
@@ -1777,7 +1739,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/prakhar_saxena.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/prakhar-saxena-a6a599201",
         facebook: "https://m.facebook.com/100057333236767/",
@@ -1796,7 +1758,7 @@ let members = [
         "Member",
         "Full Stack Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/pratik_majumdar.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/codadept/",
         facebook: "https://www.facebook.com/itspratikmaj",
@@ -1815,7 +1777,7 @@ let members = [
         "Member",
         "Android Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/raktim_bhuyan.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/raktim-bhuyan-337299211",
         facebook: "https://www.facebook.com/raktim.bhuyan.756",
@@ -1834,7 +1796,7 @@ let members = [
         "Member",
         "Android Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/ritam_nath.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/ritam-nath-01780b201/",
         facebook: "https://www.facebook.com/ritam.nath.735",
@@ -1848,12 +1810,12 @@ let members = [
         firstName: "Saurav",
         lastName: "Pal",
       },
-      username: "resyfer",
+      username: null,
       positions: [
         "Member",
         "Full Stack Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/saurav_pal.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/resyfer/",
         facebook: "https://www.facebook.com/resyfer.dev/",
@@ -1872,7 +1834,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/sayahnneeta_dutta.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/mwlite/in/sayahnneeta-dutta-2b4525187",
         facebook: "https://m.facebook.com/100004857528784/",
@@ -1891,7 +1853,7 @@ let members = [
         "Member",
         "Full Stack Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/shayan_debroy.jpeg",
       socials : {
         linkedin: "https://www.linkedin.com/in/shayan-debroy/",
         facebook: "https://www.facebook.com/shayan.debroy.90",
@@ -1910,7 +1872,7 @@ let members = [
         "Member",
         "Designer"
       ],
-      img : null,
+      img : "/img/teams_potraits/shibam_debnath.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/mwlite/in/shibam-debnath-25b235206",
         facebook: "https://www.facebook.com/ind.iconic",
@@ -1929,7 +1891,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/siddharta_shankar_paul.jpeg",
       socials : {
         linkedin: "https://www.linkedin.com/in/siddharta-paul-99a0891bb",
         facebook: "https://www.facebook.com/siddharta.paul.71",
@@ -1948,7 +1910,7 @@ let members = [
         "Member",
         "Flutter Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/vikas.jpg",
       socials : {
         linkedin: "https://www.linkedin.com/in/vikas-suthar-bb4678200",
         facebook: "https://www.facebook.com/vikas.makkar.357",
@@ -1967,7 +1929,7 @@ let members = [
         "Member",
         "Web Developer"
       ],
-      img : null,
+      img : "/img/teams_potraits/vinayak_das.jpeg",
       socials : {
         linkedin: "https://www.linkedin.com/in/phenyloder/",
         facebook: "https://www.facebook.com/phenyloder",
@@ -2006,7 +1968,7 @@ function changeTab(index) {
 
 function changeDiscipline(discipline, index) {
   disciplinesContainer.innerHTML = "";
-
+  disciplines[index].length > 5 && disciplinesContainer.classList.add("small");
   for(let j = 0; j<disciplines[index].length; j++) {
     disciplinesContainer.innerHTML += `
       <div
@@ -2041,7 +2003,7 @@ function memberCard(person) {
     <div class="member">
       
       <div class="top">
-        <div class="background-img">
+        <div class="background-img ${person.domain ? (person.domain == 'UI/UX' ? 'uiux' : person.domain.toLowerCase()) : 'none'}">
           
           <div class="profile-pic">
             <img loading="lazy" src="${person.img}" alt="${person.name.firstName + ' ' + person.name.lastName}" />

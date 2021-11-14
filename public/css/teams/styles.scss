@@ -219,6 +219,18 @@ main {
         }
       }
     }
+    .web, .cloud {
+      background: linear-gradient(180deg, #091E3A 0%, #F4C20D 100%) !important;
+    }
+    .uiux, .none {
+      background: linear-gradient(180deg, #091E3A 0%, #DB3236 100%) !important;
+    }
+    .android {
+      background: linear-gradient(180deg, #091E3A 0%, #3CBA54 100%) !important;
+    }
+    .flutter {
+      background: linear-gradient(180deg, #091E3A 0%, #4885ED 100%) !important;
+    }
   }
 
   .name {
@@ -398,6 +410,18 @@ main {
           font-size: 3.5vw;
           border-left: 0.1vw solid #E2E2E2;
           border-right: 0.1vw solid #E2E2E2;
+        }
+      }
+      .small {
+        flex-direction: column !important;
+        width: 40% !important;
+
+        .discipline {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1vw 0 !important;
         }
       }
     

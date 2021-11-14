@@ -272,6 +272,26 @@ main .members #tab-content {
           transform: translate(-50%, -50%);
 }
 
+.member .top .web, .member .top .cloud {
+  background: -webkit-gradient(linear, left top, left bottom, from(#091E3A), to(#F4C20D)) !important;
+  background: linear-gradient(180deg, #091E3A 0%, #F4C20D 100%) !important;
+}
+
+.member .top .uiux, .member .top .none {
+  background: -webkit-gradient(linear, left top, left bottom, from(#091E3A), to(#DB3236)) !important;
+  background: linear-gradient(180deg, #091E3A 0%, #DB3236 100%) !important;
+}
+
+.member .top .android {
+  background: -webkit-gradient(linear, left top, left bottom, from(#091E3A), to(#3CBA54)) !important;
+  background: linear-gradient(180deg, #091E3A 0%, #3CBA54 100%) !important;
+}
+
+.member .top .flutter {
+  background: -webkit-gradient(linear, left top, left bottom, from(#091E3A), to(#4885ED)) !important;
+  background: linear-gradient(180deg, #091E3A 0%, #4885ED 100%) !important;
+}
+
 .member .name {
   width: 100%;
   height: 10%;
@@ -466,6 +486,26 @@ main .members #tab-content {
     font-size: 3.5vw;
     border-left: 0.1vw solid #E2E2E2;
     border-right: 0.1vw solid #E2E2E2;
+  }
+  main .members .small {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    width: 40% !important;
+  }
+  main .members .small .discipline {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1vw 0 !important;
   }
   main .members #tab-content {
     width: 100%;
