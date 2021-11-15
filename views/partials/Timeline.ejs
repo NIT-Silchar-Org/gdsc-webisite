@@ -1,4 +1,18 @@
 <%
+  /* !!! 
+   * On Changes to events
+   * Change $no-of-items in index_event_schedule.scss to match events.length 
+   */
+
+  /**
+   * Catgories (exactly copy these):
+   * android
+   * flutter
+   * gcp
+   * web
+   * uiux
+   * misc
+  */
   let events = [
     {
       name: "Intro to Git & Github",
@@ -61,7 +75,8 @@
 <section id="schedule" class="section">
   <div class="title">Timeline</div>
   
-  <!--Left and Right buttons-->
+  <!--Left and Right buttons for movement-->
+  <!--These don't exist in mobile view-->
   <div class="navigation">
     <div class="navigation-item go-left">
       <i class="fas fa-chevron-left"></i>
@@ -71,6 +86,18 @@
     </div>
   </div>
 
+  <!--
+    In either top or bottom, alternate elements are filled with content
+    while others are blank elements with same width and height
+
+    Top has even indices filled with content, while bottom has odd ones.
+
+    In middle there's a line, with the dots at centres of divs with same
+    width as elements with content.
+
+    Each element also has a line-to-timeline which extends from element to
+    meet the dot on the line in middle
+  -->
   <div id="timeline-wrapper">
     <div class="timeline">
       <div class="timeline-container up-container">

@@ -361,6 +361,9 @@ section#schedule div.timeline .misc {
   section#schedule div.timeline .timeline-item .text .name {
     font-size: 3vw;
   }
+  section#schedule div.timeline .timeline-item .text .small {
+    font-size: 1.8vw !important;
+  }
   section#schedule div.timeline .timeline-item .text .duration {
     font-size: 2vw;
   }
