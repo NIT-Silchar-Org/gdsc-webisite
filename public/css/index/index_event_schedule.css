@@ -1,421 +1,391 @@
-/*----------------------------*\
-	Section
-\*----------------------------*/
-.section {
+/*
+  Timeline width = timeline-itm * no. of items + some padding.
+  TODO: Make this calculation in js
+*/
+section#schedule {
   position: relative;
-  padding: 90px 0px;
+  height: 100vh;
+  width: 100%;
 }
 
-.section-bg {
+section#schedule div.title {
+  width: 100%;
+  font-size: 5vh;
+  height: 6vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#schedule div.navigation {
   position: absolute;
-  left: 0;
-  top: 10;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 60px;
+section#schedule div.navigation .navigation-item {
+  height: 100%;
+  width: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 10vh;
+  font-weight: lighter;
+  padding: 0 0 0 3vh;
+  color: rgba(153, 153, 153, 0.25);
+  cursor: pointer;
 }
 
-.section-title .title {
+section#schedule div.navigation .navigation-item:hover {
+  background-color: rgba(153, 153, 153, 0.25);
+  color: rgba(153, 153, 153, 0.8);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+section#schedule div#timeline-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  /* IE, Firefox, Safari */
+}
+
+section#schedule div#timeline-wrapper::-webkit-scrollbar {
+  display: none;
+  /* Chromium */
+}
+
+section#schedule div.timeline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90%;
+  width: calc(15vw * 11);
+  padding: 0 10vw;
+}
+
+section#schedule div.timeline .timeline-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+section#schedule div.timeline .timeline-item {
   position: relative;
-  text-transform: capitalize;
-  font-weight: 900;
-  font-size: 42px;
-  margin-top: -10px;
+  min-width: 12vw;
+  max-width: 12vw;
+  height: 22vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3vh 1vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section#schedule div.timeline .timeline-item .line-to-timeline {
+  position: absolute;
+  z-index: 1;
+  height: 16vh;
+  width: 0.5vh;
+  border-radius: 3vh;
+}
+
+section#schedule div.timeline .timeline-item .logo {
+  position: relative;
+  height: 50%;
+  width: 100%;
+}
+
+section#schedule div.timeline .timeline-item .logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-height: 100%;
+  max-width: 100%;
   overflow: hidden;
 }
 
-/*=========================================================
-        EVENTS
-    ===========================================================*/
-.events-wrapper {
-  background-image: url(../../img/illustrations/frame.svg);
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: 30%;
-  padding-right: 2rem;
-  background-position-x: 54rem;
+section#schedule div.timeline .timeline-item .text {
+  text-align: center;
 }
 
-.event .event-content p.cont {
-  margin-right: 350px;
-  text-align: justify;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+section#schedule div.timeline .timeline-item .text .name {
+  font-size: 2.4vh;
 }
 
-.event {
+section#schedule div.timeline .timeline-item .text .small {
+  font-size: 2.2vh !important;
+}
+
+section#schedule div.timeline .timeline-item .text .duration {
+  font-size: 2vh;
+}
+
+section#schedule div.timeline .up-item .line-to-timeline {
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+section#schedule div.timeline .down-item .line-to-timeline {
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+}
+
+section#schedule div.timeline .line {
   position: relative;
+  height: 3vh;
+  width: calc(13vw * 11);
+  border-radius: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: visible;
+  margin: 15vh 0;
+  background-color: #C6C6C6;
 }
 
-.event + .event {
-  margin-top: 40px;
-}
-
-.event:after {
-  content: "";
+section#schedule div.timeline .line .new-session {
   position: absolute;
-  left: 260px;
-  top: 0px;
-  bottom: 0px;
-  width: 4px;
-  /* background-color: #2b65ec; */
-  background-color: #3bb9ff;
-}
-
-.event:last-child:after {
-  height: 60px;
-}
-
-.event + .event:before {
-  content: "";
-  position: absolute;
-  left: 260px;
-  height: 60px;
-  top: -60px;
-  width: 4px;
-  background-color: #3bb9ff;
-  /* background-color: #2B65EC; */
-}
-
-.event .event-day {
-  position: relative;
-  width: 120px;
-  height: 120px;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 15vh;
+  aspect-ratio: 1/1;
   border-radius: 50%;
-  /* background: #2b65ec; */
-  /* background: #3bb9ff; */
-  background-color: #3bb9ff;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border: 2vh solid #C6C6C6;
+  background-color: white;
   z-index: 1;
 }
 
-.event .event-hour {
-  position: relative;
-  left: 262px;
-  top: 60px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #3bb9ff;
-  z-index: 10;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.event .event-day {
+section#schedule div.timeline .line .new-session img {
   position: absolute;
-  top: 20%;
-  left: 200px;
-  right: 0;
-  text-align: center;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  padding-top: 10px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-height: 90%;
+  max-width: 90%;
 }
 
-.event .event-day .day {
-  display: block;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 60px;
+section#schedule div.timeline .line .new-session .text {
+  position: absolute;
+  top: 120%;
+  height: 3vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  font-size: 2.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  white-space: nowrap;
 }
 
-.event .event-day .year {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 15px;
+section#schedule div.timeline .line .line-item {
+  position: relative;
+  width: 12vw;
 }
 
-.event .event-content {
-  padding-left: 370px;
-  min-height: 120px;
+section#schedule div.timeline .line .line-item .line-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 4vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1.5vh solid white;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
-.event .event-time {
-  font-size: 15px;
+section#schedule div.timeline .android {
+  background-color: #3CBA54;
 }
 
-.event .event-time i {
-  color: #2b65ec;
+section#schedule div.timeline .flutter {
+  background-color: #4885ED;
 }
 
-.event .event-content a {
-  color: #2b65ec;
+section#schedule div.timeline .web {
+  background-color: #F4C20D;
 }
 
-/*=========================================================
-        RESPONSIVE
-    ===========================================================*/
-@media only screen and (max-width: 768px) {
-  .section {
+section#schedule div.timeline .uiux {
+  background-color: #DB3236;
+}
+
+section#schedule div.timeline .gcp {
+  background-color: #4885ED;
+}
+
+section#schedule div.timeline .misc {
+  background-color: #434343;
+}
+
+@media screen and (max-width: 875px) {
+  section#schedule {
     position: relative;
-    padding: 90px 0px;
+    height: 70vh;
   }
-  .section-bg {
+  section#schedule div.title {
+    font-size: 8vw;
+    height: 10vw;
+    margin-bottom: 2vh;
+  }
+  section#schedule div.navigation {
+    display: none;
+  }
+  section#schedule div.timeline {
+    width: calc(30vw * 11);
+    padding: 0 25vw;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  section#schedule div.timeline .timeline-item {
+    min-width: 25vw;
+    max-width: 25vw;
+    height: 20vh;
+    padding: 3vw 1vw;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  section#schedule div.timeline .timeline-item .line-to-timeline {
     position: absolute;
-    left: 0;
-    top: 10;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    z-index: 1;
+    height: 10vh;
+    width: 0.5vw;
+    border-radius: 3vw;
   }
-  .section-title {
-    text-align: center;
-    margin-bottom: 60px;
+  section#schedule div.timeline .timeline-item .logo {
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
   }
-  .section-title .title {
-    position: relative;
-    text-transform: capitalize;
-    font-weight: 900;
-    font-size: 42px;
-    margin-top: -10px;
+  section#schedule div.timeline .timeline-item .logo img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
     overflow: hidden;
   }
-  /*=========================================================
-        EVENTS
-    ===========================================================*/
-  .event .event-content p.cont {
-    /* display: flex; */
-    margin-right: 60px;
-    /* text-align:justify; */
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+  section#schedule div.timeline .timeline-item .logo-uiux {
+    width: 100%;
+    /* It was too small for 50% width */
   }
-  .event {
-    position: relative;
+  section#schedule div.timeline .timeline-item .text .name {
+    font-size: 3vw;
   }
-  .event + .event {
-    margin-top: 60px;
+  section#schedule div.timeline .timeline-item .text .small {
+    font-size: 1.8vw !important;
   }
-  .event:after {
-    /*line part*/
-    content: "";
-    position: absolute;
-    left: 90px;
-    top: 0px;
-    bottom: 0px;
-    width: 4px;
-    /* background-color: #2b65ec; */
-    background-color: #3bb9ff;
+  section#schedule div.timeline .timeline-item .text .duration {
+    font-size: 2vw;
   }
-  .event:last-child:after {
-    height: 60px;
+  section#schedule div.timeline .line {
+    height: 3vw;
+    width: calc(28vw * 11);
+    margin: 10vh 0;
   }
-  .event + .event:before {
-    /*line part*/
-    content: "";
-    position: absolute;
-    left: 90px;
-    height: 60px;
-    top: -60px;
-    width: 4px;
-    background-color: #3bb9ff;
-    /* background-color: #2B65EC; */
+  section#schedule div.timeline .line .new-session {
+    height: 7.5vh;
+    border: 2vw solid #C6C6C6;
   }
-  .event .event-day {
-    /*Circular area*/
-    position: relative;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    /* background: #2b65ec; */
-    background-color: #3bb9ff;
-    z-index: 1;
+  section#schedule div.timeline .line .new-session .text {
+    font-size: 3vw;
   }
-  .event .event-hour {
-    /*small circle*/
-    position: relative;
-    left: 92px;
-    top: 60px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #3bb9ff;
-    z-index: 10;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
+  section#schedule div.timeline .line .line-item {
+    min-width: 25vw;
+    max-width: 25vw;
   }
-  .event .event-day {
-    /* large Circular area*/
-    position: absolute;
-    top: 20%;
-    left: 40px;
-    right: 0;
-    text-align: center;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    padding-top: 0;
-  }
-  .event .event-day .day {
-    display: block;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 50px;
-  }
-  .event .event-day .year {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 14px;
-  }
-  .event .event-content {
-    padding-left: 170px;
-    min-height: 120px;
-  }
-  .event .event-time {
-    font-size: 15px;
-  }
-  .event .event-time i {
-    color: #2b65ec;
-  }
-  .event .event-content a {
-    color: #2b65ec;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .event .event-content p.cont {
-    font-size: 0.8rem;
-    text-align: start;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  .section {
-    position: relative;
-    padding: 90px 0px;
-  }
-  .section-bg {
-    position: absolute;
-    left: 0;
-    top: 10;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    z-index: 1;
-  }
-  .section-title {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-  .section-title .title {
-    position: relative;
-    text-transform: capitalize;
-    font-weight: 900;
-    font-size: 32px;
-    margin-top: -10px;
-    overflow: hidden;
-  }
-  /*=========================================================
-      EVENTS
-  ===========================================================*/
-  .event .event-content p.cont {
-    /* display: flex; */
-    margin-right: 20px;
-    /* text-align:justify; */
-    /* flex-wrap: wrap; */
-  }
-  .event {
-    position: relative;
-  }
-  .event + .event {
-    margin-top: 60px;
-  }
-  .event:after {
-    /*line part*/
-    content: "";
-    position: absolute;
-    left: 60px;
-    top: 0px;
-    bottom: 0px;
-    width: 4px;
-    /* background-color: #2b65ec; */
-    background-color: #3bb9ff;
-  }
-  .event:last-child:after {
-    height: 60px;
-  }
-  .event + .event:before {
-    /*line part*/
-    content: "";
-    position: absolute;
-    left: 60px;
-    height: 60px;
-    top: -60px;
-    width: 4px;
-    background-color: #3bb9ff;
-    /* background-color: #2B65EC; */
-  }
-  .event .event-day {
-    /*Circular area*/
-    position: relative;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    /* background: #2b65ec; */
-    background-color: #3bb9ff;
-    z-index: 1;
-  }
-  .event .event-hour {
-    /*small circle*/
-    position: relative;
-    left: 62px;
-    top: 60px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #3bb9ff;
-    z-index: 10;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-  .event .event-day {
-    /* large Circular area*/
-    position: absolute;
-    top: 20%;
-    left: 18px;
-    right: 0;
-    text-align: center;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 70px;
-    height: 70px;
-  }
-  .event .event-day .day {
-    display: block;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 40px;
-  }
-  .event .event-day .year {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 10px;
-  }
-  .event .event-content {
-    padding-left: 122px;
-    min-height: 120px;
-    line-height: 20px;
-  }
-  .event .event-time {
-    font-size: 0.8rem;
-  }
-  .event .event-time i {
-    color: #2b65ec;
-  }
-  .event .event-content a {
-    color: #2b65ec;
+  section#schedule div.timeline .line .line-item .line-circle {
+    height: 4vw;
+    border: 1.5vw solid white;
   }
 }
 /*# sourceMappingURL=index_event_schedule.css.map */
