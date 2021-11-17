@@ -331,8 +331,8 @@ body::-webkit-scrollbar {
 
 .blog-list-item .blog-profile a{    
     position: absolute;
-    transform: translate(-50%, -50%);
-    margin-left: 10%;
+    transform: translate(0%, -50%);
+    margin-left: 5%;
     top: 50%;
     font-size: 1.1rem;
 }

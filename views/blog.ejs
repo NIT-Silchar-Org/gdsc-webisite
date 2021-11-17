@@ -62,12 +62,14 @@
 
         <% popularBlogs.forEach((blog, index)=>{%>
           <div class="best-blogs-list-item">
-            <div class="blog-rank"><'0' + %index%></div>
+            <div class="blog-rank"><%='0' + (index+1)%></div>
             <div class="blog-profile">
               <img src="/img/profile/profile_demo.png">
-              <a>Profile 1</a>
+              <a><%=blog.author.name%></a>
             </div>
-            <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vero error corrupti expedita sunt saepe quisquam architecto sint nemo odit.</a></div>
+            <div class="blog-title"><a>
+                <%=blog.title.slice(0,20) + (blog.title.length>20?'...':'')%>
+            </a></div>
             <div class="blog-date">7 Oct 2021</div>
           </div>
         <%}) %>
@@ -88,8 +90,7 @@
         </ul>
       </div>
       <div class="blog-list-box">
-
-        <div class="blog-list-item">
+        <!-- <div class="blog-list-item">
           <div class="blog-profile">
             <img src="/img/profile/profile_demo.png">
             <a>Profile 1</a>
@@ -98,52 +99,19 @@
           <div class="blog-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis laborum iusto, aliquid quis excepturi quia cupiditate nulla et cum officiis, ut exercitationem quam minima fuga neque!</div>
           <div class="blog-date">7 Oct 2021</div>
           <img src = "/img/illustrations/about.jpg" class="blog-thumbnail">
-        </div>
-
-        <div class="blog-list-item">
+        </div> -->
+        <% newBlogs.forEach((blog, index)=>{%>
+         <div class="blog-list-item">
           <div class="blog-profile">
             <img src="/img/profile/profile_demo.png">
-            <a>Profile 1</a>
+            <a><%=blog.author.name%></a>
           </div>
-          <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vero error corrupti expedita sunt saepe quisquam architecto sint nemo odit.</a></div>
-          <div class="blog-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis laborum iusto, aliquid quis excepturi quia cupiditate nulla et cum officiis, ut exercitationem quam minima fuga neque!</div>
+          <div class="blog-title"><a><%=blog.title.slice(0,30) + (blog.title.length>30?'...':'')%></a></div>
+          <div class="blog-text"><%=blog.body.slice(0,50) + (blog.body.length>50?'...':'')%></div>
           <div class="blog-date">7 Oct 2021</div>
           <img src = "/img/illustrations/about.jpg" class="blog-thumbnail">
         </div>
-
-        <div class="blog-list-item">
-          <div class="blog-profile">
-            <img src="/img/profile/profile_demo.png">
-            <a>Profile 1</a>
-          </div>
-          <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vero error corrupti expedita sunt saepe quisquam architecto sint nemo odit.</a></div>
-          <div class="blog-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis laborum iusto, aliquid quis excepturi quia cupiditate nulla et cum officiis, ut exercitationem quam minima fuga neque!</div>
-          <div class="blog-date">7 Oct 2021</div>
-          <img src = "/img/illustrations/about.jpg" class="blog-thumbnail">
-        </div>
-
-        <div class="blog-list-item">
-          <div class="blog-profile">
-            <img src="/img/profile/profile_demo.png">
-            <a>Profile 1</a>
-          </div>
-          <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vero error corrupti expedita sunt saepe quisquam architecto sint nemo odit.</a></div>
-          <div class="blog-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis laborum iusto, aliquid quis excepturi quia cupiditate nulla et cum officiis, ut exercitationem quam minima fuga neque!</div>
-          <div class="blog-date">7 Oct 2021</div>
-          <img src = "/img/illustrations/about.jpg" class="blog-thumbnail">
-        </div>
-
-        <div class="blog-list-item">
-          <div class="blog-profile">
-            <img src="/img/profile/profile_demo.png">
-            <a>Profile 1</a>
-          </div>
-          <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vero error corrupti expedita sunt saepe quisquam architecto sint nemo odit.</a></div>
-          <div class="blog-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis laborum iusto, aliquid quis excepturi quia cupiditate nulla et cum officiis, ut exercitationem quam minima fuga neque!</div>
-          <div class="blog-date">7 Oct 2021</div>
-          <img src = "/img/illustrations/about.jpg" class="blog-thumbnail">
-        </div>
-
+        <%}) %>
 
   
       </div>
