@@ -49,7 +49,7 @@
           <h3>Best Blogs</h3>
       </div>  
       <div class="best-blogs-list-box">
-
+<!-- 
         <div class="best-blogs-list-item">
           <div class="blog-rank">01</div>
           <div class="blog-profile">
@@ -58,57 +58,19 @@
           </div>
           <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vero error corrupti expedita sunt saepe quisquam architecto sint nemo odit.</a></div>
           <div class="blog-date">7 Oct 2021</div>
-        </div>
+        </div> -->
 
-        <div class="best-blogs-list-item">
-          <div class="blog-rank">02</div>
-          <div class="blog-profile">
-            <img src="/img/profile/profile_demo.png">
-            <a>Profile 2</a>
+        <% popularBlogs.forEach((blog, index)=>{%>
+          <div class="best-blogs-list-item">
+            <div class="blog-rank"><'0' + %index%></div>
+            <div class="blog-profile">
+              <img src="/img/profile/profile_demo.png">
+              <a>Profile 1</a>
+            </div>
+            <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vero error corrupti expedita sunt saepe quisquam architecto sint nemo odit.</a></div>
+            <div class="blog-date">7 Oct 2021</div>
           </div>
-          <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sequi consequatur enim, commodi quis error?</a></div>
-          <div class="blog-date">14 Nov 2021</div>
-        </div>
-
-        <div class="best-blogs-list-item">
-          <div class="blog-rank">03</div>
-          <div class="blog-profile">
-            <img src="/img/profile/profile_demo.png">
-            <a>Profile 3</a>
-          </div>
-          <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur.</a></div>
-          <div class="blog-date">3 Jun 2021</div>
-        </div>
-
-        <div class="best-blogs-list-item">
-          <div class="blog-rank">04</div>
-          <div class="blog-profile">
-            <img src="/img/profile/profile_demo.png">
-            <a>Profile 4</a>
-          </div>
-          <div class="blog-title"><a>Lorem ipsum dolor sit amet.</a></div>
-          <div class="blog-date">10 Apr 2021</div>
-        </div>
-
-        <div class="best-blogs-list-item">
-          <div class="blog-rank">05</div>
-          <div class="blog-profile">
-            <img src="/img/profile/profile_demo.png">
-            <a>Profile 5</a>
-          </div>
-          <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, ullam!</a></div>
-          <div class="blog-date">05 Jan 2021</div>
-        </div>
-
-        <div class="best-blogs-list-item">
-          <div class="blog-rank">06</div>
-          <div class="blog-profile">
-            <img src="/img/profile/profile_demo.png">
-            <a>Profile 6</a>
-          </div>
-          <div class="blog-title"><a>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa unde provident voluptas sed minima ipsum, dolores adipisci doloremque.</a></div>
-          <div class="blog-date">19 Dec 2021</div>
-        </div>
+        <%}) %>
 
       </div>
     </div>
@@ -201,6 +163,7 @@
           </ul>
       </div>
     </div>
+    <%console.log(newBlogs)%>
 
 
     <!---------------x------------- Main Site Section ---------------x-------------->
