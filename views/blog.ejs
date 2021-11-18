@@ -68,7 +68,7 @@
               <a><%=blog.author.name%></a>
             </div>
             <div class="blog-title"><a>
-                <%=blog.title.slice(0,20) + (blog.title.length>20?'...':'')%>
+                <%=blog.title.slice(0,30) + (blog.title.length>30?'...':'')%>
             </a></div>
             <div class="blog-date">7 Oct 2021</div>
           </div>
@@ -83,10 +83,10 @@
           Sort by:
         </h4>
         <ul>
-          <li><button>Most Popular</button></li>
-          <li><button>Most Viewed</button></li>
-          <li><button>Latest</button></li>
-          <li><button>Oldest</button></li>
+          <li><button name="most-popular">Most Popular</button></li>
+          <li><button name="most-viewed">Most Viewed</button></li>
+          <li><button name="latest">Latest</button></li>
+          <li><button name="oldest">Oldest</button></li>
         </ul>
       </div>
       <div class="blog-list-box">
@@ -100,18 +100,18 @@
           <div class="blog-date">7 Oct 2021</div>
           <img src = "/img/illustrations/about.jpg" class="blog-thumbnail">
         </div> -->
-        <% newBlogs.forEach((blog, index)=>{%>
+        <!-- <% newBlogs.forEach((blog, index)=>{%>
          <div class="blog-list-item">
           <div class="blog-profile">
             <img src="/img/profile/profile_demo.png">
             <a><%=blog.author.name%></a>
           </div>
-          <div class="blog-title"><a><%=blog.title.slice(0,30) + (blog.title.length>30?'...':'')%></a></div>
-          <div class="blog-text"><%=blog.body.slice(0,50) + (blog.body.length>50?'...':'')%></div>
+          <div class="blog-title"><a><%=blog.title.slice(0,50) + (blog.title.length>50?'...':'')%></a></div>
+          <div class="blog-text"><%=blog.body.slice(0,150) + (blog.body.length>150?'...':'')%></div>
           <div class="blog-date">7 Oct 2021</div>
-          <img src = "/img/illustrations/about.jpg" class="blog-thumbnail">
+          <img src = "<%=blog.cover%>" class="blog-thumbnail">
         </div>
-        <%}) %>
+        <%}) %> -->
 
   
       </div>
@@ -131,7 +131,6 @@
           </ul>
       </div>
     </div>
-    <%console.log(newBlogs)%>
 
 
     <!---------------x------------- Main Site Section ---------------x-------------->
