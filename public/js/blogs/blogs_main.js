@@ -2,7 +2,7 @@ let allBlogs;
 let displayableBlogs;
 
 
-fetch('http://localhost:8080/blog/allBlogData')
+fetch(window.location.href + '/allBlogData')
     .then(res=>{
         if(!res.ok) console.log('blogs load failure');
         return res.json();
@@ -13,6 +13,7 @@ fetch('http://localhost:8080/blog/allBlogData')
         updateBlogListBox(displayableBlogs);
     });
 
+    console.log(window.location);
 
 
 //SEARCH BLOGS
@@ -21,7 +22,6 @@ const searchFor = (searchText)=>{
     let search = searchText.split(' ');
     //remove empty strings
    search = search.filter(Boolean);
-    console.log(search);
     let result = [];
     allBlogs.forEach((blog)=>{
         let compoundData = '';
@@ -84,7 +84,6 @@ tagButtons.forEach(button=>{
             activeTags.forEach((tag)=>{
                 searchText+= tag + ' ';
             });
-            console.log(searchText);
             displayableBlogs = searchFor(searchText);
             
         }
