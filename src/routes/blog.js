@@ -102,7 +102,7 @@ router.get("/", async(req, res) => {
 
 router.get("/allBlogData", async(req, res) => {
     try {
-        res.send(JSON.stringify(await Blog.find()));
+        res.send(JSON.stringify(await Blog.find().populate("author")));
     } catch (err) {
         console.error(err);
         req.flash("error", "Something went wrong. Try again");
