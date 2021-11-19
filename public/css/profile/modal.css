@@ -104,26 +104,6 @@
   transition: all 0.5s;
 }
 
- /* .RegisterModal{
-  opacity: 100;
-  width: 40%;
-  border: 1px solid;
-  background-color: var(--white);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  height: 80vh;
-  width: 70vw;
-  z-index: 50;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}  */
-
 .addExperienceModal {
   border: 1px solid;
   background-color: var(--white);
@@ -157,14 +137,6 @@
   .backPart {
     width: 10% !important;
   }
-  /* .RegisterModal{
-    top: 50%;
-    width: 35%;
-    position: absolute;
-    overflow: auto;
-    font-size: 0.8rem !important;
-    height: auto;
-  } */
   .editProfileModal,
   .addSkillsModal,
   .addAchievementModal,
@@ -229,18 +201,6 @@
   .submit {
     width: 100% !important;
   }
-  .flexRow {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
   .edill {
     display: none;
   }
@@ -263,15 +223,15 @@
   display: flex;
 }
 
-/* .editProfileModal,
+.editProfileModal,
 .addExperienceModal,
 .addProjectsModal,
 .addAchievementModal,
 .addSkillsModal {
-  Top-level Styling
-  Div Layout Styling
-  Text Styling for h2, p, a
-} */
+  /* Top-level Styling */
+  /* Div Layout Styling */
+  /* Text Styling for h2, p, a */
+}
 
 .editProfileModal label,
 .addExperienceModal label,
@@ -547,6 +507,7 @@
 
 .editProfileModal #subscribeBox,
 .addExperienceModal #subscribeBox,
+.addProjectsModal #subscribeBox,
 .addAchievementModal #subscribeBox,
 .addSkillsModal #subscribeBox {
   position: relative;
