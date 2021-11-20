@@ -64,13 +64,13 @@
           <div class="best-blogs-list-item">
             <div class="blog-rank"><%='0' + (index+1)%></div>
             <div class="blog-profile">
-              <img src="/img/profile/profile_demo.png">
-              <a><%=blog.author.name%></a>
+              <img src="<%=blog.author.profileImageLocation || '/img/profile/person.png'%>">
+              <a href="/user/public-profile/<%= blog.author.dscHandle %>"><%=blog.author.name%></a>
             </div>
-            <div class="blog-title"><a>
+            <div class="blog-title"><a href="/blog/view/<%=blog.slug%>">
                 <%=blog.title.slice(0,30) + (blog.title.length>30?'...':'')%>
             </a></div>
-            <div class="blog-date">7 Oct 2021</div>
+            <div class="blog-date"><%=blog.createdAt.toUTCString().slice(5, 16)%></div>
           </div>
         <%}) %>
 

@@ -357,7 +357,7 @@ router.get("/view/:slug", async(req, res) => {
                 user = await User.findById(decodedToken.userId);
         }
         //render result page
-        res.render("fullblog", {
+        res.render("viewBlog", {
             user,
             found: finduser,
             blog: blog,

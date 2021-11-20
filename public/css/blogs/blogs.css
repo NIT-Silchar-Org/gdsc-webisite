@@ -19,6 +19,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+a{
+    color:inherit;
+}
+
 .blog-banner{
     position: relative;
 }
@@ -173,7 +177,7 @@ body::-webkit-scrollbar {
     font-weight: 600;
     color: #292929;
     padding-right: 5%;
-    overflow: hidden;
+    word-wrap: break-word;
 
     cursor: pointer;
 }
@@ -346,6 +350,7 @@ body::-webkit-scrollbar {
 .blog-list-item .blog-profile img{
     position: absolute;
     width: 4%;
+    border-radius: 50%;
     transform: translate(-50%, -50%);
     left:2%;
     top: 50%;
@@ -375,7 +380,7 @@ body::-webkit-scrollbar {
     grid-column-start: 1;
     grid-column-end: 2;
     color:#757575;
-    overflow:hidden;
+    word-wrap: break-word;
 }
 
 .blog-list-item .blog-date{

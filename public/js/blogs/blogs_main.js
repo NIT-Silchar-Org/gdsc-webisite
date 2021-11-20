@@ -13,7 +13,6 @@ fetch(window.location.href + '/allBlogData')
         updateBlogListBox(displayableBlogs);
     });
 
-    console.log(window.location);
 
 
 //SEARCH BLOGS
@@ -158,10 +157,10 @@ const updateBlogListBox = (data)=>{
      blogListBox.innerHTML += 
         `<div class="blog-list-item">
         <div class="blog-profile">
-          <img src="${blog.author.profileImageLocation  || '/img/profile/profile_demo.png'}">
-          <a>${blog.author.name}</a>
+          <img src="${blog.author.profileImageLocation  || '/img/profile/person.png'}">
+          <a href="/user/public-profile/${blog.author.dscHandle}">${blog.author.name}</a>
         </div>
-        <div class="blog-title"><a>${blog.title.slice(0,50) + (blog.title.length>50?'...':'')}</a></div>
+        <div class="blog-title"><a href="/blog/view/${blog.slug}">${blog.title.slice(0,50) + (blog.title.length>50?'...':'')}</a></div>
         <div class="blog-text">${blog.body.slice(0,100) + (blog.body.length>100?'...':'')}</div>
         <div class="blog-date">${date.day} ${date.month} ${date.year}</div>
         <img src = "${blog.cover}" class="blog-thumbnail">
