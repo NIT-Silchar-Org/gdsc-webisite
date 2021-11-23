@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 main {
   margin-top: 11vh;
   min-height: 89vh;
@@ -138,6 +144,8 @@ main .members #tab-titles .tab-year {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 main .members #tab-titles .active-tab-year {

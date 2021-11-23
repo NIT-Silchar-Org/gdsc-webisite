@@ -405,29 +405,29 @@
       <!-- faq ends -->
       
       <!---Contact Us Section Starts-->
-      <section class="contact_us" id="contactus">
-        <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
+      <!-- <section class="contact_us" id="contactus">
+        <img src="../public/img/illustrations/contact.png" alt="" />
         <div>
-          <% if (flashMessages) { %> <% if (flashMessages.contact_success) { %>
-          <!-- <div class="flash success"><%= flashMessages.success %></div> -->
+          <%# if (flashMessages) { %> <%# if (flashMessages.contact_success) { %>
+          <div class="flash success"><%#= flashMessages.success %></div>
           <div class="alert" id="success">
             <span
               class="closebtn"
               onclick="this.parentElement.style.display='none';"
               >&times;</span
             >
-            <%= flashMessages.contact_success %>
+            <%#= flashMessages.contact_success %>
           </div>
-          <% } else if (flashMessages.contact_error) { %>
+          <%# } else if (flashMessages.contact_error) { %>
           <div class="alert" id="error">
             <span
               class="closebtn"
               onclick="this.parentElement.style.display='none';"
               >&times;</span
             >
-            <%= flashMessages.contact_error %>
+            <%#= flashMessages.contact_error %>
           </div>
-          <% } %> <% } %>
+          <%# } %> <%# } %>
         </div>
         <div class="row" style="padding-top: 2rem">
           <h2 class="heading__primary intersect" style="padding-top: 2rem">
@@ -492,7 +492,7 @@
                       onchange="javascript:updateList()"
                       style="cursor: pointer"
                     /><br />
-                    <!-- <center>
+                    <center>
                       <progress
                         class="progress"
                         id="progressBar"
@@ -500,7 +500,7 @@
                         max="100"
                         style="width: 300px"
                       ></progress>
-                    </center> -->
+                    </center>
 
                     <h3 id="status" class="status"></h3>
                     <p id="loaded_n_total" class="loaded_n_total"></p>
@@ -520,7 +520,7 @@
             </div>
           </div>
         </form>
-      </section>
+      </section> -->
     </main>
     <%-include('partials/footer')%>
     <!---Contact Us Section Ends-->
