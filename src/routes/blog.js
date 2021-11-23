@@ -55,8 +55,9 @@ router.get("/", async(req, res) => {
             .sort({
                 views: -1,
             })
-            .limit(5)
+            .limit(6)
             .populate("author");
+
         const newBlogs = await Blog.find({"reportCount": {$lt: filterThreshold}}, {}, query)
             .sort({
                 createdAt: -1,
@@ -66,6 +67,13 @@ router.get("/", async(req, res) => {
             skip: size * page,
             limit: size
         }
+
+        const newBlogsString =  JSON.stringify( await Blog.find({"reportCount": {$lt: filterThreshold}}, {}, query)
+        .sort({
+            createdAt: -1,
+        })
+        .populate("author"));
+
         const nextPageBlogs = await Blog.find({"reportCount": {$lt: filterThreshold}}, {}, queryNextPage)
             .sort({
                 createdAt: -1,
@@ -79,11 +87,22 @@ router.get("/", async(req, res) => {
             user: user,
             found: finduser,
             newBlogs: newBlogs || [],
+            newBlogsString: newBlogsString || '',
             popularBlogs: popularBlogs || [],
             page,
             nextPageExists
             // blogsCount: blogsCount
         });
+    } catch (err) {
+        console.error(err);
+        req.flash("error", "Something went wrong. Try again");
+        res.redirect("/");
+    }
+});
+
+router.get("/allBlogData", async(req, res) => {
+    try {
+        res.send(JSON.stringify(await Blog.find().populate("author")));
     } catch (err) {
         console.error(err);
         req.flash("error", "Something went wrong. Try again");
@@ -338,7 +357,7 @@ router.get("/view/:slug", async(req, res) => {
                 user = await User.findById(decodedToken.userId);
         }
         //render result page
-        res.render("fullblog", {
+        res.render("viewBlog", {
             user,
             found: finduser,
             blog: blog,

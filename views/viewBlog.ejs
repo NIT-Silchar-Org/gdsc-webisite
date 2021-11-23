@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta
+      name="description"
+      content="DSC NIT Silchar is under Developer Students Club, which is a
+    worldwide developers community initiated by Google.The DSC NITS website is open for
+    all student developers, who wish to improve their skills.
+    Each user has separate profile page, where one can add his/her skills,
+    projects and accomplishments."
+    />
+    <meta
+      name="keywords"
+      content="DSC, DSC NITS, Developer Student Club NIT Silchar, Blogs, 
+    Profile, Forum, Events, Developers, NIT Silchar"
+    />
+
+    <title>DSC NITS | Blog</title>
+
+    <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
+    <link rel="stylesheet" href="/css/index/colors.css" />
+    <link rel="stylesheet" href="/css/blogs/viewBlog.css" />
+    <link rel="stylesheet" href="/css/index/navbar.css" />
+    <link rel="stylesheet" href="/css/index/footer.css" />
+    <link rel="stylesheet" href="/css/index/flashMessage.css" />
+  </head>
+
+  <body id="">
+    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+    <%-include('partials/navbar')%>
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!-- Flash Message Body Start-->
+    <%-include('partials/flashMessage')%>
+    <!-- Flash Message Body End -->
+
+    <!----------------------------- Main Site Section ------------------------------> 
+
+    <div class="parent-container">
+        <div class = "blog-container">
+          <div class="blog-profile">
+            <img class="profile-image" src="<%=blog.author.profileImageLocation || '/img/profile/profile_demo.png'%>">
+            <div class="blog-title"><%=blog.title%></div>
+            <div class="blog-author">by <%=blog.author.name%></div>
+            <div class="blog-date"><%=blog.createdAt.toUTCString().slice(5, 16)%></div>
+            <div class="blog-tags">
+              <span>Tags:</span>
+              <ul>
+                <%blog.tags.forEach(tag=>{%>
+                  <li><%=tag%></li>
+                <%})%>
+
+              </ul>
+            </div>
+          </div>
+          <div class="blog-body"><%=blog.body%></div>
+        </div>
+
+    </div>
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+    <%-include('partials/footer')%>
+
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+
+    <!-- Custom Javascript file -->
+    <script src="/js/darkmode.js"></script>
+    <script src="/js/navbar.js"></script>
+    </script>
+    <script src="/js/blogs/fullblog.js"></script>
+    <script>
+      document.querySelector('.blog-body').innerHTML= document.querySelector('.blog-body').innerText;
+    </script>
+  </body>
+</html>
