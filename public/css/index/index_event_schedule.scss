@@ -2,7 +2,7 @@
   Timeline width = timeline-itm * no. of items + some padding.
   TODO: Make this calculation in js
 */
-
+$no-of-items: 11;
 
 section#schedule {
   position: relative;
@@ -70,7 +70,7 @@ section#schedule {
     justify-content: center;
     align-items: center;
     height: 90%;
-    width: 150vw;
+    width: calc(15vw * #{$no-of-items});
     padding: 0 10vw;
 
     .timeline-container {
@@ -123,6 +123,9 @@ section#schedule {
         .name {
           font-size: 2.4vh;
         }
+        .small {
+          font-size: 2.2vh !important;
+        }
 
         .duration {
           font-size: 2vh;
@@ -149,7 +152,7 @@ section#schedule {
     .line {
       position: relative;
       height: 3vh;
-      width: 130vw;
+      width: calc(13vw * #{$no-of-items});
       border-radius: 5vh;
       display: flex;
       flex-direction: row;
@@ -234,6 +237,10 @@ section#schedule {
       background-color: #4885ED;
     }
 
+    .misc {
+      background-color: #434343;
+    }
+
   }
 }
 
@@ -253,7 +260,7 @@ section#schedule {
     }
   
     div.timeline {
-      width: 300vw;
+      width: calc(30vw * #{$no-of-items});
       padding: 0 25vw;
       box-sizing: content-box;
 
@@ -295,6 +302,9 @@ section#schedule {
           .name {
             font-size: 3vw;
           }
+          .small {
+            font-size: 1.8vw !important;
+          }
   
           .duration {
             font-size: 2vw;
@@ -304,7 +314,7 @@ section#schedule {
   
       .line {
         height: 3vw;
-        width: 280vw;
+        width: calc(28vw * #{$no-of-items});
         margin: 10vh 0;
   
         .new-session {
