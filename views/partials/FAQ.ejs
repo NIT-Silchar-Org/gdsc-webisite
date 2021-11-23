@@ -1,4 +1,5 @@
 <%
+  // Questions for FAQ
   let faq = [
     {
       question: "How can we help you?",
@@ -38,11 +39,14 @@
   <div class="faq-container">
     <% for(let i = 0; i<faq.length; i++) { %> 
       <div class="faq">
+
         <div class="question">
           <i class="fas fa-chevron-down button"></i>
 
           Q: <%= faq[i].question %>
         </div>
+        
+        
         <div class="answer">A: <%= faq[i].answer %></div>
       </div>
     <% } %> 

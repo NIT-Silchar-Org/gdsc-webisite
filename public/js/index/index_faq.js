@@ -5,6 +5,7 @@ let states = [];
 for(let i = 0; i<faqList.length; i++)
     states.push(0);
 
+//Answer reveal
 for(let i = 0; i<faqList.length; i++) {
     let question = faqList[i].getElementsByClassName("question")[0];
 
@@ -13,6 +14,8 @@ for(let i = 0; i<faqList.length; i++) {
         let buttonList = faqContainer.getElementsByClassName("button");
 
         for(let j = 0; j<faqList.length; j++) {
+
+            //Answer Animation
             if(j == i && states[j] == 0) {
                 answerList[j].style.height = "auto";
                 answerList[j].style.padding = "2vh";
