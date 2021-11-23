@@ -50,6 +50,7 @@
   border-radius: 1vh;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
+  text-align: justify;
 }
 
 @media screen and (max-width: 550px) {
@@ -60,8 +61,11 @@
   .faq-section div.faq-container {
     width: 85%;
   }
+  .faq-section .question {
+    padding: 4vw 10vw 4vw 5vw !important;
+  }
   .faq-section .button {
-    right: 5%;
+    right: 4% !important;
   }
 }
 /*# sourceMappingURL=index_faq.css.map */
