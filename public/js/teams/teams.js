@@ -1969,6 +1969,7 @@ function changeTab(index) {
 function changeDiscipline(discipline, index) {
   disciplinesContainer.innerHTML = "";
   disciplines[index].length > 5 && disciplinesContainer.classList.add("small");
+  disciplines[index].length <= 5 && disciplinesContainer.classList.remove("small");
   for(let j = 0; j<disciplines[index].length; j++) {
     disciplinesContainer.innerHTML += `
       <div
@@ -1995,9 +1996,12 @@ function changeMembers(discipline, i) {
   for(let j = 0; j<people.length; j++) {
     tabContent.innerHTML += memberCard(people[j]);
   }
+
+  setDimensions();
 }
 
 
+// Give person data for member card HTML as return value
 function memberCard(person) {
   return `
     <div class="member">
@@ -2006,12 +2010,15 @@ function memberCard(person) {
         <div class="background-img ${person.domain ? (person.domain == 'UI/UX' ? 'uiux' : person.domain.toLowerCase()) : 'none'}">
           
           <div class="profile-pic">
-            <img loading="lazy" src="${person.img}" alt="${person.name.firstName + ' ' + person.name.lastName}" />
+            <img loading="lazy" class="pfp" src="${person.img}" alt="${person.name.firstName + ' ' + person.name.lastName}" />
           </div>
         </div>
       </div>
       
-      <div class="name ${((person.name.firstName + ' ' + person.name.lastName).length > 12 || person.name.firstName.length > 7 ||  person.name.lastName.length > 7 ) ? 'small' : 'large'}">
+      <div class="name ${
+        ((person.name.firstName + ' ' + person.name.lastName).length > 12 || person.name.firstName.length > 7 ||  person.name.lastName.length > 7 )
+          ? 'small-name' 
+          : 'large-name'}">
         ${person.name.firstName + ' ' + person.name.lastName}
       </div>
 
@@ -2050,7 +2057,7 @@ let searchResultsContainer = document.getElementById('search-results');
 let completeMemberList = [];
 for(let i = 0; i<members.length; i++) {
   completeMemberList = [...completeMemberList, ...members[i]];
-}
+} // Adding all members to a common list, completeMemberList
 completeMemberList.sort((a, b) => {
   return (a.name.firstName + " " + a.name.lastName).localeCompare(b.name.firstName + " " + b.name.lastName);
 }); //Lexicographic sorting of names
@@ -2084,6 +2091,9 @@ devSearch.addEventListener('keyup', (e) => {
     searchResultsContainer.innerHTML = "No results matched"
   }
 
+
+  setDimensions();
+
 })
 
 //Preventing search enter
@@ -2091,3 +2101,17 @@ let searchForm = document.getElementById("search-form");
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
 })
+
+// Setting height and width of profile pictures on them loading
+function setDimensions() {
+  let pfpList = document.getElementsByClassName("pfp");
+  for(let i = 0; i<pfpList.length; i++) {
+    pfpList[i].addEventListener('load', () => {
+      if(pfpList[i].clientWidth / pfpList[i].clientHeight > 1)
+        pfpList[i].style.maxHeight = "100%";
+      else
+        pfpList[i].style.maxWidth = "100%";
+    })
+  }
+
+}
