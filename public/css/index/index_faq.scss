@@ -45,6 +45,7 @@
         background-color: rgba(237, 237, 237, 0.45);
         border-radius: 1vh;
         transition: 0.1s ease-in-out;
+        text-align: justify;
       }
     }
   }
@@ -62,8 +63,12 @@
       width: 85%;
     }
 
+    .question {
+      padding: 4vw 10vw 4vw 5vw !important;
+    }
+
     .button {
-      right: 5%;
+      right: 4% !important;
     }
   }
 }

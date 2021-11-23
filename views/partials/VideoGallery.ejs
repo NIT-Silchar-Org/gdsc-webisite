@@ -1,0 +1,37 @@
+<%
+  let videoList = [
+    "https://www.youtube.com/embed/Nhtu2RSitUg",
+    "https://www.youtube.com/embed/LrztNCe0NdI",
+    "https://www.youtube.com/embed/uw5TL7mCIOI",
+    "https://www.youtube.com/embed/DLBgtb4nqnQ",
+    "https://www.youtube.com/embed/V84yjOdtybQ",
+    "https://www.youtube.com/embed/SESfqVu3Ce8"
+  ]
+%> 
+<section class="video">
+  <h1 class="video__secondary intersect">Video Gallery</h1>
+  <div class="contain">
+    <button id="left-button">
+      <img src="/img/logo/left.svg" alt="left arrow" class="" />
+    </button>
+    <div class="row" id="row">
+      <div class="row__inner">
+        <% for(let i = 0; i<videoList.length; i++) { %>
+          <div class="tile">
+            <div class="tile__media">
+              <iframe
+                src="<%= videoList[i] %>"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        <% } %> 
+      </div>
+    </div>
+    <button id="right-button">
+      <img src="/img/logo/left.svg" alt="left arrow" class="inv" />
+    </button>
+  </div>
+</section>
