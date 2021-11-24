@@ -5,14 +5,15 @@
     /* box-sizing: border-box; */
     font-family: 'Poppins', sans-serif;
   }
-.whitespace{
+/* .whitespace{
     height: 75px;
-}
+} */
 
 nav{
-    position: fixed;
+    position: sticky;
     top:0;
     height:auto;
+    height: 75px;
     z-index: 10;
     background: #ffffff;
     width: 100%;
@@ -129,11 +130,12 @@ nav .nav-list a button:hover[name=logout]{
 /* Portrait mode*/
 @media (orientation:portrait) {
 
-    .whitespace{
+    /* .whitespace{
         height:8vw;
-    }
+    } */
      nav{
-        height: 8%;
+        height: 8vh;
+        position: sticky;
     }
 
     nav img{

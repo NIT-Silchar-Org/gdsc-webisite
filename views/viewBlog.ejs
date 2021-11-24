@@ -23,6 +23,10 @@
 
     <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
     <!-- Custom Style   -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
     <link rel="stylesheet" href="/css/index/colors.css" />
     <link rel="stylesheet" href="/css/blogs/viewBlog.css" />
@@ -47,7 +51,7 @@
           <div class="blog-profile">
             <img class="profile-image" src="<%=blog.author.profileImageLocation || '/img/profile/profile_demo.png'%>">
             <div class="blog-title"><%=blog.title%></div>
-            <div class="blog-author">by <%=blog.author.name%></div>
+            <div class="blog-author">by <a href="/user/public-profile/<%= blog.author.dscHandle %>"><%=blog.author.name%></a></div>
             <div class="blog-date"><%=blog.createdAt.toUTCString().slice(5, 16)%></div>
             <div class="blog-tags">
               <span>Tags:</span>
@@ -60,8 +64,19 @@
             </div>
           </div>
           <div class="blog-body"><%=blog.body%></div>
-        </div>
 
+          <%if(user){%>
+            <%if(user.likes.includes(blog._id)){%>
+              <i class="fa fa-lg fa-heart" aria-hidden="true"><%=blog.appreciateCount%></i>
+              <%}else{%>
+                <i class="fa fa-lg fa-heart-o" aria-hidden="true"><%=blog.appreciateCount%></i>
+              <%}%>
+              <div style="display:none" class="blog-id"><%=blog._id%></div>
+          
+        <%}else{%>
+          <a href="/user/register?type=login"><i class="fa fa-lg fa-heart-o" aria-hidden="true" style="pointer-events: none"></i></a>
+          <%}%>
+        </div>
     </div>
 
     <!---------------x------------- Main Site Section ---------------x-------------->
@@ -79,6 +94,23 @@
     <script src="/js/blogs/fullblog.js"></script>
     <script>
       document.querySelector('.blog-body').innerHTML= document.querySelector('.blog-body').innerText;
+    </script>
+    <script>
+      const id = document.querySelector('.blog-id').innerText;
+      const appreciateButton = document.querySelector('.fa-heart') || document.querySelector('.fa-heart-o');
+      appreciateButton.addEventListener('click', ()=>{
+        fetch(window.location.origin + '/blog/appreciate/' + id, {method:"POST"});
+          if(document.querySelector('.fa-heart-o')){
+            appreciateButton.classList.remove('fa-heart-o');
+            appreciateButton.classList.add('fa-heart');
+            appreciateButton.innerText = Number(appreciateButton.innerText) + 1;
+          }
+          else {
+            appreciateButton.classList.remove('fa-heart');
+            appreciateButton.classList.add('fa-heart-o');
+            appreciateButton.innerText = Number(appreciateButton.innerText) - 1;
+          }
+      })
     </script>
   </body>
 </html>

@@ -1,3 +1,8 @@
+* {
+  margin: 0%;
+  box-sizing: border-box;
+}
+
 main {
   margin-top: 11vh;
   min-height: 89vh;

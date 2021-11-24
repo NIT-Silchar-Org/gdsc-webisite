@@ -11,7 +11,7 @@ $(document).ready(()=>{
       case '/': return 'home';
       case '/blog/': return 'blog';
       case '/project/': return 'project';
-      case '/team/': return 'team';
+      case '/members': return 'team';
       default: return 'none';
    }
  }

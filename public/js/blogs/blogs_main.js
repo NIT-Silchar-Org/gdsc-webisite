@@ -38,12 +38,12 @@ const searchFor = (searchText)=>{
 }
 
 //search box
-document.addEventListener('keydown', (e)=>{
+document.addEventListener('keyup', (e)=>{
     const searchBox = document.querySelector('.blog-search-bar input');
-    if((e.code==='Enter') && (document.activeElement == searchBox) && searchBox.value){
+    if((e.which==13) && (document.activeElement == searchBox) && searchBox.value){
         displayableBlogs = searchFor(searchBox.value);
         updateBlogListBox(displayableBlogs);
-        window.scrollTo(0,document.querySelector(".blog-container").scrollHeight);
+        window.scrollTo(0,document.querySelector(".blog-list-box").scrollHeight);
     }
 });
 
