@@ -59,10 +59,10 @@
   letter-spacing: 4px;
   padding-left: 2rem;
 }
-.cards_ach {
+/* .cards_ach {
   padding-left: 5rem;
   width: 93%;
-}
+} */
 
 .bookmarks {
   padding-top: 4px;
@@ -147,8 +147,8 @@
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  padding: 5px;
-  text-decoration: underline;
+  /* padding: 5px; */
+  /* text-decoration: underline; */
 }
 ś .delete-ach img {
   size: 5px;

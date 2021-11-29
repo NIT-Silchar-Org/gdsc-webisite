@@ -12,17 +12,18 @@
 .addExperience {
   background-color: transparent;
   border: none;
-  margin: 1rem;
-  font-size: 0.8rem;
+  margin: 0 1rem;
+  font-size: 1rem;
   font-family: var(--global-font);
   transition: all 0.2s;
   padding: 0.5rem;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .addExperience:hover {
   cursor: pointer;
-  color: var(--Grey-dark-2);
+  /* color: var(--Grey-dark-2); */
+  color: #616DD9;
 
   /* border-color: var(--Grey-dark-1); */
 }
@@ -174,4 +175,15 @@
 }
 .delete-exp a {
   background: none;
+}
+
+@media (max-width: 520px){
+  .flexRow{
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .flexRow  button{
+      padding: 0;
+      margin: 0;
+  }
 }

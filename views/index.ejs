@@ -395,85 +395,9 @@
 
       <%- include('partials/Timeline.ejs') %> 
       <!-- ################################/Event Schedule #####################################-->
-
+      
       <!--Video Gallery Section Starts-->
-      <section class="video">
-        <h1 class="video__secondary intersect">Video Gallery</h1>
-        <h2 class="video__instruction">Scroll horizontal to see more videos</h2>
-        <div class="contain">
-          <button id="left-button">
-            <img src="/img/logo/left.svg" alt="left arrow" class="" />
-          </button>
-          <div class="row" id="row">
-            <div class="row__inner">
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/GAoWVb_a9_M"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/xMBkZRCA_Lo"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/YL8amQAXD2A"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/V6s5vp4l4WE"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/P3-Btcdwzbs"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-              <div class="tile">
-                <div class="tile__media">
-                  <iframe
-                    src="https://www.youtube.com/embed/1-uwfWc3v-4"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button id="right-button">
-            <img src="/img/logo/left.svg" alt="left arrow" class="inv" />
-          </button>
-        </div>
-      </section>
+      <%- include('partials/VideoGallery.ejs') %> 
       <!---Video Gallery Section Ends-->
 
       <!-- faq starts -->
@@ -481,29 +405,29 @@
       <!-- faq ends -->
       
       <!---Contact Us Section Starts-->
-      <section class="contact_us" id="contactus">
-        <!-- <img src="../public/img/illustrations/contact.png" alt="" /> -->
+      <!-- <section class="contact_us" id="contactus">
+        <img src="../public/img/illustrations/contact.png" alt="" />
         <div>
-          <% if (flashMessages) { %> <% if (flashMessages.contact_success) { %>
-          <!-- <div class="flash success"><%= flashMessages.success %></div> -->
+          <%# if (flashMessages) { %> <%# if (flashMessages.contact_success) { %>
+          <div class="flash success"><%#= flashMessages.success %></div>
           <div class="alert" id="success">
             <span
               class="closebtn"
               onclick="this.parentElement.style.display='none';"
               >&times;</span
             >
-            <%= flashMessages.contact_success %>
+            <%#= flashMessages.contact_success %>
           </div>
-          <% } else if (flashMessages.contact_error) { %>
+          <%# } else if (flashMessages.contact_error) { %>
           <div class="alert" id="error">
             <span
               class="closebtn"
               onclick="this.parentElement.style.display='none';"
               >&times;</span
             >
-            <%= flashMessages.contact_error %>
+            <%#= flashMessages.contact_error %>
           </div>
-          <% } %> <% } %>
+          <%# } %> <%# } %>
         </div>
         <div class="row" style="padding-top: 2rem">
           <h2 class="heading__primary intersect" style="padding-top: 2rem">
@@ -568,7 +492,7 @@
                       onchange="javascript:updateList()"
                       style="cursor: pointer"
                     /><br />
-                    <!-- <center>
+                    <center>
                       <progress
                         class="progress"
                         id="progressBar"
@@ -576,7 +500,7 @@
                         max="100"
                         style="width: 300px"
                       ></progress>
-                    </center> -->
+                    </center>
 
                     <h3 id="status" class="status"></h3>
                     <p id="loaded_n_total" class="loaded_n_total"></p>
@@ -596,7 +520,7 @@
             </div>
           </div>
         </form>
-      </section>
+      </section> -->
     </main>
     <%-include('partials/footer')%>
     <!---Contact Us Section Ends-->

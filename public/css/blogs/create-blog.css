@@ -1,150 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background-color: #fafafa;
 }
 
-body {
-  overflow: hidden;
-}
-
-.container {
-  display: block;
-  margin-top: 1em;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 1rem;
-}
-
-form {
-  display: grid;
-  grid-template-areas: "title title btns" "img img img" "toolbar toolbar toolbar" "body body body";
-}
-
-#title {
-  padding-left: 0.2em;
-  height: 40px;
-  width: 50rem;
-  font-size: 2em;
-  font-weight: bolder;
-  border: none;
-  grid-area: title;
-  outline: none !important;
-  border-bottom: 1px solid gray;
-}
-
-.btns {
-  grid-area: btns;
-  align-self: center;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin-left: 2em;
-}
-
-.file-upload-wrapper {
-  grid-area: img;
-  width: 100%;
-  margin: 0.6em 0;
-}
-
-.file-upload-label {
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-}
-.tags-upload-label
-{
-  /* grid-area: btns; */
-  /* width: 100%; */
-  /* margin: 0.6em 0; */
-  /* display: flex;
-  padding: 0.10em; */
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 4px 8px;
-}
-.tags-upload-field {
-  margin: 3px;
-  margin-left: 2px;
-  width: 15rem;
-  height:18px;
-}
-.ql-toolbar {
-  grid-area: toolbar;
-}
-
-.ql-container {
-  grid-area: body;
-  height: 80vh;
-}
-
-.publish {
-  margin-left: 1em;
-}
-
-.publish,
-.cancel {
-  border: none;
-  border-radius: 5px;
-  width: 6em;
-  color: white;
-  height: 2.5em;
-  padding: 0.4em 0;
-  background-color: var(--loginButton);
-}
-
-.cancel {
-  background-color: rgb(231, 54, 54);
-}
-
-input[type="file"] {
-  display: none;
-}
-
-#category {
-  padding: 0.5em;
-  border: 1px solid #ccc;
-}
-.ql-editor {
-  word-wrap: anywhere;
-}
-
-button a {
-  color: white;
+a{
+  color: inherit;
   text-decoration: none;
 }
-
-@media only screen and (min-width: 850px) {
-  form {
-    grid-template-areas: "title title btns" "img img img" "body body body";
-  }
-  .container {
-    width: 70%;
-    max-width: 70%;
-  }
-  .ql-container {
-    height: 90vh;
-    border-top: 1px solid #ccc !important;
-  }
-  .ql-toolbar {
-    position: fixed;
-    bottom: 0%;
-    z-index: 2;
-    width: 70%;
-  }
-  .ql-snow .ql-picker.ql-expanded .ql-picker-options {
-    /* top: 100%; */
-    top: -450%;
-  }
-  #ql-picker-options-0 {
-    top: -750%;
-  }
+.container {
+  display: block;
+  width: 90vw;
+  height:90vh;
+  margin-left: 5vw;
+  margin-top: 5vh;
+  /* background-color: rgb(219, 219, 219);
+  padding:1%; */
+}
+.ql-toolbar{
+  background-color: rgb(202, 202, 202);
 }
 
-@media screen and (max-width: 850px) {
-  #title {
-    width: 100%;
+#create-form{
+  width: 100%;
+  height: 100%;
+}
+
+#title{
+  width:100%;
+  height: 8%;
+  border:0px solid black;
+  border-bottom:2px solid rgb(218, 218, 218);
+  font-size: 1.2rem;
+  margin-top: 2%;
+  outline: none;
+  border:1px solid #ccc;
+  padding-left: 2%;
+}
+#title:focus{
+  border:1px solid rgb(167, 167, 167);
+}
+.btns{
+  width: 100%;
+  height: 10%;
+}
+.btn{
+  float: right;
+  padding: 1%;
+  border-radius: 5%;
+  border:0px solid black;
+  margin-left: 1%;
+  font-size: 1.1rem;
+}
+
+.btns img{
+  height: 100%;
+}
+
+.publish{
+  background-color: rgb(54, 161, 180);
+  color: white;
+}
+
+.cancel{
+  background-color: rgb(180, 54, 54);
+  color: white;
+}
+
+.file-upload-wrapper{
+  margin-top: 2%;
+  height: 10%;
+  margin-bottom: 2%;
+}
+
+#category{
+  height:100%;
+  width: 15%;
+  text-align: center;
+  margin-right: 2%;
+}
+
+.file-upload-label{
+  height:100%;
+  font-size: 0.8rem;
+}
+
+#file{
+  height:100%;
+  width: 20%;
+}
+
+.tags-upload-label{
+  height: 100%;
+  margin-right: 2%;
+}
+
+.tags-upload-label input{
+  height: 80%;
+  width: 30%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#editor{
+  height: auto;
+  height: 50%;
+  background-color: rgb(233, 233, 233);
+  overflow: scroll;
+}
+
+@media (orientation:portrait) {
+  .container{
+    height:90vh;
+    margin-top: 5vh;
   }
+
+  .btn{
+    font-size: 0.9rem;
+    height: 8%;
+    padding:2.5%;
+    margin-left: 2%;
+  }
+  .file-upload-wrapper{
+    margin-top: 2%;
+    height: 20%;
+    margin-bottom: 2%;
+  }
+
+  #category{
+    height: 50%;
+    width: 30%;
+  }
+
+  .tags-upload-label{
+    height: 50%;
+  }
+  
+  .tags-upload-label input{
+    height: 50%;
+    width: 65%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  #file{
+    height:50%;
+    width: auto;
+  }
+  
 }

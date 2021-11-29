@@ -27,13 +27,14 @@
   <div class="container">
     <form id="create-form" method="post" enctype="multipart/form-data" action="/blog/create">
       <!-- Create the editor container -->
-      <input type="text" name="title" id="title" placeholder="Title" required="true" />
-      <input type="hidden" name="body" />
-      <input type="hidden" name="summary" />
       <div class="btns">
+        <a href="/"><img src="/img/logo/DSC-trans-new.png"alt="favicon"/></a>
         <button type="button" class="btn cancel" style="cursor: pointer;"><a href="/blog">Cancel</a></button>
         <input type="submit" class="btn publish" value="Publish" style="cursor: pointer;"/>
       </div>
+      <input type="text" name="title" id="title" placeholder="Title" required="true" />
+      <input type="hidden" name="body" />
+      <input type="hidden" name="summary" />
       <div class="file-upload-wrapper">
         <select name="category" id="category">
           <option value="Web Dev">Web Dev</option>
@@ -44,15 +45,15 @@
           <option value="Artificial Intelligence">Artificial Intelligence</option>
           <option value="other">Other</option>
         </select>
-        <label for="file" class="file-upload-label"><span id="file-label">Select Cover Image</span>
-          <input name="cover" type="file" class="file-upload-field" value="" id="file" />
-        </label>
         <label for="tags" class="tags-upload-label"><span id="tag-label"></span>
           <input name="tags" type="text" class="tags-upload-field" value="" id="tags" placeholder="Enter the tags Seperated by spaces"/>
         </label>
+        <label for="file" class="file-upload-label"><span id="file-label">Select Cover Image: </span>
+          <input name="cover" type="file" class="file-upload-field" value="" id="file" />
+        </label>
       </div>
       <div id="editor">
-      </div>
+    </div>
       
     </form>
   </div>

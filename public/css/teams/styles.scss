@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 main {
   margin-top: 11vh;
   min-height: 89vh;
@@ -103,6 +108,7 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
+        box-sizing: content-box;
       }
 
       .active-tab-year {
