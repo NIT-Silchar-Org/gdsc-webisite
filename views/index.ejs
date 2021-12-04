@@ -50,7 +50,7 @@
       rel="stylesheet"
     />
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-    <style>
+    <!-- <style>
       .thin {
         font-weight: 600;
         font-size: 22px;
@@ -62,7 +62,7 @@
         justify-content: center;
         margin-bottom: 15px;
       }
-    </style>
+    </style> -->
   </head>
 
   <body id="bodydiv">
@@ -78,51 +78,31 @@
     <%-include('partials/flashMessage')%>
     <!-- Flash Message Body End -->
 
-    <!-- End of Register Modal -->
-    <header class="header">
-      <img
-        src="/official-logo/DSC3(T).png"
-        alt="dsc logo"
-        class="dsclogo"
-        id="dsclogo"
-      />
-      <img
-        src="/official-logo/DSC1(T).png"
-        alt="dsc logo"
-        class="dsclogoMobile"
-      />
-
-      <img
-        src="/img/illustrations/dashboards.png"
-        alt="design"
-        class="dscdesign"
-      />
-
-      <!-- <h2 class="heading__secondary intersect" id="heading__secondary">
-        Developer Students Clubs
-      </h2>
-      <h1 class="heading__primary" id="heading__primary">
-        <span class="bold">NIT</span> Silchar
-      </h1> -->
-      <% if(!user){ %>
-      <a href="/user/register" class="getStartedAHref"
-        ><input
-          type="button"
-          class="getStarted"
-          id="getStarted"
-          value="Get Started"
-          style="cursor: pointer"
-        />
-      </a>
-      <% } %>
-    </header>
-    <!-- <button id="ScrolltoTop" class="ScrolltoTop">
-        <i class="material-icons">arrow_upward</i>
-      </button> -->
-
-    <!---Dashboard Section Ends-->
-    <!--About Us Section Starts-->
     <main class="main">
+
+        <div class="animated-banner" style="width: 100vw; height: 100vh;"><h1>Together we will build this website</h1></div>
+        <div class="about">
+            <div class="about-header">
+                <img src="/img/logo/logo_text.svg">
+                <p>GDSC NIT Silchar is under Google Developer Students Club, which is a worldwide developers community initiated by Google. Our GDSC prioritizes solving real life problems that we as part of a society face in our daily lives. Solving such problems brings opportunities for the budding developer communities to showcase their talents and, improve and gain new skillsets.
+                </p>
+            </div>
+            <div class="sponsors">
+                <h4>OUR SPONSORS</h4>
+                <ul>
+                    <li><a><img src="/img/logo/egghead.png"></a></li>
+                    <li><a><img src="/img/logo/gmc.jpg"></a></li>
+                    <li><a><img src="/img/logo/reskill-spark-logo.png"></a></li>
+                </ul>
+                <h4>Community Partners</h4>
+                <ul>
+                    <li><a><img src="/img/logo/finflee.svg"></a></li>
+                </ul>
+                <h4>UPCOMING EVENTS</h4>
+                <p> events coming soon</p>
+                <hr>
+            </div>
+        </div>
       
       <!-- Features End -->
       <!-- ##############################EVENT SCHEDULE#################################### -->

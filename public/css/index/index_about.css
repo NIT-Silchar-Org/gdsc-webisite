@@ -1,83 +1,49 @@
-.main .about {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100vh;
-  padding: 3rem;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.about{
+  background-color: #FFFBFB;
+  width: 100vw;
+  text-align: center;
+}
+.about-header{
+  width: 100%;
+  padding-top: 2%;
+}
+.about-header p{
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 3%;
+  font-size: 1.4rem;
+  color: black;
 }
 
-.main .about .background__image {
-  width: 35rem;
+
+.sponsors h4{
+  margin-top: 5%;
 }
 
-.main .about .content {
-  width: 35rem;
+.sponsors ul{
+  margin-top: 1%;
+  width: 90%;
+  display: inline-block;
 }
 
-.main .about .content .heading__primary {
-  font-size: 2rem;
-  font-family: var(--global-font);
+.sponsors ul li{
+  margin-right: 3%;
+  margin-bottom: 2%;
+  display: inline-block;
+  background: #F8F8F8;
+  padding:2%;
+  border-radius: 25px;
+  min-width: 15%;
+  max-width: 50%;
+  height: 18vh;
+  cursor: pointer;
+}
+.sponsors ul li:hover{
+  background: rgb(230, 242, 243);
 }
 
-.main .about .content .heading__secondary {
-  margin-top: 2rem;
-  font-weight: 200;
-  font-family: var(--global-font);
-  font-size: 1.2rem;
-  line-height: 2rem;
-  opacity: 0.9;
+.sponsors ul li img{
+  max-height: 100%;
+  max-width: 100%;
 }
 
-@media screen and (max-width: 1020px) {
-  .main .about {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .main .about .background__image {
-    display: none;
-  }
-  .main .about .content {
-    padding-bottom: 0rem;
-  }
-  .main .about .content .heading__primary {
-    padding: 0 3rem 0 3rem;
-    margin-top: 1rem;
-    font-size: 2rem;
-    text-align: center;
-  }
-  .main .about .content .heading__secondary {
-    text-align: center;
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 400px), (max-height: 720px) {
-  .main .about {
-    height: auto;
-  }
-  .main .about .content .heading__primary {
-    padding: 0rem;
-  }
-  .main .about .content .heading__secondary {
-    padding: 0 !important;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .main .about .content .heading__primary {
-    padding: 0rem;
-  }
-  .main .about .content .heading__secondary {
-    line-height: 1.4rem;
-    padding: 0 8rem 0 8rem;
-  }
-}
-/*# sourceMappingURL=index_about.css.map */
