@@ -157,7 +157,7 @@ const updateBlogListBox = (data)=>{
      blogListBox.innerHTML += 
         `<div class="blog-list-item">
         <div class="blog-profile">
-          <img src="${blog.author.profileImageLocation  || '/img/profile/person.png'}">
+          <img src="${blog.author.profileImageLocation?('/upload/'+blog.author.profileImageLocation):'/img/profile/person.png'}">
           <a href="/user/public-profile/${blog.author.dscHandle}">${blog.author.name}</a>
         </div>
         <div class="blog-title"><a href="/blog/view/${blog.slug}">placeholder</a></div>
