@@ -95,12 +95,12 @@ a{
     margin-top: 5%;
 }
 
-.fa-heart-o {
-    /* color: red; */
+.far{
+    color: rgb(48, 48, 48);
     cursor: pointer;
   }
   
-  .fa-heart {
+  .fas{
     color: rgb(182, 12, 49);
     cursor: pointer;
   }

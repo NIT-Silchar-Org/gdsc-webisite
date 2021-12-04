@@ -49,7 +49,7 @@
     <div class="parent-container">
         <div class = "blog-container">
           <div class="blog-profile">
-            <img class="profile-image" src="<%=blog.author.profileImageLocation || '/img/profile/profile_demo.png'%>">
+            <img class="profile-image" src="<%=blog.author.profileImageLocation?('/upload/'+blog.author.profileImageLocation):'/img/profile/person.png'%>">
             <div class="blog-title"><%=blog.title%></div>
             <div class="blog-author">by <a href="/user/public-profile/<%= blog.author.dscHandle %>"><%=blog.author.name%></a></div>
             <div class="blog-date"><%=blog.createdAt.toUTCString().slice(5, 16)%></div>
@@ -67,14 +67,14 @@
 
           <%if(user){%>
             <%if(user.likes.includes(blog._id)){%>
-              <i class="fa fa-lg fa-heart" aria-hidden="true"><%=blog.appreciateCount%></i>
+              <i class="fas fa-lg fa-heart"><%=blog.appreciateCount%></i>
               <%}else{%>
-                <i class="fa fa-lg fa-heart-o" aria-hidden="true"><%=blog.appreciateCount%></i>
+                <i class="far fa-lg fa-heart"><%=blog.appreciateCount%></i>
               <%}%>
               <div style="display:none" class="blog-id"><%=blog._id%></div>
           
         <%}else{%>
-          <a href="/user/register?type=login"><i class="fa fa-lg fa-heart-o" aria-hidden="true" style="pointer-events: none"></i></a>
+          <a href="/user/register?type=login"><i class="far fa-lg fa-heart" aria-hidden="true" style="pointer-events: none"></i></a>
           <%}%>
         </div>
     </div>
@@ -97,17 +97,17 @@
     </script>
     <script>
       const id = document.querySelector('.blog-id').innerText;
-      const appreciateButton = document.querySelector('.fa-heart') || document.querySelector('.fa-heart-o');
+      const appreciateButton = document.querySelector('.fa-heart');
       appreciateButton.addEventListener('click', ()=>{
         fetch(window.location.origin + '/blog/appreciate/' + id, {method:"POST"});
-          if(document.querySelector('.fa-heart-o')){
-            appreciateButton.classList.remove('fa-heart-o');
-            appreciateButton.classList.add('fa-heart');
+          if(appreciateButton.classList.contains('far')){
+            appreciateButton.classList.remove('far');
+            appreciateButton.classList.add('fas');
             appreciateButton.innerText = Number(appreciateButton.innerText) + 1;
           }
           else {
-            appreciateButton.classList.remove('fa-heart');
-            appreciateButton.classList.add('fa-heart-o');
+            appreciateButton.classList.remove('fas');
+            appreciateButton.classList.add('far');
             appreciateButton.innerText = Number(appreciateButton.innerText) - 1;
           }
       })
