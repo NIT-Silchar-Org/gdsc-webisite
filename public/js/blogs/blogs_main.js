@@ -38,12 +38,12 @@ const searchFor = (searchText)=>{
 }
 
 //search box
-document.addEventListener('keydown', (e)=>{
+document.addEventListener('keyup', (e)=>{
     const searchBox = document.querySelector('.blog-search-bar input');
-    if((e.code==='Enter') && (document.activeElement == searchBox) && searchBox.value){
+    if((e.which==13) && (document.activeElement == searchBox) && searchBox.value){
         displayableBlogs = searchFor(searchBox.value);
         updateBlogListBox(displayableBlogs);
-        window.scrollTo(0,document.querySelector(".blog-container").scrollHeight);
+        window.scrollTo(0,document.querySelector(".blog-banner").scrollHeight + document.querySelector(".best-blogs-container").scrollHeight);
     }
 });
 
@@ -157,15 +157,20 @@ const updateBlogListBox = (data)=>{
      blogListBox.innerHTML += 
         `<div class="blog-list-item">
         <div class="blog-profile">
-          <img src="${blog.author.profileImageLocation  || '/img/profile/person.png'}">
+          <img src="${blog.author.profileImageLocation?('/upload/'+blog.author.profileImageLocation):'/img/profile/person.png'}">
           <a href="/user/public-profile/${blog.author.dscHandle}">${blog.author.name}</a>
         </div>
-        <div class="blog-title"><a href="/blog/view/${blog.slug}">${blog.title.slice(0,50) + (blog.title.length>50?'...':'')}</a></div>
-        <div class="blog-text">${blog.body.slice(0,100) + (blog.body.length>100?'...':'')}</div>
+        <div class="blog-title"><a href="/blog/view/${blog.slug}">placeholder</a></div>
+        <div class="blog-text">${blog.summary + (blog.body.length>100?'...':'')}</div>
         <div class="blog-date">${date.day} ${date.month} ${date.year}</div>
         <img src = "${blog.cover}" class="blog-thumbnail">
       </div>`
+      //add title separately for safety
+      const blogList = document.getElementsByClassName('blog-list-item');
+      blogList[blogList.length-1].querySelector('.blog-title a').innerText = blog.title.slice(0,50) + (blog.title.length>50?'...':'');
     });
+
+    blogListBox.scrollTo(0,0);
 
 }
 

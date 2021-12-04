@@ -64,7 +64,7 @@
           <div class="best-blogs-list-item">
             <div class="blog-rank"><%='0' + (index+1)%></div>
             <div class="blog-profile">
-              <img src="<%=blog.author.profileImageLocation || '/img/profile/person.png'%>">
+              <img src="<%=blog.author.profileImageLocation?('/upload/'+blog.author.profileImageLocation):'/img/profile/person.png'%>">
               <a href="/user/public-profile/<%= blog.author.dscHandle %>"><%=blog.author.name%></a>
             </div>
             <div class="blog-title"><a href="/blog/view/<%=blog.slug%>">
@@ -76,7 +76,7 @@
 
       </div>
     </div>
-    <hr/>
+    <hr class="end-line"/>
     <div class="blog-container">
       <div class="blog-sort">
         <h4>
@@ -106,7 +106,7 @@
             <img src="/img/profile/profile_demo.png">
             <a><%=blog.author.name%></a>
           </div>
-          <div class="blog-title"><a><%=blog.title.slice(0,50) + (blog.title.length>50?'...':'')%></a></div>
+          <div class="blog-title"><a><%=blog.title.slice(0,50) + (blog.title.length>50?'...':'')%></a></div 
           <div class="blog-text"><%=blog.body.slice(0,150) + (blog.body.length>150?'...':'')%></div>
           <div class="blog-date">7 Oct 2021</div>
           <img src = "<%=blog.cover%>" class="blog-thumbnail">
