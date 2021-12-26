@@ -94,3 +94,17 @@ function toggle(index, subCard) {
   }
 
 }
+
+const observer1 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting == true) {
+      entry.target.classList.add("animate");
+    } else {
+      entry.target.classList.remove("animate");
+    }
+  });
+});
+
+[...projects].forEach((project) => {
+  observer1.observe(project);
+});
