@@ -38,25 +38,31 @@
   height: 100%;
   width: 100%;
   background-color: blue;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .projects .project-card .intro {
-  z-index: -1;
+  z-index: 1;
+  opacity: 1;
   background-color: #FFFFFF;
 }
 
 .projects .project-card .info {
-  z-index: 1;
+  z-index: -1;
+  opacity: 0;
   background-color: #FFE9E9;
 }
 
 .projects .project-card .members {
   z-index: -1;
+  opacity: 0;
   background-color: #F1FCFF;
 }
 
 .projects .project-card .tech-stack {
   z-index: -1;
+  opacity: 0;
   background-color: #FFFADD;
 }
 
@@ -65,6 +71,14 @@
   margin: 2.5% auto;
   width: 80%;
   border-top: 0.2vh solid #D9D9D9;
+}
+
+.projects .project-card .go-back {
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 .projects .project-card .intro .top {
@@ -392,10 +406,29 @@
           align-items: center;
 }
 
-.projects .project-card .icons .icon {
+.projects .project-card .icons .icons-container {
+  position: absolute;
   height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projects .project-card .icons .icons-container .icon {
+  height: 100%;
   aspect-ratio: 1/1;
   border-radius: 50%;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -410,14 +443,24 @@
   cursor: pointer;
 }
 
-.projects .project-card .icons .icon:hover {
-  background-color: #FFF3CA;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
-.projects .project-card .icons .icon a {
+.projects .project-card .icons .icons-container .icon a {
   text-decoration: none;
   color: #292929;
+}
+
+.projects .project-card .icons .icons-container .icon-hover {
+  position: absolute;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  z-index: 0;
+  background-color: #FFF3CA;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  display: none;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 /*# sourceMappingURL=dscprojects.css.map */
