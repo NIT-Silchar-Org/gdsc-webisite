@@ -126,23 +126,26 @@
   </div>
 
   <div class="icons">
-    <div class="icon icon-click info" onclick="toggle(<%=projectIndex%>, 1)">
+    <div class="icon icon-click info-icon" onclick="toggle(<%=projectIndex%>, 1)">
       <span class="iconify-inline" data-icon="uil:info"></span>
     </div>
 
-    <div class="icon icon-click members" onclick="toggle(<%=projectIndex%>, 2)">
+    <div class="icon icon-click members-icon" onclick="toggle(<%=projectIndex%>, 2)">
       <span class="iconify-inline" data-icon="mdi:account-group"></span>
     </div>
 
-    <div class="icon icon-click tech-stack" onclick="toggle(<%=projectIndex%>, 3)">
+    <div class="icon icon-click tech-stack-icon" onclick="toggle(<%=projectIndex%>, 3)">
       <span class="iconify-inline" data-icon="eva:code-outline"></span>
     </div>
 
-    <div class="icon link">
-      <a href="<%= project.link %>" rel="noreferrer" target="_blank">
-        <span class="iconify-inline" data-icon="eva:link-fill"></span>
-      </a>
-    </div>
+    <% if (project.link) { %>
+      <div class="icon link-icon">
+        <a href="<%= project.link %>" rel="noreferrer" target="_blank">
+          <span class="iconify-inline" data-icon="eva:link-fill"></span>
+        </a>
+      </div>
+    <% } %>
+
   </div>
 
 </div>
