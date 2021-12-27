@@ -3,6 +3,9 @@
   width: 100vw;
   text-align: center;
 }
+
+
+
 .about-header{
   width: 100%;
   padding-top: 2%;
@@ -15,6 +18,20 @@
   color: black;
 }
 
+.about-header p.animate{
+  animation: about-ani 1s;
+}
+
+@keyframes about-ani{
+  100%{
+    margin-left: 20%;
+
+  }
+  0%{
+    margin-left: 10%;
+  }
+}
+
 
 .sponsors h4{
   margin-top: 5%;
@@ -23,6 +40,7 @@
 .sponsors ul{
   margin-top: 1%;
   width: 90%;
+  margin-left: 5%;
   display: inline-block;
 }
 
@@ -31,19 +49,62 @@
   margin-bottom: 2%;
   display: inline-block;
   background: #F8F8F8;
-  padding:2%;
   border-radius: 25px;
-  min-width: 15%;
+  min-width: 20%;
   max-width: 50%;
-  height: 18vh;
+  height: 25vh;
   cursor: pointer;
+  position: relative;
 }
 .sponsors ul li:hover{
   background: rgb(230, 242, 243);
 }
 
-.sponsors ul li img{
-  max-height: 100%;
-  max-width: 100%;
+.sponsors ul li.animate{
+    animation: sponsor-ani 1s forwards;
 }
 
+@keyframes sponsor-ani{
+  100%{
+    transform: scale(100%);
+  }
+
+  0%{
+    transform:scale(60%);
+  }
+}
+
+.sponsors ul li img{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top:50%;
+  left:50%;
+  max-height: 80%;
+  max-width: 80%;
+}
+
+
+@media (orientation:portrait) {
+  .about-header p{
+    margin-left: 5%;
+    width:90%;
+    font-size: 1rem;
+  }
+
+  .about-header img{
+    width: 90%;
+  }
+
+  .sponsors ul li{
+    height: 20vh;
+    width: 40vw;
+  }
+  .sponsors ul li:hover{
+    background: rgb(230, 242, 243);
+  }
+  
+  .sponsors ul li img{
+    max-height: 90%;
+    max-width: 90%;
+  }
+}

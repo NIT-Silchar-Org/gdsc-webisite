@@ -89,10 +89,10 @@ nav .nav-list a button:hover[name=logout]{
 
 .hamburger .line{
     width: 40px;
-    height: 5px;
+    height: 3px;
     background-color: #444444;
     display: block;
-    margin: 4px auto;
+    margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
@@ -113,16 +113,16 @@ nav .nav-list a button:hover[name=logout]{
 #hamburger-3.is-active .line:nth-child(1){
   -webkit-transform: translateY(5px) rotate(-45deg);
   -ms-transform: translateY(5px) rotate(-45deg);
-  -o-transform: translateY(5px) rotate(-45deg);
-  transform: translateY(5px) rotate(-45deg);
+  -o-transform: translateY(6px) rotate(-45deg);
+  transform: translateY(4px) rotate(-45deg);
  
 }
 
 #hamburger-3.is-active .line:nth-child(3){
   -webkit-transform:  translateY(5px) rotate(45deg);
   -ms-transform:  translateY(5px) rotate(45deg);
-  -o-transform: translateY(5px) rotate(45deg);
-  transform:  translateY(-5px) rotate(45deg);
+  -o-transform: translateY(8px) rotate(45deg);
+  transform:  translateY(-4px) rotate(45deg);
 }
 
 
