@@ -71,6 +71,7 @@ for (let i = 0; i<projects.length; i++) {
   }
 }
 
+const activeIconHoverColors = ["#FAB9B9", "#FFF3CA", "#D0E699"];
 function toggle(index, subCard) {
 
   let iconHover = projects[index].getElementsByClassName("icon-hover")[0];
@@ -89,6 +90,7 @@ function toggle(index, subCard) {
     } else {
       iconHover.style.display = "block";
       iconHover.style.left = `${25 * (subCard - 1)}%`;
+      iconHover.style.backgroundColor = activeIconHoverColors[subCard - 1];
     }
 
   }
