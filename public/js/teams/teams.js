@@ -21,7 +21,7 @@
   * }
   */
 
-let years = ["2017-2021", "2018-22", "2019-23", "2020-24"];
+let years = ["2017-21", "2018-22", "2019-23", "2020-24"];
 
 let disciplines = [
   ["All", ],
@@ -559,7 +559,7 @@ let members = [
         "GDSC Lead",
         "Android Developer"
       ],
-      img : "/img/teams_potraits/jyotimoy-kashyap.jpeg",
+      img : "/img/teams_potraits/jyotimoy-kashyap.jfif",
       socials : {
         facebook: "https://www.facebook.com/jyotimoy.kashyap.33",
         github: "https://github.com/JyotimoyKashyap",
@@ -2027,19 +2027,11 @@ function memberCard(person) {
     <div class="member">
       
       <div class="top">
-        <div class="background-img ${person.domain ? (person.domain == 'UI/UX' ? 'uiux' : person.domain.toLowerCase()) : 'none'}">
-          <div class="profile-pic">
-            <img loading="lazy" class="pfp" src="${person.img}" alt="${person.name.firstName + ' ' + person.name.lastName}" />
-          </div>
+        <div class="background-img ${person.domain ? (person.domain == 'UI/UX' ? 'uiux' : person.domain.toLowerCase()) : 'none'}"></div>
+        <div class="profile-pic">
+          <img loading="lazy" class="pfp" src="${person.img}" alt="${person.name.firstName + ' ' + person.name.lastName}" />
         </div>
       </div>
-      
-      <!--<div class="name" title="${person.name.firstName + ' ' + person.name.lastName}">
-        ${(person.name.firstName + ' ' + person.name.lastName).length > 15 ? 
-          `${(person.name.firstName + ' ' + person.name.lastName).slice(0, 15)}...` :
-          (person.name.firstName + ' ' + person.name.lastName)
-        }
-      </div>-->
       <div class="name" title="${person.name.firstName + ' ' + person.name.lastName}">
         ${person.name.firstName + ' ' + person.name.lastName}
       </div>

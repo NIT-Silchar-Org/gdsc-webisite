@@ -111,6 +111,7 @@ main .dev-search form label input::placeholder {
 }
 
 main .members {
+  position: relative;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -122,6 +123,7 @@ main .members {
 }
 
 main .members #tab-titles {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,6 +170,8 @@ main .members #tab-titles .tab-year.active-tab-year {
 }
 
 main .members .discipline {
+  position: relative;
+  float: right;
   padding: 0.5vh 1vh;
 }
 
@@ -206,16 +210,17 @@ main .members #tab-content {
 
 .member .top {
   position: relative;
-  height: calc(38% - 2vh);
-  width: 85%;
-  margin: 1vh auto;
+  height: calc(38% - 4vh);
+  width: calc(100% - 4vh);
+  margin: 2vh auto;
   border-radius: 1.5vh;
   overflow: hidden;
 }
 
 .member .top .background-img {
-  height: 100%;
+  height: 65%;
   width: 100%;
+  border-radius: 1.5vh;
 }
 
 .member .top .background-img.none, .member .top .background-img.web {
@@ -238,11 +243,11 @@ main .members #tab-content {
   background: linear-gradient(180deg, #091E3A 0%, #4885ED 100%);
 }
 
-.member .top .background-img div.profile-pic {
-  height: calc(100% - 3vh);
+.member .top div.profile-pic {
+  height: 95%;
   aspect-ratio: 1/1;
   position: absolute;
-  top: 50%;
+  top: 52.5%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -254,7 +259,7 @@ main .members #tab-content {
           box-sizing: content-box;
 }
 
-.member .top .background-img div.profile-pic img {
+.member .top div.profile-pic img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -274,9 +279,9 @@ main .members #tab-content {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .member .middle {
