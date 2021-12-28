@@ -6,9 +6,9 @@ var get = document.getElementById("getStarted");
 document.onreadystatechange = function () {
   if (document.readyState !== "complete") {
     document.querySelector("body").style.visibility = "hidden";
-    document.querySelector(".loaderr").style.visibility = "visible";
+    document.querySelector(".loader-container").style.visibility = "visible";
   } else {
-    document.querySelector(".loaderr").style.display = "none";
+    document.querySelector(".loader-container").style.display = "none";
     document.querySelector("body").style.visibility = "visible";
     logo.style.animation = "fadeIn 1s forwards";
     dsc.style.animation = "fadeIn 1s 0.5s forwards";
