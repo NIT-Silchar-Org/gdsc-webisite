@@ -462,7 +462,7 @@ main .members #tab-content {
 @media (orientation: portrait) {
   main {
     padding: 5vw 0;
-    width: 95%;
+    width: 90%;
   }
   main .dev-search {
     height: 25vh;

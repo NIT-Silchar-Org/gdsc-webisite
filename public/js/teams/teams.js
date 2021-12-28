@@ -597,7 +597,7 @@ let members = [
         "Core Member",
         "Cloud Developer"
       ],
-      img : "/img/teams_potraits/gaurav-das.jpeg",
+      img : "/img/teams_potraits/gaurav-das.jpg",
       socials : {
         facebook: "https://www.facebook.com/gaurav.das.338211",
         github: "https://github.com/gauravdas014",
