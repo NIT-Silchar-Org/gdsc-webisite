@@ -50,6 +50,11 @@
       rel="stylesheet"
     />
     <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+    
+    <!--Lottie Player-->
+    <link rel="stylesheet" href="/css/index/loader.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
     <style>
       .thin {
         font-weight: 600;
@@ -66,9 +71,8 @@
   </head>
 
   <body id="bodydiv">
-    <div class="loaderr">
-      <img src="img/loaderanimation/64.gif" alt="" />
-    </div>
+    <%-include('partials/Loader')%>
+
     <!--Navbar Starts-->
     <%-include('partials/navbar')%>
     <!---Navbar Ends-->
@@ -130,10 +134,6 @@
       <%- include('partials/Timeline.ejs') %> 
       <!-- ################################/Event Schedule #####################################-->
       
-      <!--Video Gallery Section Starts-->
-      <%- include('partials/VideoGallery.ejs') %> 
-      <!---Video Gallery Section Ends-->
-
       <!-- faq starts -->
       <%- include('partials/FAQ.ejs') %>  
       <!-- faq ends -->
@@ -178,7 +178,6 @@
         RegisterModal.style.pointerEvents = "none";
       });
     </script>
-    <script src="/js/darkmode.js"></script>
     <script src="/js/loader.js"></script>
     <script src="/js/index/index_progressbar.js"></script>
     <script src="/js/index/index_faq.js"></script>
