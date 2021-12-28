@@ -110,3 +110,8 @@ const observer1 = new IntersectionObserver((entries) => {
 [...projects].forEach((project) => {
   observer1.observe(project);
 });
+
+let projectContainer = document.getElementsByClassName("projects")[0];
+function display() {
+  projectContainer.style.display = "flex";
+}

@@ -559,7 +559,7 @@ let members = [
         "GDSC Lead",
         "Android Developer"
       ],
-      img : "/img/teams_potraits/jyotimoy-kashyap.jpeg",
+      img : "/img/teams_potraits/jyotimoy-kashyap.jfif",
       socials : {
         facebook: "https://www.facebook.com/jyotimoy.kashyap.33",
         github: "https://github.com/JyotimoyKashyap",
@@ -597,7 +597,7 @@ let members = [
         "Core Member",
         "Cloud Developer"
       ],
-      img : "/img/teams_potraits/gaurav-das.jpeg",
+      img : "/img/teams_potraits/gaurav-das.jpg",
       socials : {
         facebook: "https://www.facebook.com/gaurav.das.338211",
         github: "https://github.com/gauravdas014",
@@ -1945,6 +1945,17 @@ let tabTitles = document.getElementById("tab-titles");
 let disciplinesContainer = document.getElementById("disciplines");
 let tabContent = document.getElementById("tab-content");
 
+// Animate on hover
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting == true) {
+      entry.target.classList.add("animate");
+    } else {
+      entry.target.classList.remove("animate");
+    }
+  });
+});
+
 changeTab(0);
 
 
@@ -1965,22 +1976,26 @@ function changeTab(index) {
   changeDiscipline("All", index);
 }
 
+function select(index) {
+
+  let select = document.getElementById(`discipline${index}`);
+  changeDiscipline(select.value, index);
+
+}
 
 function changeDiscipline(discipline, index) {
-  disciplinesContainer.innerHTML = "";
-  disciplines[index].length > 5 && disciplinesContainer.classList.add("small");
-  disciplines[index].length <= 5 && disciplinesContainer.classList.remove("small");
-  for(let j = 0; j<disciplines[index].length; j++) {
-    disciplinesContainer.innerHTML += `
-      <div
-        class="discipline${(disciplines[index][j] == discipline) ? ' active-discipline' : ''}"
-        onclick="changeDiscipline('${disciplines[index][j]}', ${index})"
-      >
-        ${disciplines[index][j]}
-      </div>
-    `; // Applying active-discipline to the active discipline
-  }
 
+  let html = ""; // Had to use a temporary string or HTML auto-closes tags
+  html += `<select name="discipline" class="discipline" id="discipline${index}" onchange="select(${index})">`;
+  for(let j = 0; j<disciplines[index].length; j++) {
+    html += `
+      <option value="${disciplines[index][j]}">${disciplines[index][j]}</option>
+    `;
+  }
+  html += `</select>`;
+  
+  disciplinesContainer.innerHTML = html;
+  document.getElementById(`discipline${index}`).value = discipline;
   changeMembers(discipline, index);
 }
 
@@ -1998,6 +2013,11 @@ function changeMembers(discipline, i) {
   }
 
   setDimensions();
+  
+  const memberCards = document.getElementsByClassName("member");
+  [...memberCards].forEach((project) => {
+    observer.observe(project);
+  });
 }
 
 
@@ -2007,18 +2027,12 @@ function memberCard(person) {
     <div class="member">
       
       <div class="top">
-        <div class="background-img ${person.domain ? (person.domain == 'UI/UX' ? 'uiux' : person.domain.toLowerCase()) : 'none'}">
-          
-          <div class="profile-pic">
-            <img loading="lazy" class="pfp" src="${person.img}" alt="${person.name.firstName + ' ' + person.name.lastName}" />
-          </div>
+        <div class="background-img ${person.domain ? (person.domain == 'UI/UX' ? 'uiux' : person.domain.toLowerCase()) : 'none'}"></div>
+        <div class="profile-pic">
+          <img loading="lazy" class="pfp" src="${person.img}" alt="${person.name.firstName + ' ' + person.name.lastName}" />
         </div>
       </div>
-      
-      <div class="name ${
-        ((person.name.firstName + ' ' + person.name.lastName).length > 12 || person.name.firstName.length > 7 ||  person.name.lastName.length > 7 )
-          ? 'small-name' 
-          : 'large-name'}">
+      <div class="name" title="${person.name.firstName + ' ' + person.name.lastName}">
         ${person.name.firstName + ' ' + person.name.lastName}
       </div>
 
@@ -2028,16 +2042,17 @@ function memberCard(person) {
             return `<div class="position ${(position.includes('DSC Lead') ? 'lead' : '')}">${position}</div>`;
           }).join("")
         }
+        ${
+          person.username ?
+            `<div class="middle-hover profile">
+              <a class="view-profile" target="_blank" href='/user/public-profile/${person.username}'>View Profile</a>
+            </div>` :
+            `<div class="middle-hover profile-not-found">
+              Profile Not Found
+            </div>`
+        }
+        
       </div>
-      ${
-        person.username ?
-          `<div class="middle-hover profile">
-            <a class="view-profile" target="_blank" href='/user/public-profile/${person.username}'>View Profile</a>
-          </div>` :
-          `<div class="middle-hover profile-not-found">
-            Profile Not Found
-          </div>`
-      }
 
 
       <div class="socials">
@@ -2094,6 +2109,11 @@ devSearch.addEventListener('keyup', (e) => {
 
   setDimensions();
 
+  
+  const memberCards = document.getElementsByClassName("member");
+  [...memberCards].forEach((project) => {
+    observer.observe(project);
+  });
 })
 
 //Preventing search enter
@@ -2113,5 +2133,13 @@ function setDimensions() {
         pfpList[i].style.maxWidth = "100%";
     })
   }
+
+}
+
+// Body Onload
+function display() {
+
+  let main = document.getElementsByTagName("main")[0];
+  main.style.display = "block";
 
 }
