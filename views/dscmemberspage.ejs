@@ -18,9 +18,16 @@
   <link rel="stylesheet" href="/css/index/footer.css" />
   <link rel="stylesheet" href="/css/index/navbar.css" />
   <link rel="stylesheet" href="/css/teams/styles.css">
+  
+  <!--Lottie Player-->
+  <link rel="stylesheet" href="/css/index/loader.css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
-<body onload="display()">
+<body>
+  
+	<%-include('partials/Loader')%>
+
   <!--Navbar Starts-->
   <%-include('partials/navbar')%>
   <!--Navbar Ends-->
@@ -68,7 +75,6 @@
 </body>
 
 <script src="/js/navbar.js"></script>
-<script src="/js/darkmode.js"></script>
 <script src="/js/teams/teams.js"></script>
-
+<script src="/js/loader.js"></script>
 </html>

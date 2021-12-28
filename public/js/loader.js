@@ -1,18 +1,5 @@
-var logo = document.getElementById("dsclogo");
-var dsc = document.getElementById("heading__secondary");
-var nitsilchar = document.getElementById("heading__primary");
-var get = document.getElementById("getStarted");
+let container = document.querySelector(".loader-container");
 
-document.onreadystatechange = function () {
-  if (document.readyState !== "complete") {
-    document.querySelector("body").style.visibility = "hidden";
-    document.querySelector(".loader-container").style.visibility = "visible";
-  } else {
-    document.querySelector(".loader-container").style.display = "none";
-    document.querySelector("body").style.visibility = "visible";
-    logo.style.animation = "fadeIn 1s forwards";
-    dsc.style.animation = "fadeIn 1s 0.5s forwards";
-    nitsilchar.style.animation = "fadeIn 1s 1s forwards";
-    get.style.animation = "fadeIn 1s 1.5s forwards";
-  }
-};
+window.addEventListener('load', ()=> {
+  container.style.animation = "fade 1s forwards"
+})

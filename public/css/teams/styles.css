@@ -9,7 +9,6 @@ main {
   padding: 5vh 0;
   width: 90%;
   margin: 0 auto;
-  display: none;
 }
 
 main .dev-search {
@@ -120,6 +119,7 @@ main .members {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 4vh;
 }
 
 main .members #tab-titles {
@@ -136,7 +136,7 @@ main .members #tab-titles {
   width: 90%;
   margin: 5vh auto 2vh auto;
   border-bottom: 0.1vh solid #EEEEEE;
-  height: 5vh;
+  height: 6vh;
   overflow-x: auto;
 }
 

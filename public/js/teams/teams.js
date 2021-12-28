@@ -2135,11 +2135,3 @@ function setDimensions() {
   }
 
 }
-
-// Body Onload
-function display() {
-
-  let main = document.getElementsByTagName("main")[0];
-  main.style.display = "block";
-
-}
