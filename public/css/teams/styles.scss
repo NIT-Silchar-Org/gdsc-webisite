@@ -12,7 +12,7 @@ main {
   .dev-search {
     position: relative;
     height: 50vh;
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
 
     overflow: hidden;
@@ -73,6 +73,7 @@ main {
           box-shadow: 0.5vh 0.5vh 1.5vh 0.5vh rgba(0, 0, 0, 0.1);
   
           font-size: 3vh;
+          font-size: 1rem;
           color: #636363;
 
           border: none;
@@ -358,5 +359,47 @@ main {
     opacity: 1;
     -webkit-transform: translateX(0);
     transform: translateX(0);
+  }
+}
+
+@media (orientation: portrait) {
+  main {
+    padding: 5vw 0;
+    width: 95%;
+  
+    .dev-search {
+      height: 25vh;
+      border-radius: 5vw;
+      box-shadow: 0.2vw 0.2vw 0.9vw 0.5vw #50505015;
+  
+      div.bg-img { 
+        img {
+          height: 100%;
+          border-radius: 5vw;
+        }
+      }
+  
+      form {
+        label {
+          width: 95%;
+          input {
+            font-size: 1rem;
+
+            &::placeholder {
+              color: #B4B4B4; // Same as icon
+            }
+          }
+        }
+  
+      }
+    }
+  
+  
+    .members {
+      #tab-titles {
+        justify-content: flex-start;
+        width: 99%;
+      }
+    }
   }
 }
