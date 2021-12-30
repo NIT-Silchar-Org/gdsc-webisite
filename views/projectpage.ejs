@@ -18,7 +18,12 @@ Profile, Forum, Events, Developers, NIT Silchar" />
 	<link rel="stylesheet" href="/css/project-page/dscprojects.css" />
 	<link rel="stylesheet" href="/css/index/footer.css" />
 	<link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
-	
+  <link rel="stylesheet" href="/css/index/colors.css" />
+
+    <!--Lottie Player-->
+	<link rel="stylesheet" href="/css/index/loader.css">
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 	<script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
 </head>
 
@@ -591,6 +596,8 @@ let projects = [
 %>
 
 <body>
+	<%-include('partials/Loader')%>
+
 	<!--Navbar-->
 	<%-include('partials/navbar')%>
 
@@ -607,8 +614,7 @@ let projects = [
 	<%- include('partials/footer.ejs') %>
 </body>
 
-<script src="/js/darkmode.js"></script>
 <script src="/js/navbar.js"></script>
 <script src="/js/dscprojects/dscprojects.js"></script>
-
+<script src="/js/loader.js"></script>
 </html>

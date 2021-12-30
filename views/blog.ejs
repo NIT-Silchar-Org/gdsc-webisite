@@ -26,10 +26,15 @@
     <link rel="stylesheet" href="/css/blogs/blogs.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
+    
+    <!--Lottie Player-->
+    <link rel="stylesheet" href="/css/index/loader.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
  
   </head>
 
   <body>
+    <%-include('partials/Loader')%>
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
@@ -153,6 +158,6 @@
     <script src="/js/navbar.js"></script>
     <script src="/js/blogs/blogs_search.js"></script>
     <script src="/js/blogs/blogs_main.js"></script>
-    <script src="/js/darkmode.js"></script>
+    <script src="/js/loader.js"></script>
   </body>
 </html>
