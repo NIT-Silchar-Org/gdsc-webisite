@@ -1,9 +1,12 @@
+.animated-banner canvas{
+    float: right;
+}
+
 .about{
   background-color: #FFFBFB;
   width: 100%;
   text-align: center;
 }
-
 
 .about-header{
   width: 100%;
