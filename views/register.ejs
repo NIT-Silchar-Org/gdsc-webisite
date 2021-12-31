@@ -50,19 +50,24 @@
 
         <input id="hname" type="text" placeholder="Username" name="dscHandle" required maxlength="20"
           onchange="return checkuniquedschandle()" />
-        <h6 style="margin-top: -20px;margin-bottom: 10px;"> Username cannot be longer than 20 characters</h6>
         <p id="uniqueness"></p>
 
         <label for="email">Email</label><input
           pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
           type="email" name="email" placeholder="Email Address" required />
         <label for="sidearm">Password</label>
-        <input type="password" id="password" type="password" name="password" placeholder="Password" required />
+        <div class="Password">
+          <input type="password" id="password" type="password" name="password" placeholder="Password" required />
+          <img id="password_img_signin1" onclick="showpasswordsignup()" src="/img/icons/hide.png" alt="Password show"/>
+        </div>
 
         <label for="sidearm">Confirm Password</label>
-        <input type="password" id="cpassword" type="password" name="cpassword" placeholder="Retype Password" required />
-        <br />
-        <div class="flexRow" style="
+        <div class="Password">
+          <input type="password" id="cpassword" type="password" name="cpassword" placeholder="Retype Password" required />
+          <img id="password_img_signin2" onclick="showpasswordsignup()" src="/img/icons/hide.png" alt="Password show"/>
+        </div>
+        <!-- <br /> -->
+        <!-- <div class="flexRow" style="
               display: flex;
               align-items: center;
               height: auto;
@@ -72,20 +77,21 @@
             ">
           <input onclick="showpasswordsignup()" type="checkbox" style="width: auto; margin: 0" />&nbsp&nbsp Show
           Password
-        </div>
+        </div> -->
         <div>
           <center>
-            <div class="button-box" id="btn-1">
+            <div class="button-box" id="btn-1" style="border-radius: 30px;">
               <div class="button-mask button-mask-slide" style="padding: 0">
-                <input type="submit" value="SignUp" id="" style="padding: 20px"
+                <input type="submit" value="SignUp" id="" style="padding: 4px;"
                   onclick="ValidateEmail(document.signupform.text1)" />
               </div>
             </div>
-            <br><br> Already have an account ?
+            <br>
+            <span style="font-size: 16px; ">Already have an account ?</span>
+            
 
             <div class="button-mask button-mask-slide" id="switchtologin"
-              style="cursor: pointer; display: inline-block;"> Login</div>
-
+              style="cursor: pointer; display: inline-block;font-size: 16px; color: rgba(49, 131, 255, 1);padding-bottom: 0;"> Login →</div>
           </center>
         </div>
 
@@ -117,37 +123,39 @@
         <label for="email">Email/Username</label><input type="text" name="email" placeholder="Email/Username"
           required />
         <label for="sidearm">Password</label>
-        <input type="password" id="loginpassword" type="password" name="password" placeholder="Password" required />
+        <div class="Password" style="margin-bottom: 0;">
+          <input type="password" id="loginpassword" type="password" name="password" placeholder="Password" required />
+          <img id="password_img_login" onclick="showpasswordlogin()" src="/img/icons/hide.png" alt="Password show"/>
+        </div>
         <br />
         <div class="flexRow" style="
               display: flex;
               align-items: center;
               height: auto;
               margin: -18px;
+              margin-bottom: 0;
             ">
-          <input onclick="showpasswordlogin()" type="checkbox" style="width: auto; margin: 0" />&nbsp&nbsp Show Password
+          <p style="margin-top: 5px">
+            <a href="/user/forgotpassword" style="color: #616161; text-decoration: none;font-size: 16px; ">Forgot Password ?</a><br />
+          </p>
         </div>
         <div>
           <center>
-            <div class="button-box" id="btn-1">
+            <div class="button-box" id="btn-1" style="border-radius: 30px;">
               <div class="button-mask button-mask-slide" style="padding: 0; ">
-                <input type="submit" value="Login" id="" style="padding: 20px" />
+                <input type="submit" value="Login" id="" style="padding: 4px" />
               </div>
             </div>
-            <br><br>Don't have an account ?
+            <br>
+            <span  style="font-size: 16px; "> Not a member ?</span>
             <div class="button-mask button-mask-slide" id="switchtosignup"
-              style="display: inline-block; cursor: pointer;">SignUp
+              style="display: inline-block; cursor: pointer; font-size: 16px; color: rgba(49, 131, 255, 1);padding-bottom: 0;">SignUp →
             </div>
           </center>
 
 
         </div>
       </form>
-
-      <p>
-        <a href="/user/forgotpassword" style="color: #0f1923; text-decoration: none; ">Forgot Password ?</a><br />
-
-      </p>
 
       <!-- <div class="social-login">
           <a href="#">
