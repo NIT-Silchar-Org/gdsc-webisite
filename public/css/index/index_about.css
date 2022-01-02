@@ -1,5 +1,39 @@
+.animated-banner {
+  position: relative;
+}
+
 .animated-banner canvas{
-    float: right;
+  float: right;
+}
+
+.animated-banner .text-animation {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  transform: translate(0, -50%);
+  height: 30vh;
+  width: 40vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.animated-banner .text-animation .text-animation-items {
+  height: 40%;
+  width: fit-content;
+  font-size: 5.5vh;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 0 0.5vh;
+}
+
+.animated-banner .text-animation .text-animation-items.dynamic {
+  border-right: 1.2vh solid;
+  font-weight: bold;
+  font-size: 6.5vh;
+  transition: 0.2s ease-in-out;
 }
 
 .about{
@@ -89,6 +123,10 @@
 
 
 @media (orientation:portrait) {
+  .animated-banner .text-animation {
+    display: none;
+  }
+  
   .about-header p{
     margin-left: 5%;
     width:90%;

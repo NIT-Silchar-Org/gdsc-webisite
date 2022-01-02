@@ -55,6 +55,7 @@ gltfLoader.load('models/gdsc2.glb', (gltf)=>{
     const action = mixer.clipAction(gltf.animations[0]);
     action.play();
 
+    type();
 
     gltf.scene.traverse( ( child )=> { 
 
@@ -134,21 +135,55 @@ const clock = new THREE.Clock();
 /**
  * Animate
  */
- const tick = () =>
- {  
-     const elapsedTime = clock.getElapsedTime();
-     const deltaTime = elapsedTime-previousTime;
-     previousTime = elapsedTime;
-     // Update controls
-     controls.update()
-     if(mixer) mixer.update(deltaTime);
- 
-     // Render
-     renderer.render(scene, camera)
- 
-     // Call tick again on the next frame
-     window.requestAnimationFrame(tick)
+const tick = () =>
+{  
+    const elapsedTime = clock.getElapsedTime();
+    const deltaTime = elapsedTime-previousTime;
+    previousTime = elapsedTime;
+    // Update controls
+    controls.update()
+    if(mixer) mixer.update(deltaTime);
 
- }
- 
- tick()
+    // Render
+    renderer.render(scene, camera)
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+
+}
+
+tick()
+
+
+
+// Text Typing
+let dynamic = document.getElementById("dynamic");
+
+let typingText = ["Learn", "Build", "Solve", "Transcend"];
+let typingColor = ["#EA4335", "#FBBC04", "#4285F4", "#0F9D58"];
+let typingTextIndex = 0;
+let wordIndex = 0;
+let typeTiming = 3 * 1000; // No. of seconds
+
+dynamic.style.color = typingColor[typingTextIndex];
+function type() {
+    setInterval(() => {
+        dynamic.style.color = typingColor[typingTextIndex];
+        dynamic.style.borderColor = typingColor[typingTextIndex];
+        let intFrwd = setInterval(() => {
+            dynamic.innerText += typingText[typingTextIndex][wordIndex];
+
+            if (wordIndex == typingText[typingTextIndex].length - 1) {
+                clearInterval(intFrwd);
+                typingTextIndex++;
+                typingTextIndex%=typingText.length;
+                return;
+            }
+            wordIndex++;
+        }, 100);
+
+        wordIndex = 0;
+        dynamic.innerText = "";
+
+    }, typeTiming);
+};
