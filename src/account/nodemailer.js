@@ -429,8 +429,8 @@ function sendBody(subject, body, content, link, button) {
 const contact = (data) => {
   var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.NODEMAILER_EMAIL, //email id
       pass: process.env.NODEMAILER_PASSWORD, //my gmail password
@@ -471,8 +471,8 @@ const contact = (data) => {
 const contactAdmin = (data) => {
   var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.NODEMAILER_EMAIL, //email id
       pass: process.env.NODEMAILER_PASSWORD, //my gmail password
@@ -520,11 +520,11 @@ const signUpMail = (data, protocol, host) => {
   // const link = `http://localhost:3000/user/verify/${data._id}?tkn=${rand}`;
   // const link = `https://dscnitsilchar.herokuapp.com/user/verify/${data._id}?tkn=${rand}`;
   const PORT = process.env.PORT || 8080;
-  const link = `${protocol}://${host}/user/verify/${data._id}?tkn=${rand}`;
+  const link = `http://${process.env.ROOT}/user/verify/${data._id}?tkn=${rand}`;
   var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.NODEMAILER_EMAIL, //email id
       pass: process.env.NODEMAILER_PASSWORD, //my gmail password
@@ -566,12 +566,12 @@ const forgotPassword = (data, protocol, host) => {
   // const link = `http://localhost:3000/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
   // const link = `https://dscnitsilchar.herokuapp.com/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
   const PORT = process.env.PORT || 8080;
-  const link = `${protocol}://${host}/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
+  const link = `${process.env.ROOT}/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.NODEMAILER_EMAIL, //email id
       pass: process.env.NODEMAILER_PASSWORD, //my gmail password
@@ -613,12 +613,12 @@ const blogReportWarning = (blog, protocol, host) => {
   // const link = `http://localhost:3000/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
   // const link = `https://dscnitsilchar.herokuapp.com/user/verify/forgotpassword/${data._id}?tkn=${rand}`;
   const PORT = process.env.PORT || 8080;
-  const link = `${protocol}://${host}/blog/view/${blog._id}`;
+  const link = `${process.env.ROOT}/blog/view/${blog._id}`;
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.NODEMAILER_EMAIL, //email id
       pass: process.env.NODEMAILER_PASSWORD, //my gmail password
@@ -659,15 +659,15 @@ const blogReportWarning = (blog, protocol, host) => {
 const reportBlogToAdmin = (blog, protocol, host) => {
   var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.NODEMAILER_EMAIL, //email id
       pass: process.env.NODEMAILER_PASSWORD, //my gmail password
     },
   });
 
-  const link = `${protocol}://${host}/blog/view/${blog._id}`;
+  const link = `${process.env.ROOT}/blog/view/${blog._id}`;
 
   // filesArray = data.files.split("--");
 
