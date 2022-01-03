@@ -32,6 +32,9 @@ async function scrapeSite({ scrapeData }) {
           });
 
         events[i] = {
+          img:
+            upcomingEventsElements[i].parentElement.querySelector("a img").src ?? 
+            "",
           date:
             upcomingEventsElements[i].querySelector(".date strong").innerHTML ??
             "",
@@ -46,7 +49,8 @@ async function scrapeSite({ scrapeData }) {
             upcomingEventsElements[i]
               .querySelector(".description")
               .innerHTML.trim() ?? "",
-          tags,
+          tags:tags,
+          link:upcomingEventsElements[i].querySelector("a").href,
         };
       }
       return events;

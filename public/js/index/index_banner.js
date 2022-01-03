@@ -3,6 +3,8 @@ import { OrbitControls } from 'https://cdn.skypack.dev/three@0.136.0/examples/js
 import {GLTFLoader} from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/DRACOLoader';
 
+let dynamic = document.getElementById("dynamic");
+
 // Loaders
 const gltfLoader = new GLTFLoader();
 const dracoLoader = new DRACOLoader();
@@ -45,7 +47,7 @@ scene.add(camera)
 
 // models
 let mixer = null;
-gltfLoader.load('models/gdsc2.glb', (gltf)=>{
+gltfLoader.load('models/gdsc2.glb', (gltf)=>{   
     gltf.scene.scale.set(0.3, 0.3, 0.3);
     gltf.scene.position.set(0, -4, 0);
     gltf.scene.rotation.y = Math.PI/2;
@@ -53,8 +55,11 @@ gltfLoader.load('models/gdsc2.glb', (gltf)=>{
 
     mixer = new THREE.AnimationMixer(gltf.scene);
     const action = mixer.clipAction(gltf.animations[0]);
-    action.play();
-
+   canvas.style.display = 'none';
+    setTimeout(()=>{
+        action.play()
+        canvas.style.display = 'block';
+    }, 3000)
     type();
 
     gltf.scene.traverse( ( child )=> { 
@@ -157,7 +162,7 @@ tick()
 
 
 // Text Typing
-let dynamic = document.getElementById("dynamic");
+
 
 let typingText = ["Learn", "Build", "Solve", "Transcend"];
 let typingColor = ["#EA4335", "#FBBC04", "#4285F4", "#0F9D58"];
@@ -166,6 +171,8 @@ let wordIndex = 0;
 let typeTiming = 3 * 1000; // No. of seconds
 
 dynamic.style.color = typingColor[typingTextIndex];
+
+
 function type() {
     setInterval(() => {
         dynamic.style.color = typingColor[typingTextIndex];
@@ -180,7 +187,7 @@ function type() {
                 return;
             }
             wordIndex++;
-        }, 100);
+        }, 75);
 
         wordIndex = 0;
         dynamic.innerText = "";

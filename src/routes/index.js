@@ -30,6 +30,9 @@ const session = require("express-session");
 //   next();
 // });
 
+//events scraped data
+const eventData = require('../scraping/eventsData');
+
 //Config Modules
 const { checkType } = require("../config/checkType");
 
@@ -50,10 +53,12 @@ router.get("/", async (req, res) => {
       if (err) console.log(err);
       else req.user = user;
       // console.log(user);
-      res.render("index", { user: user, found: finduser });
+      res.render("index", { user: user, found: finduser, events:eventData.scrapeData.data });
     });
-  } else res.render("index", { user: req.user, found: finduser });
+  } else res.render("index", { user: req.user, found: finduser, events:eventData.scrapeData.data });
 });
+
+
 
 //Route for DSC Members
 router.get("/members", async (req, res) => {
