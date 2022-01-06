@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="/css/index/index_event_schedule.css" />
     <link rel="stylesheet" href="/css/index/index_feature.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
+    <link rel="stylesheet" href="/css/index/counters.css" />
   
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
 
@@ -127,7 +128,10 @@
     <!---Dashboard Section Ends-->
     <!--About Us Section Starts-->
     <main class="main">
-      
+     
+      <!-- Counters -->
+      <%- include('partials/counter.ejs') %> 
+
       <!-- Features End -->
       <!-- ##############################EVENT SCHEDULE#################################### -->
 
@@ -180,12 +184,15 @@
     </script>
     <script src="/js/loader.js"></script>
     <script src="/js/index/index_progressbar.js"></script>
+    <script src="/js/counter.js"></script>
     <script src="/js/index/index_faq.js"></script>
     <script src="/js/index/index_feature.js"></script>
     <script src="/js/index/index.js"></script>
     <script src="/js/index/index_contactus.js"></script>
     <script src="/js/navbar.js"></script>
     <script src="/js/profile/modal.js"></script>
+    <script src="/public/js/dist/jquery.waypoints.js"></script>
+    <script src="/public/js/dist/jquery.counterup.min.js"></script>
     <script>
       // var bodydiv = document.getElementById("bodydiv");
       // bodydiv.addEventListener("click", closeSearch);
