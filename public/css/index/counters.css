@@ -85,11 +85,19 @@ color: #FFFFFF;
 @media screen and (max-width: 580px) {
   .counter-up .content .box{
     width: 100%;
+    padding: 15px 20px 15px 20px;
   }
 }
 @media screen and (max-width: 500px) {
-  .counter-up{
-    padding: 30px 20px 0 20px;
+    .content .box .counter{
+      font-size: 40px;
+     height: 75px;
+
+  }
+  
+    .counter-up{
+    padding: 0px 20px 10px 20px;
+
   }
 }
 
