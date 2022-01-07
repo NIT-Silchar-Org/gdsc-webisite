@@ -1,5 +1,6 @@
 .animated-banner {
   position: relative;
+  background-color:  #FFFBFB;
 }
 
 .animated-banner canvas{
@@ -23,7 +24,6 @@
   height: 40%;
   width: fit-content;
   font-size: 5.5vh;
-
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -37,6 +37,34 @@
   transition: 0.2s ease-in-out;
 }
 
+.animated-banner button{
+  transform: translate(-50%, -50%);
+  border:0;
+  width: 2.8vw;
+  height: 2.8vw;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom: 20%;
+  left:50%;
+  cursor: pointer;
+}
+
+.animated-banner button:hover{
+  width: 3vw;
+  height: 3vw;
+  border: 2px solid rgb(155, 155, 155);
+}
+.animated-banner i{
+  font-size: 2rem;
+  border-radius: 50%;
+  color: rgb(138, 138, 138);
+}
+
+.animated-banner button:hover i{
+  color: rgb(63, 63, 63);
+}
+
 .about{
   background-color: #FFFBFB;
   width: 100%;
@@ -47,6 +75,25 @@
   width: 100%;
   padding-top: 2%;
 }
+
+.about-header img{
+  opacity: 0;
+}
+
+.about-header img.animate{
+  animation: about-img-ani 1s 0.1s forwards;
+}
+
+@keyframes about-img-ani{
+  100%{
+      opacity: 1;
+  }
+
+  0%{
+      opacity: 0;
+  }
+}
+
 .about-header p{
   width: 60%;
   margin-left: 20%;
@@ -61,11 +108,10 @@
 
 @keyframes about-ani{
   100%{
-    margin-left: 20%;
-
+    margin-top: 3%;
   }
   0%{
-    margin-left: 10%;
+    margin-top: 5%;
   }
 }
 
@@ -124,10 +170,10 @@
 
 
 @media (orientation:portrait) {
-  .animated-banner .text-animation {
+  /* .animated-banner .text-animation {
     display: none;
   }
-  
+   */
   .about-header p{
     margin-left: 5%;
     width:90%;
@@ -150,4 +196,6 @@
     max-height: 90%;
     max-width: 90%;
   }
+
+
 }

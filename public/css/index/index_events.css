@@ -21,6 +21,21 @@
     margin-bottom: 2%;
 }
 
+.events-list-item.animate{
+    animation:event-ani 0.8s;
+}
+
+@keyframes event-ani{
+    100%{
+        margin-left: 2.5%;
+
+    }
+
+    0%{
+        margin-left: 10%;
+    }
+}
+
 .events-list-item .event-date{
     grid-column-start: 2;
     grid-column-end: 3;

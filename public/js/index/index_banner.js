@@ -47,7 +47,7 @@ scene.add(camera)
 
 // models
 let mixer = null;
-gltfLoader.load('models/gdsc2.glb', (gltf)=>{   
+gltfLoader.load('models/gdsc3.glb', (gltf)=>{   
     gltf.scene.scale.set(0.3, 0.3, 0.3);
     gltf.scene.position.set(0, -4, 0);
     gltf.scene.rotation.y = Math.PI/2;
@@ -55,10 +55,8 @@ gltfLoader.load('models/gdsc2.glb', (gltf)=>{
 
     mixer = new THREE.AnimationMixer(gltf.scene);
     const action = mixer.clipAction(gltf.animations[0]);
-   canvas.style.display = 'none';
     setTimeout(()=>{
-        action.play()
-        canvas.style.display = 'block';
+        action.play();
     }, 3000)
     type();
 
@@ -132,6 +130,7 @@ controls.minAzimuthAngle = 3.5*Math.PI/4;
 controls.maxAzimuthAngle = 4.5*Math.PI/4;
 controls.minPolarAngle = 1.2;
 controls.maxPolarAngle = Math.PI/1.975;
+controls.rotateSpeed = 0.1;
 
 
 

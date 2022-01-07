@@ -79,16 +79,17 @@
     <%-include('partials/flashMessage')%>
 
     <main class="main">
-        <div class="animated-banner" style="width: 100%; height: 100vh;">
+        <div class="animated-banner" style="height:100vh">
             <div class="text-animation">
               <span class="static text-animation-items">Together We</span>
               <span class="dynamic text-animation-items" id="dynamic"></span>
             </div>
             <canvas class="banner-canvas"></canvas>
+            <button><i class="fas fa-chevron-down"></i></button>
         </div>
         <div class="about">
             <div class="about-header">
-                <img src="/img/logo/logo_text.svg">
+                <img src="/img/logo/logo_text.svg" class="live">
                 <p class="live">GDSC NIT Silchar is under Google Developer Students Club, which is a worldwide developers community initiated by Google. Our GDSC prioritizes solving real life problems that we as part of a society face in our daily lives. Solving such problems brings opportunities for the budding developer communities to showcase their talents and, improve and gain new skillsets.
                 </p>
             </div>
@@ -123,7 +124,7 @@
               <button>View Details</button>
             </div> -->
             <% events.forEach(event=>{%>
-              <div class="events-list-item">
+              <div class="events-list-item live">
                 <div class="event-date"><strong><%= event.date%> - </strong> <%= event.title.subHeading%></div>
                 <div class="event-name"><%= event.title.heading%></div>
                 <div class="event-tags">
@@ -211,6 +212,18 @@
       //   let search_list2 = document.getElementById("search_list2");
       //   search_list2.style.display = "none";
       // }
+    </script>
+    <script>
+        const scrollButton = document.querySelector('.animated-banner button');
+        scrollButton.addEventListener('click', ()=>{
+          window.scrollTo({
+            top:document.querySelector('.animated-banner').scrollHeight,
+            left:0,
+            behavior:'smooth'
+          });
+        });
+    </script>
+
     </script>
   </body>
 </html>
