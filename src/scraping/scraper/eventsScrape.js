@@ -25,13 +25,16 @@ async function scrapeSite({ scrapeData }) {
       for (let i = 0; i < upcomingEventsElements.length; i++) {
         const tags = [];
 
-        upcomingEventsElements[i]
-          .querySelectorAll(".MuiChip-root .MuiChip-label")
+         upcomingEventsElements[i]
+          .querySelectorAll(".MuiChip-label")
           .forEach((node, index) => {
             tags[index] = node.innerHTML;
           });
 
         events[i] = {
+          img:
+            upcomingEventsElements[i].parentElement.querySelector("a img").src ?? 
+            "",
           date:
             upcomingEventsElements[i].querySelector(".date strong").innerHTML ??
             "",
@@ -47,6 +50,7 @@ async function scrapeSite({ scrapeData }) {
               .querySelector(".description")
               .innerHTML.trim() ?? "",
           tags,
+          link:upcomingEventsElements[i].querySelector("a").href,
         };
       }
       return events;
