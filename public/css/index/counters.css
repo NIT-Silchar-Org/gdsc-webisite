@@ -1,101 +1,72 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-.counter-up{
- 
-height: auto;
-left: 0px;
-/* top: 1256px; */
-background-size: cover;
-  padding: 0 50px;
+.counter-up {
   position: relative;
+  height: 40vh;
+  width: 100%;
+}
+
+.counter-up .content {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  height: 100%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.counter-up .content .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.counter-up .content{
-    z-index: 1;
-    position: relative;
-    display: flex;
-    width: 100%;
+.counter-up .content .box .counter {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+@media (orientation: portrait) {
+  .counter-up {
+    height: 40vh;
+  }
+  .counter-up .content {
     height: 100%;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    width: 90%;
   }
-  .counter-up .content .box{
-    border: none;
+  .counter-up .content .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    padding: 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  .content .box .icon{
-    font-size: 48px;
-    color: #272727;
+  .counter-up .content .box .counter {
+    font-size: 2rem;
+    font-weight: bolder;
   }
-  .content .box .counter{
-    position: static;
-    width: 119px;
-    height: 99.17px;
-    left: 31.5px;
-    top: 0px;
-    
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 66px;
-    line-height: 99px;
-    text-align: center;
-    
-  color: #272727;
-  }
-  .content .box .text{
-    position: static;
-width: 182px;
-height: 30px;
-left: 0px;
-top: 99.17px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 30px;
-/* identical to box height */
-
-text-align: center;
-
-color: #272727;
-  }
-@media screen and (max-width: 1036px) {
-  .counter-up{
-    padding: 50px 50px 0 50px;
-  }
-  
-}
-@media screen and (max-width: 580px) {
-  .counter-up .content .box{
-    width: 100%;
-    padding: 15px 20px 15px 20px;
+  .counter-up .content .box .text {
+    font-size: 0.8rem;
   }
 }
-@media screen and (max-width: 500px) {
-    .content .box .counter{
-      font-size: 40px;
-     height: 75px;
-
-  }
-  
-    .counter-up{
-    padding: 0px 20px 10px 20px;
-
-  }
-}
-
-
+/*# sourceMappingURL=counters.css.map */
