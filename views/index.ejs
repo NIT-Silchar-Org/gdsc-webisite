@@ -123,7 +123,7 @@
               <img src="/img/profile/profile_demo.png">
               <button>View Details</button>
             </div> -->
-            <% events.forEach(event=>{%>
+            <% if(events) events.forEach(event=>{%>
               <div class="events-list-item live">
                 <div class="event-date"><strong><%= event.date%> - </strong> <%= event.title.subHeading%></div>
                 <div class="event-name"><%= event.title.heading%></div>
@@ -140,7 +140,9 @@
                 <button onclick="window.open('<%=event.link%>', '_blank')">View Details</button>
               </div>
               <%})%>
-
+            <%if(!events){%>
+              <h4 style="text-align: center;">No upcoming events.</h4>
+              <%}%>
           </div>
         </div>
       

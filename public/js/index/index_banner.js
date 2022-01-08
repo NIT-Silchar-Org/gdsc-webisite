@@ -32,6 +32,11 @@ window.addEventListener('resize', () =>
     // Update camera
     camera.aspect = sizes.width / sizes.height
     camera.updateProjectionMatrix()
+
+    if(sizes.width<sizes.height)
+    camera.position.set(-20, 1, -80);
+else
+    camera.position.set(0, 1, -70);
     
     // Update renderer
     renderer.setSize(sizes.width, sizes.height)
@@ -41,7 +46,10 @@ window.addEventListener('resize', () =>
 })
 
 const camera = new THREE.PerspectiveCamera( 10, sizes.width / sizes.height, 0.1, 1000 );
-camera.position.set(0, 1, -70)
+if(sizes.width<sizes.height)
+    camera.position.set(-20, 1, -80);
+else
+    camera.position.set(0, 1, -70);
 scene.add(camera)
 
 
@@ -130,7 +138,7 @@ controls.minAzimuthAngle = 3.5*Math.PI/4;
 controls.maxAzimuthAngle = 4.5*Math.PI/4;
 controls.minPolarAngle = 1.2;
 controls.maxPolarAngle = Math.PI/1.975;
-controls.rotateSpeed = 0.1;
+controls.rotateSpeed = 0.2;
 
 
 

@@ -119,3 +119,9 @@
     border: solid 5px rgb(197, 207, 236);
     margin-left: 40%;
 }
+
+@media (orientation:portrait){
+    .events-list-item .event-tags{
+        overflow: hidden;
+    }
+}
