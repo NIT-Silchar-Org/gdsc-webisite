@@ -1,21 +1,21 @@
 
-const rightBtn = document.querySelector("#right-button");
-const leftBtn = document.querySelector("#left-button");
+// const rightBtn = document.querySelector("#right-button");
+// const leftBtn = document.querySelector("#left-button");
 
-rightBtn.addEventListener("click", function (event) {
-  const conent = document.querySelector("#row");
-  conent.scrollLeft += 320;
-  event.preventDefault();
-});
+// rightBtn.addEventListener("click", function (event) {
+//   const conent = document.querySelector("#row");
+//   conent.scrollLeft += 320;
+//   event.preventDefault();
+// });
 
-leftBtn.addEventListener("click", function (event) {
-  const conent = document.querySelector("#row");
-  conent.scrollLeft -= 320;
-  event.preventDefault();
-});
+// leftBtn.addEventListener("click", function (event) {
+//   const conent = document.querySelector("#row");
+//   conent.scrollLeft -= 320;
+//   event.preventDefault();
+// });
 
-const section = document.querySelectorAll("section");
-const h2 = document.querySelectorAll("h2");
+const animated_objects = document.querySelectorAll('.live');
+// const h2 = document.querySelectorAll("h2");
 
 const observer1 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -27,10 +27,7 @@ const observer1 = new IntersectionObserver((entries) => {
   });
 });
 
-section.forEach((title) => {
-  observer1.observe(title);
-});
-h2.forEach((title) => {
+animated_objects.forEach((title) => {
   observer1.observe(title);
 });
 

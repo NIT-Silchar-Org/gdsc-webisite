@@ -5,7 +5,7 @@
 .footer_upper_body{
     -webkit-box-direction: normal;
     text-align: left;
-    padding: 60px 0;
+    /* padding: 60px 0; */
 }
 
 .footer_body .footer_container {
@@ -200,6 +200,17 @@
     /* .footer_container{
         max-width: 1140px;
     } */
+}
+
+@media screen and (min-width:992px) {
+    .footer_container{
+        max-width: 960px;
+    }
+}
+@media screen and (min-width:1200px) {
+    .footer_container{
+        max-width: 1140px;
+    }
 }
 
 

@@ -30,8 +30,9 @@
     <!-- Stylings -->
     <link rel="stylesheet" href="/css/index/colors.css" />
     <link rel="stylesheet" href="/css/index/index_animation.css" />
-    <link rel="stylesheet" href="/css/index/index_dashboard.css" />
+    <!-- <link rel="stylesheet" href="/css/index/index_dashboard.css" /> -->
     <link rel="stylesheet" href="/css/index/index_about.css" />
+    <link rel="stylesheet" href="/css/index/index_events.css" />
     <link rel="stylesheet" href="/css/index/index_videos.css" />
     <link rel="stylesheet" href="/css/index/index_contactus.css" />
     <link rel="stylesheet" href="/css/index/font-awesome.css" />
@@ -39,7 +40,6 @@
     <link rel="stylesheet" href="/css/index/index_event_schedule.css" />
     <link rel="stylesheet" href="/css/index/index_feature.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
-    <link rel="stylesheet" href="/css/index/counters.css" />
   
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
 
@@ -74,64 +74,78 @@
   <body id="bodydiv">
     <%-include('partials/Loader')%>
 
-    <!--Navbar Starts-->
     <%-include('partials/navbar')%>
-    <!---Navbar Ends-->
-    <!---Dashboard Section Starts-->
 
-    <!-- Flash Message Body Start-->
     <%-include('partials/flashMessage')%>
-    <!-- Flash Message Body End -->
 
-    <!-- End of Register Modal -->
-    <header class="header">
-      <img
-        src="/official-logo/DSC3(T).png"
-        alt="dsc logo"
-        class="dsclogo"
-        id="dsclogo"
-      />
-      <img
-        src="/official-logo/DSC1(T).png"
-        alt="dsc logo"
-        class="dsclogoMobile"
-      />
-
-      <img
-        src="/img/illustrations/dashboards.png"
-        alt="design"
-        class="dscdesign"
-      />
-
-      <!-- <h2 class="heading__secondary intersect" id="heading__secondary">
-        Developer Students Clubs
-      </h2>
-      <h1 class="heading__primary" id="heading__primary">
-        <span class="bold">NIT</span> Silchar
-      </h1> -->
-      <% if(!user){ %>
-      <a href="/user/register" class="getStartedAHref"
-        ><input
-          type="button"
-          class="getStarted"
-          id="getStarted"
-          value="Get Started"
-          style="cursor: pointer"
-        />
-      </a>
-      <% } %>
-    </header>
-    <!-- <button id="ScrolltoTop" class="ScrolltoTop">
-        <i class="material-icons">arrow_upward</i>
-      </button> -->
-
-    <!---Dashboard Section Ends-->
-    <!--About Us Section Starts-->
     <main class="main">
-     
-      <!-- Counters -->
-      <%- include('partials/counter.ejs') %> 
-
+        <div class="animated-banner" style="height:100vh">
+            <div class="text-animation">
+              <span class="static text-animation-items">Together We</span>
+              <span class="dynamic text-animation-items" id="dynamic"></span>
+            </div>
+            <canvas class="banner-canvas"></canvas>
+            <button><i class="fas fa-chevron-down"></i></button>
+        </div>
+        <div class="about">
+            <div class="about-header">
+                <img src="/img/logo/logo_text.svg" class="live">
+                <p class="live">GDSC NIT Silchar is under Google Developer Students Club, which is a worldwide developers community initiated by Google. Our GDSC prioritizes solving real life problems that we as part of a society face in our daily lives. Solving such problems brings opportunities for the budding developer communities to showcase their talents and, improve and gain new skillsets.
+                </p>
+            </div>
+            <div class="sponsors">
+                <h2>OUR SPONSORS</h2>
+                <ul>
+                    <li class="live"><a href="https://egghead.io/" target="_blank" rel="noopener noreferrer"><img src="/img/logo/egghead.png"></a></li>
+                    <li class="live"><a href="https://givemycertificate.com/" target="_blank" rel="noopener noreferrer"><img src="/img/logo/gmc.png"></a></li>
+                    <li class="live"><a href="https://sparkar.reskilll.com/" target="_blank" rel="noopener noreferrer"><img src="/img/logo/reskill-spark-logo.png"></a></li>
+                </ul>
+                <h2>Community Partners</h2>
+                <ul>
+                    <li class="live"><a href="https://finflee.co/" target="_blank" rel="noopener noreferrer"><img src="/img/logo/finflee.svg"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="events">
+          <h2>UPCOMING EVENTS</h2>
+          <div class="events-list-box">
+            <!-- <div class="events-list-item">
+              <div class="event-date"><strong>NOV 12, 2021 - </strong> SESSION / TECH TALK - VIRTUAL</div>
+              <div class="event-name">Info Session on Spark AR</div>
+              <div class="event-tags">
+                <ul>
+                  <li>AR/VR</li>
+                  <li>GDSC</li>
+                  <li>Web Development</li>
+                </ul>
+              </div>
+              <p>Augmented Reality is the future. Using AR effects to increase the reach and engage fans, customers, clients is the new norm for top global artists, brands, and companies. In collaboration with GDSC, Reskilll x Spark AR will conduct an info session on Spark AR, on 12th Nov, Friday, 6:30 PM. Speaker- Kshitiz Saini, Associate Developer, Reskilll technologies.</p>
+              <img src="/img/profile/profile_demo.png">
+              <button>View Details</button>
+            </div> -->
+            <% if(events) events.forEach(event=>{%>
+              <div class="events-list-item live">
+                <div class="event-date"><strong><%= event.date%> - </strong> <%= event.title.subHeading%></div>
+                <div class="event-name"><%= event.title.heading%></div>
+                <div class="event-tags">
+                  <ul>
+                    <% event.tags.forEach((tag)=>{%>
+                      <li><%=tag%></li>
+                    <%})%>
+                  </ul>
+                </div>
+                <p><%= event.description%></p>
+                <img src="<%=event.img%>">
+                
+                <button onclick="window.open('<%=event.link%>', '_blank')">View Details</button>
+              </div>
+              <%})%>
+            <%if(!events){%>
+              <h4 style="text-align: center;">No upcoming events.</h4>
+              <%}%>
+          </div>
+        </div>
+      
       <!-- Features End -->
       <!-- ##############################EVENT SCHEDULE#################################### -->
 
@@ -184,15 +198,13 @@
     </script>
     <script src="/js/loader.js"></script>
     <script src="/js/index/index_progressbar.js"></script>
-    <script src="/js/counter.js"></script>
     <script src="/js/index/index_faq.js"></script>
     <script src="/js/index/index_feature.js"></script>
     <script src="/js/index/index.js"></script>
+    <script src="/js/index/index_banner.js" type="module"></script>
     <script src="/js/index/index_contactus.js"></script>
     <script src="/js/navbar.js"></script>
     <script src="/js/profile/modal.js"></script>
-    <script src="/public/js/dist/jquery.waypoints.js"></script>
-    <script src="/public/js/dist/jquery.counterup.min.js"></script>
     <script>
       // var bodydiv = document.getElementById("bodydiv");
       // bodydiv.addEventListener("click", closeSearch);
@@ -202,6 +214,18 @@
       //   let search_list2 = document.getElementById("search_list2");
       //   search_list2.style.display = "none";
       // }
+    </script>
+    <script>
+        const scrollButton = document.querySelector('.animated-banner button');
+        scrollButton.addEventListener('click', ()=>{
+          window.scrollTo({
+            top:document.querySelector('.animated-banner').scrollHeight,
+            left:0,
+            behavior:'smooth'
+          });
+        });
+    </script>
+
     </script>
   </body>
 </html>

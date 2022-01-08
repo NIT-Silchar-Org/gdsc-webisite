@@ -4,7 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%if(!verified){%>
   <link rel="stylesheet" href="/css/index/notverify.css" />
+  <%}%>
+  <%if(verified){%>
+  <link rel="stylesheet" href="/css/index/verify.css" />
+  <%}%>
 
   <meta name="description" content="DSC NIT Silchar is under Developer Students Club, which is a
     worldwide developers community initiated by Google.The DSC NITS website is open for
@@ -17,6 +22,7 @@
   <title>DSC NITS | Email Verification</title>
   <link rel="shortcut icon" type="image/x-icon" href="/img/logo/dsc_trans_logo.png" />
 </head>
+
 
 <body>
   <div class="card">
@@ -31,7 +37,7 @@
         <h2>Your Email has been verified.</h2>
         <div class="desc">Click on the button below to log in.</div>
         <div class="actions">
-          <button><a href="/user/register?type=login">Log In</a></button>
+          <button><a href="/user/register?type=login">Login</a></button>
         </div>
       </div>
       <% } else { %>

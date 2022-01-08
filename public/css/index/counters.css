@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -12,8 +11,6 @@ height: auto;
 left: 0px;
 /* top: 1256px; */
 background-size: cover;
-
-background: linear-gradient(90deg, #091E3A 0%, #2F80ED 50%, #2D9EE0 100%);
   padding: 0 50px;
   position: relative;
   display: flex;
@@ -40,7 +37,7 @@ background: linear-gradient(90deg, #091E3A 0%, #2F80ED 50%, #2D9EE0 100%);
   }
   .content .box .icon{
     font-size: 48px;
-    color: #e6e6e6;
+    color: #272727;
   }
   .content .box .counter{
     position: static;
@@ -56,7 +53,7 @@ background: linear-gradient(90deg, #091E3A 0%, #2F80ED 50%, #2D9EE0 100%);
     line-height: 99px;
     text-align: center;
     
-    color: #FFFFFF;
+  color: #272727;
   }
   .content .box .text{
     position: static;
@@ -74,7 +71,7 @@ line-height: 30px;
 
 text-align: center;
 
-color: #FFFFFF;
+color: #272727;
   }
 @media screen and (max-width: 1036px) {
   .counter-up{
