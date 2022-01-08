@@ -26,7 +26,7 @@ async function scrapeSite({ scrapeData }) {
         const tags = [];
 
         upcomingEventsElements[i]
-          .querySelectorAll(".MuiChip-root .MuiChip-label")
+          .querySelectorAll(".MuiChip-label")
           .forEach((node, index) => {
             tags[index] = node.innerHTML;
           });

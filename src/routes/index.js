@@ -46,13 +46,14 @@ router.get("/", async (req, res) => {
   var token = req.cookies.authorization;
   const finduser = await User.find({active : true}, null, {sort:{name:1}});
   if (token) {
+    const events = await eventData.scrapeData.data;
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
       else req.user = user;
       // console.log(user);
-      res.render("index", { user: user, found: finduser });
+      res.render("index", { user: user, found: finduser, events });
     });
-  } else res.render("index", { user: req.user, found: finduser });
+  } else res.render("index", { user: req.user, found: finduser, events: null });
 });
 
 //Route for DSC Members
