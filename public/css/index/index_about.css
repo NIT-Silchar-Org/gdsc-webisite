@@ -10,38 +10,74 @@
 .animated-banner .text-animation {
   user-select: none;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 5%;
   transform: translate(0, -50%);
   height: 30vh;
-  width: 40vh;
+  width: 80vh;
 
   display: flex;
   flex-direction: column;
 }
 
 .animated-banner .text-animation .text-animation-items {
-  height: 40%;
-  width: fit-content;
-  font-size: 5.5vh;
+  height: 60%;
+  max-width: fit-content;
+  font-size: 10vh;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
-  padding: 0 0.5vh;
+  align-items: center;
 }
 .animated-banner .text-animation .text-animation-items.dynamic {
   border-right: 1.2vh solid;
   font-weight: bold;
-  font-size: 6.5vh;
+  font-size: 12vh;
   transition: 0.2s ease-in-out;
+  animation-name: typing;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+
+  10% {
+    width: 0;
+  }
+
+  40% {
+    width: 100%;
+  }
+
+  80% {
+    width: 100%;
+  }
+
+  90% {
+    width: 0;
+  }
+
+  100% {
+    width: 0;
+  }
 }
 
 @media (orientation:portrait) {
+  .animated-banner .text-animation {
+    top: 40%;
+    width: 80%;
+  }
+
   .animated-banner .text-animation .text-animation-items {
     height: 20%;
   }
   .animated-banner .text-animation .text-animation-items {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
   .animated-banner .text-animation .text-animation-items.dynamic {
     border-right: 0.8vh solid;

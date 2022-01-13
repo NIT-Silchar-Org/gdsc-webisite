@@ -63,11 +63,8 @@ gltfLoader.load('models/gdsc3.glb', (gltf)=>{
 
     mixer = new THREE.AnimationMixer(gltf.scene);
     const action = mixer.clipAction(gltf.animations[0]);
-    setTimeout(()=>{
-        action.play();
-    }, 3000)
-    type();
 
+    action.play();
     gltf.scene.traverse( ( child )=> { 
 
         if ( child.isMesh ) {
@@ -164,40 +161,26 @@ const tick = () =>
 
 }
 
-tick()
+tick();
 
 
 
 // Text Typing
-
-
 let typingText = ["Learn", "Build", "Solve", "Transcend"];
 let typingColor = ["#EA4335", "#FBBC04", "#4285F4", "#0F9D58"];
 let typingTextIndex = 0;
-let wordIndex = 0;
-let typeTiming = 3 * 1000; // No. of seconds
-
+let typeTiming = 3 * 1000; // No. of secondstype();
 dynamic.style.color = typingColor[typingTextIndex];
 
-
 function type() {
-    setInterval(() => {
-        dynamic.style.color = typingColor[typingTextIndex];
-        dynamic.style.borderColor = typingColor[typingTextIndex];
-        let intFrwd = setInterval(() => {
-            dynamic.innerText += typingText[typingTextIndex][wordIndex];
-
-            if (wordIndex == typingText[typingTextIndex].length - 1) {
-                clearInterval(intFrwd);
-                typingTextIndex++;
-                typingTextIndex%=typingText.length;
-                return;
-            }
-            wordIndex++;
-        }, 75);
-
-        wordIndex = 0;
-        dynamic.innerText = "";
-
-    }, typeTiming);
+    dynamic.style.color = typingColor[typingTextIndex];
+    dynamic.style.borderColor = typingColor[typingTextIndex];
+    dynamic.innerHTML = typingText[typingTextIndex];
+    typingTextIndex++;
+    typingTextIndex%=typingText.length;
 };
+
+type();
+setInterval(() => {
+    type();
+}, typeTiming);
