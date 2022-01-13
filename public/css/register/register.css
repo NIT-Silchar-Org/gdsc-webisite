@@ -3,39 +3,13 @@
 
 /* FONT */
 
-body::-webkit-scrollbar {
-    width: 0.5em;
-}
-
-body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
-}
-
-div::-webkit-scrollbar {
-    width: 0.2em;
-}
-
-div::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-div::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
-}
-
 body {
     margin: 0;
-    height: 100vh;
+    /* height: 100vh; */
     overflow: scroll;
     overflow-x: hidden;
     color: #0f1923;
-    font: 400 18px/22px "Rajdhani", sans-serif;
+    /* font: 400 18px/22px "Rajdhani", sans-serif; */
 }
 
 #loginform {
@@ -75,6 +49,7 @@ body {
 
     margin: 2.5rem auto;
     /* margin-top: 3rem; */
+    margin-bottom: 5rem;
     flex-direction: row;
     box-shadow: -2.23847px 0px 12.3116px rgba(0, 0, 0, 0.1), 2.23847px 2.23847px 12.3116px rgba(0, 0, 0, 0.1);
     border-radius: 5px;

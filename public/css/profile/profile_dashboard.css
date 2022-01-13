@@ -258,6 +258,7 @@ body {
 
 .dashboard__main .main__profileinfo .branchandyear {
   height: -webkit-fit-content;
+  justify-content: center;
   height: -moz-fit-content;
   height: fit-content;
   display: -webkit-box;
@@ -265,7 +266,6 @@ body {
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
 }
 
 .dashboard__main .main__profileinfo .branchandyear .collegeinfo {
@@ -282,7 +282,11 @@ body {
   color: var(--Grey-dark-2);
   font-size: 0.8rem;
   border: 0.2px;
-  padding: 0.2rem 1rem;
+  /* padding: 0.2rem 1rem; */
+}
+
+.dashboard__main .main__profileinfo .branchandyear .collegeinfo a {
+  padding: .2rem 1rem;
 }
 
 .dashboard__main .main__profileinfo .branchandyear .collegeinfo img {
