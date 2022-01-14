@@ -25,7 +25,7 @@ async function scrapeSite({ scrapeData }) {
       for (let i = 0; i < upcomingEventsElements.length; i++) {
         const tags = [];
 
-         upcomingEventsElements[i]
+        upcomingEventsElements[i]
           .querySelectorAll(".MuiChip-label")
           .forEach((node, index) => {
             tags[index] = node.innerHTML;
@@ -33,7 +33,7 @@ async function scrapeSite({ scrapeData }) {
 
         events[i] = {
           img:
-            upcomingEventsElements[i].parentElement.querySelector("a img").src ?? 
+            upcomingEventsElements[i].parentElement.querySelector("a img").src ??
             "",
           date:
             upcomingEventsElements[i].querySelector(".date strong").innerHTML ??
@@ -50,7 +50,7 @@ async function scrapeSite({ scrapeData }) {
               .querySelector(".description")
               .innerHTML.trim() ?? "",
           tags,
-          link:upcomingEventsElements[i].querySelector("a").href,
+          link: upcomingEventsElements[i].querySelector("a").href,
         };
       }
       return events;
@@ -62,4 +62,39 @@ async function scrapeSite({ scrapeData }) {
   }
 }
 
-module.exports = { scrapeSite };
+//past events
+const pastEvents = async () => {
+  try {
+    const browser = await puppeteer.launch({ headless: true });
+    const page = await browser.newPage();
+    await page.goto(
+      "https://gdsc.community.dev/national-institute-of-technology-nit-silchar/"
+    );
+
+    const pastEventsList = await page.evaluate(() => {
+      const events = [];
+      let list = document.querySelectorAll("#past-events .past-event-list a");
+      for (let i = 0; i < list.length; i++) {
+        events[i] = {
+          img: list[i].querySelector("img").src,
+          date: list[i].querySelectorAll("p")[0].innerText.trim(),
+          heading: list[i].querySelectorAll("p")[1].innerText.trim(),
+          discription: list[i].querySelectorAll("p")[2].innerText.trim(),
+        }
+      }
+      return events;
+    })
+    res.status(200).json({
+      pastEventsList
+    });
+    return pastEventsList;
+
+  } catch (err) {
+    console.log(err);
+    res.send(err.message);
+  }
+}
+
+
+
+module.exports = { scrapeSite, pastEvents };

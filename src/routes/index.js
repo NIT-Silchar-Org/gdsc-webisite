@@ -32,6 +32,7 @@ const session = require("express-session");
 
 //events scraped data
 const eventData = require('../scraping/eventsData');
+const { pastEvents } = require('../scraping/scraper/eventsScrape');
 
 //Config Modules
 const { checkType } = require("../config/checkType");
@@ -47,7 +48,7 @@ router.use(cookieParser());
 //Route for Homepage
 router.get("/", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find({active : true}, null, {sort:{name:1}});
+  const finduser = await User.find({ active: true }, null, { sort: { name: 1 } });
   const events = (await eventData.scrapeData.data);
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
@@ -56,15 +57,17 @@ router.get("/", async (req, res) => {
       // console.log(user);
       res.render("index", { user: user, found: finduser, events });
     });
-  } else res.render("index", { user: req.user, found: finduser, events:eventData.scrapeData.data });
+  } else res.render("index", { user: req.user, found: finduser, events: eventData.scrapeData.data });
 });
 
+//Route to get past events
+router.get("/pastEvents", pastEvents);
 
 
 //Route for DSC Members
 router.get("/members", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find({active : true}, null, {sort:{name:1}});
+  const finduser = await User.find({ active: true }, null, { sort: { name: 1 } });
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
@@ -77,7 +80,7 @@ router.get("/members", async (req, res) => {
 
 router.get("/dscwebsitedeveloper", async (req, res) => {
   var token = req.cookies.authorization;
-  const finduser = await User.find({active : true}, null, {sort:{name:1}});
+  const finduser = await User.find({ active: true }, null, { sort: { name: 1 } });
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
