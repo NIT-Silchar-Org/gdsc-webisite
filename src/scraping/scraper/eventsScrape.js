@@ -10,12 +10,12 @@ async function scrapeSite({ scrapeData }) {
         waitUntil: "networkidle2",
       }
     );
-    await page.waitForSelector("#upcoming-events .general-card h4");
+    // await page.waitForSelector("#upcoming-events");
 
     /**
      * Scraping various data from elements and adding that to an object
      */
-    scrapeData.data = await page.evaluate(() => {
+    scrapeData.data.upcomingEvents = await page.evaluate(() => {
       const events = [];
 
       const upcomingEventsElements = document.querySelectorAll(
@@ -55,23 +55,8 @@ async function scrapeSite({ scrapeData }) {
       }
       return events;
     });
-    console.log(scrapeData);
-    browser.close();
-  } catch (err) {
-    console.log(err);
-  }
-}
 
-//past events
-const pastEvents = async () => {
-  try {
-    const browser = await puppeteer.launch({ headless: true });
-    const page = await browser.newPage();
-    await page.goto(
-      "https://gdsc.community.dev/national-institute-of-technology-nit-silchar/"
-    );
-
-    const pastEventsList = await page.evaluate(() => {
+    scrapeData.data.pastEvents = await page.evaluate(() => {
       const events = [];
       let list = document.querySelectorAll("#past-events .past-event-list a");
       for (let i = 0; i < list.length; i++) {
@@ -79,22 +64,20 @@ const pastEvents = async () => {
           img: list[i].querySelector("img").src,
           date: list[i].querySelectorAll("p")[0].innerText.trim(),
           heading: list[i].querySelectorAll("p")[1].innerText.trim(),
-          discription: list[i].querySelectorAll("p")[2].innerText.trim(),
+          description: list[i].querySelectorAll("p")[2].innerText.trim(),
         }
       }
+      console.log(events);
       return events;
     })
-    res.status(200).json({
-      pastEventsList
-    });
-    return pastEventsList;
 
+    console.log(scrapeData);
+    browser.close();
   } catch (err) {
     console.log(err);
-    res.send(err.message);
   }
 }
 
 
 
-module.exports = { scrapeSite, pastEvents };
+module.exports = { scrapeSite};

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="facebook-domain-verification"
+      content="q704lxpy98ovhiln7zwkgl1d8ogtxi"
+    />
+    <meta
+      name="description"
+      content="GDSC NIT Silchar is under Google Developer Students Club, which is a
+    worldwide developers community initiated by Google.The DSC NITS website is open for
+    all student developers, who wish to improve their skills.
+    Each user has separate profile page, where one can add his/her skills,
+    projects and accomplishments."
+    />
+    <meta
+      name="keywords"
+      content="GDSC, GDSC NITS, Google Developer Student Club NIT Silchar, Blogs, 
+    Profile, Forum, Events, Developers, NIT Silchar"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/img/logo/dsc_trans_logo.png"
+    />
+    <title>Developer Students Club | NIT Silchar</title>
+    <!-- ######################################################################## -->
+    <!-- Stylings -->
+    <link rel="stylesheet" href="/css/index/colors.css" />
+    <link rel="stylesheet" href="/css/index/index_animation.css" />
+    <!-- <link rel="stylesheet" href="/css/index/index_dashboard.css" /> -->
+    <link rel="stylesheet" href="/css/index/counters.css" />
+    <link rel="stylesheet" href="/css/index/index_about.css" />
+    <link rel="stylesheet" href="/css/index/index_events.css" />
+    <link rel="stylesheet" href="/css/index/index_videos.css" />
+    <link rel="stylesheet" href="/css/index/index_contactus.css" />
+    <link rel="stylesheet" href="/css/index/font-awesome.css" />
+    <link rel="stylesheet" href="/css/index/index_faq.css" />
+    <link rel="stylesheet" href="/css/index/index_event_schedule.css" />
+    <link rel="stylesheet" href="/css/index/index_feature.css" />
+    <link rel="stylesheet" href="/css/index/footer.css" />
+  
+    <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
+
+    <link rel="stylesheet" href="/css/index/flashMessage.css" />
+    <!-- ######################################################################## -->
+    <!---Icons Import-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+    
+    <!--Lottie Player-->
+    <link rel="stylesheet" href="/css/index/loader.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <style>
+      .thin {
+        font-weight: 600;
+        font-size: 22px;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+      .fullwidth {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+
+  <body id="bodydiv">
+    <%-include('partials/Loader')%>
+
+    <%-include('partials/navbar')%>
+
+    <%-include('partials/flashMessage')%>
+
+    <main class="main">
+       
+      
+    </main>
+    <%-include('partials/footer')%>
+    <!---Contact Us Section Ends-->
+    <script>
+      function checkRegistrationForm() {
+        var name = document.forms["registerform"]["name"].value;
+        var email = document.forms["registerform"]["email"].value;
+        var phone = document.forms["registerform"]["phone"].value;
+        var scholarId = document.forms["registerform"]["scholar_id"].value;
+
+        if (name.trim().length == 0) {
+          alert("Full Name is too short !");
+          return false;
+        }
+
+        if (email.length < 5) {
+          alert("Enter a valid email");
+          return false;
+        }
+        if (phone.trim().length < 10) {
+          alert("Enter a valid Phone Number");
+          return false;
+        }
+        return true;
+      }
+      var RegisterBtn = document.getElementById("registerEvent");
+      var backBtn5 = document.getElementById("backlogo5");
+      var RegisterModal = document.getElementById("RegisterModal");
+      RegisterBtn.addEventListener("click", () => {
+        RegisterModal.style.opacity = "1";
+        RegisterModal.style.pointerEvents = "all";
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      });
+      backBtn5.addEventListener("click", () => {
+        RegisterModal.style.opacity = "0";
+        RegisterModal.style.pointerEvents = "none";
+      });
+    </script>
+    <script src="/js/loader.js"></script>
+    <script src="/js/index/index_progressbar.js"></script>
+    <script src="/js/index/index_faq.js"></script>
+    <script src="/js/index/index_feature.js"></script>
+    <script src="/js/index/index.js"></script>
+    <script src="/js/index/index_banner.js" type="module"></script>
+    <script src="/js/index/index_contactus.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/profile/modal.js"></script>
+    <script>
+      // var bodydiv = document.getElementById("bodydiv");
+      // bodydiv.addEventListener("click", closeSearch);
+      // function closeSearch() {
+      //   let search_list1 = document.getElementById("search_list1");
+      //   search_list1.style.display = "none";
+      //   let search_list2 = document.getElementById("search_list2");
+      //   search_list2.style.display = "none";
+      // }
+    </script>
+
+  </body>
+</html>

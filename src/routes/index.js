@@ -49,7 +49,7 @@ router.use(cookieParser());
 router.get("/", async (req, res) => {
   var token = req.cookies.authorization;
   const finduser = await User.find({ active: true }, null, { sort: { name: 1 } });
-  const events = (await eventData.scrapeData.data);
+  const events = (await eventData.scrapeData.data.upcomingEvents);
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
@@ -57,11 +57,9 @@ router.get("/", async (req, res) => {
       // console.log(user);
       res.render("index", { user: user, found: finduser, events });
     });
-  } else res.render("index", { user: req.user, found: finduser, events: eventData.scrapeData.data });
+  } else res.render("index", { user: req.user, found: finduser, events });
 });
 
-//Route to get past events
-router.get("/pastEvents", pastEvents);
 
 
 //Route for DSC Members
