@@ -32,7 +32,6 @@ const session = require("express-session");
 
 //events scraped data
 const eventData = require('../scraping/eventsData');
-const { pastEvents } = require('../scraping/scraper/eventsScrape');
 
 //Config Modules
 const { checkType } = require("../config/checkType");
@@ -49,15 +48,15 @@ router.use(cookieParser());
 router.get("/", async (req, res) => {
   var token = req.cookies.authorization;
   const finduser = await User.find({ active: true }, null, { sort: { name: 1 } });
-  const events = (await eventData.scrapeData.data.upcomingEvents);
+  const upcomingEvents = eventData.scrapeData.data.upcomingEvents;
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) console.log(err);
       else req.user = user;
       // console.log(user);
-      res.render("index", { user: user, found: finduser, events });
+      res.render("index", { user: user, found: finduser, upcomingEvents });
     });
-  } else res.render("index", { user: req.user, found: finduser, events });
+  } else res.render("index", { user: req.user, found: finduser, upcomingEvents });
 });
 
 

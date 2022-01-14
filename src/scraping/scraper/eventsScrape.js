@@ -66,8 +66,8 @@ async function scrapeSite({ scrapeData }) {
           heading: list[i].querySelectorAll("p")[1].innerText.trim(),
           description: list[i].querySelectorAll("p")[2].innerText.trim(),
         }
+
       }
-      console.log(events);
       return events;
     })
 

@@ -3,8 +3,8 @@ const { scrapeSite } = require("./scraper/eventsScrape");
 
 let scrapeData = {
   data: {
-    upcomingEvents: null,
-    pastEvents: null,
+    upcomingEvents: [],
+    pastEvents: [],
   },
 };
 scrapeSchedule({ scrapeData });

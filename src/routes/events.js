@@ -12,9 +12,9 @@ router.get('/', async (req, res)=>{
         jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
           if (err) console.log(err);
           else req.user = user;
-          res.render("events", { user: user, found: finduser, upcomingEvents:events.upcomingEvents });
+          res.render("events", { user: user, found: finduser, upcomingEvents:events.upcomingEvents, pastEvents:events.pastEvent });
         });
-      } else res.render("events", { user: req.user, found: finduser, pastEvents:events.pastEvents });
+      } else res.render("events", { user: req.user, found: finduser, upcomingEvents:events.upcomingEvents, pastEvents:events.pastEvents });
 })
 
 module.exports = router;

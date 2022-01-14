@@ -33,7 +33,6 @@
     <!-- <link rel="stylesheet" href="/css/index/index_dashboard.css" /> -->
     <link rel="stylesheet" href="/css/index/counters.css" />
     <link rel="stylesheet" href="/css/index/index_about.css" />
-    <link rel="stylesheet" href="/css/index/index_events.css" />
     <link rel="stylesheet" href="/css/index/index_videos.css" />
     <link rel="stylesheet" href="/css/index/index_contactus.css" />
     <link rel="stylesheet" href="/css/index/font-awesome.css" />
@@ -41,7 +40,8 @@
     <link rel="stylesheet" href="/css/index/index_event_schedule.css" />
     <link rel="stylesheet" href="/css/index/index_feature.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
-  
+    <link rel="stylesheet" href="/css/events/upcoming_events.css" />
+    
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
 
     <link rel="stylesheet" href="/css/index/flashMessage.css" />
@@ -108,44 +108,10 @@
             </div>
         </div>
         <%- include("partials/counter.ejs") %>
+
         <div class="events">
           <h2>UPCOMING EVENTS</h2>
-          <div class="events-list-box">
-            <!-- <div class="events-list-item">
-              <div class="event-date"><strong>NOV 12, 2021 - </strong> SESSION / TECH TALK - VIRTUAL</div>
-              <div class="event-name">Info Session on Spark AR</div>
-              <div class="event-tags">
-                <ul>
-                  <li>AR/VR</li>
-                  <li>GDSC</li>
-                  <li>Web Development</li>
-                </ul>
-              </div>
-              <p>Augmented Reality is the future. Using AR effects to increase the reach and engage fans, customers, clients is the new norm for top global artists, brands, and companies. In collaboration with GDSC, Reskilll x Spark AR will conduct an info session on Spark AR, on 12th Nov, Friday, 6:30 PM. Speaker- Kshitiz Saini, Associate Developer, Reskilll technologies.</p>
-              <img src="/img/profile/profile_demo.png">
-              <button>View Details</button>
-            </div> -->
-            <% if(events) events.forEach(event=>{%>
-              <div class="events-list-item live">
-                <div class="event-date"><strong><%= event.date%> - </strong> <%= event.title.subHeading%></div>
-                <div class="event-name"><%= event.title.heading%></div>
-                <div class="event-tags">
-                  <ul>
-                    <% event.tags.forEach((tag)=>{%>
-                      <li><%=tag%></li>
-                    <%})%>
-                  </ul>
-                </div>
-                <p><%= event.description%></p>
-                <img src="<%=event.img%>">
-                
-                <button onclick="window.open('<%=event.link%>', '_blank')">View Details</button>
-              </div>
-              <%})%>
-            <%if(!events){%>
-              <h4 style="text-align: center;">No upcoming events.</h4>
-              <%}%>
-          </div>
+        <%- include("partials/upcoming-events.ejs")%>
         </div>
       
       <!-- Features End -->
