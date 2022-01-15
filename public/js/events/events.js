@@ -20,8 +20,8 @@ const activeTagsList =  document.querySelector('.active-tags');
 let activeTags = [];
 document.querySelector('main select').addEventListener('change', (e)=>{
         if(!activeTags.some(aTag => aTag == e.target.value)) addActiveTag(e.target.value);
+        updatePastEvents();
         e.target.value = "";
-
 });
 
 const addActiveTag = (tag)=>{
@@ -30,8 +30,26 @@ const addActiveTag = (tag)=>{
     tagItem.innerHTML = `${tag} <span>X</span>`
     tagItem.addEventListener('click', (e)=>{
         activeTags.splice(activeTags.indexOf(tag), 1);
+        updatePastEvents();
         e.target.remove();
     });
     
     activeTagsList.appendChild(tagItem);
+}
+
+const updatePastEvents = ()=>{
+    if(activeTags[0]){
+        document.querySelectorAll('.past-events-list-item').forEach((event)=>{
+            const searchable = event.querySelector('h4').innerText.toLowerCase() + ' ' + event.querySelector('p').innerText.toLowerCase();
+            if(activeTags.some((aTag)=>{
+                const exp = new RegExp(aTag.toLowerCase());
+                return exp.test(searchable)
+            })) event.style.display = 'inline-grid';
+            else event.style.display = 'none';
+        })
+    }
+    else {
+        console.log('hi');
+        document.querySelectorAll('.past-events-list-item').forEach((event)=>{event.style.display='inline-grid'});
+        }
 }
