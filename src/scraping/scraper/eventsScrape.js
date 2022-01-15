@@ -61,6 +61,7 @@ async function scrapeSite({ scrapeData }) {
       let list = document.querySelectorAll("#past-events .past-event-list a");
       for (let i = 0; i < list.length; i++) {
         events[i] = {
+          link: list[i].href,
           img: list[i].querySelector("img").src,
           date: list[i].querySelectorAll("p")[0].innerText.trim(),
           heading: list[i].querySelectorAll("p")[1].innerText.trim(),

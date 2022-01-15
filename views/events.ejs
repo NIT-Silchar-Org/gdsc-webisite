@@ -78,7 +78,16 @@
       <h2>Upcoming Events</h2>
       <%-include('partials/upcoming-events')%>
       <h2>Past Events</h2>
-      
+      <select name="tags">
+        <option value= "" disabled selected>Filter Events</option>
+        <option value = "Android">Android</option>
+        <option value="AR/VR">AR/VR</option>
+        <option value="Assistant / Actions on Google">Assistant / Actions on Google</option>
+      </select>
+
+      <ul class= "active-tags">
+     
+      </ul>
       <div class="past-events-list-box">
           <!-- <span class="past-events-list-item">
               <img src="/img/profile/profile_demo.png">
@@ -91,7 +100,7 @@
             </span> -->
             
             <% if( pastEvents[0]) pastEvents.forEach(event=>{%>
-              <div class="past-events-list-item">
+              <div class="past-events-list-item" onclick="window.open('<%=event.link%>', '_blank')">
                 <img src="<%=event.img%>">
                 <div class="past-event-date"><%=event.date%></div>
                 <h4><%=event.heading%></h4>
