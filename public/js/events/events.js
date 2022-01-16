@@ -38,18 +38,24 @@ const addActiveTag = (tag)=>{
 }
 
 const updatePastEvents = ()=>{
+    const allPastEvents = document.querySelectorAll('.past-events-list-item');
+
+    allPastEvents.forEach((event)=>event.style.display='none');
+
     if(activeTags[0]){
-        document.querySelectorAll('.past-events-list-item').forEach((event)=>{
+       allPastEvents.forEach((event)=>{
             const searchable = event.querySelector('h4').innerText.toLowerCase() + ' ' + event.querySelector('p').innerText.toLowerCase();
             if(activeTags.some((aTag)=>{
                 const exp = new RegExp(aTag.toLowerCase());
                 return exp.test(searchable)
-            })) event.style.display = 'inline-grid';
+            })) {
+                event.style.display = 'inline-grid';
+            }
+
             else event.style.display = 'none';
         })
     }
     else {
-        console.log('hi');
-        document.querySelectorAll('.past-events-list-item').forEach((event)=>{event.style.display='inline-grid'});
+        allPastEvents.forEach((event)=>event.style.display='inline-grid');
         }
 }
