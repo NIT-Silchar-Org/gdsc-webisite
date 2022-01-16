@@ -88,8 +88,23 @@ nav .nav-list a button:hover[name=logout]{
     cursor: pointer;
     transition: 0.1s;
 }
-
-
+nav .nav-list a button:hover[name=profile]{
+    /* background-color: #d63c37; */
+    color:aliceblue;
+    cursor: pointer;
+    transition: 0.1s;
+}
+nav .nav-list a button[name=profile]{
+    background-color: rgb(133, 207, 236);
+    color:aliceblue;
+    cursor: pointer;
+    transition: 0.1s;
+    border: none;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    border-width: 0px;
+}
 
 /* HAMBURGER */
 
