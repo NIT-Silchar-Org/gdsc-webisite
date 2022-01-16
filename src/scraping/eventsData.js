@@ -2,7 +2,10 @@ const { scrapeSchedule } = require("./cron/eventsCron");
 const { scrapeSite } = require("./scraper/eventsScrape");
 
 let scrapeData = {
-  data: null,
+  data: {
+    upcomingEvents: [],
+    pastEvents: [],
+  },
 };
 scrapeSchedule({ scrapeData });
 scrapeSite({ scrapeData });
