@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 * {
     margin: 0;
@@ -237,4 +238,231 @@ nav .nav-list a button[name=profile]{
         display: inline-block;
     }
     
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+/* .whitespace{
+    height: 75px;
+} */
+
+/**Scrollbar**/
+::-webkit-scrollbar {
+    width: 1vh;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+      border-radius: 3vh;
+      background: #d9d9d967;
+  }
+
+nav{
+    position: sticky;
+    top:0;
+    height:auto;
+    height: 75px;
+    z-index: 10;
+    background: #ffffff;
+    width: 100%;
+    box-shadow: 1px 1px 3px 3px #50505015;
+}
+
+nav a{
+    line-height:0;
+    display: inline-block;
+    padding: 1vh 1vw 1vh 1vw;
+}
+nav img{
+    height: 60px;    
+}
+
+
+nav .nav-list{
+    position: relative;
+    text-align: right;
+    width: auto;
+    height: 100%;
+    float: right;
+    padding: 1vh 1vw 1vh 1vw;
+    background-color: #ffffff;
+}
+nav .nav-list a{
+    color: #646464;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    /* padding: 2vh 1vw 2vh 1vw; */
+    /* font-size: 1.2rem; */
+}
+
+nav .nav-list a button{
+ background-color: #F9EFEF;
+  border: none;
+  color: rgb(75, 75, 75);
+  height: 40px;
+  width:80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+nav .nav-list a button:hover[name=login]{
+    background-color: var(--loginButton);
+    color:aliceblue;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+nav .nav-list a button:hover[name=logout]{
+    background-color: #d63c37;
+    color:aliceblue;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+
+
+/* HAMBURGER */
+
+.hamburger{
+    float: left;
+    margin-left: 5%;
+    margin-top: 3%;
+    display: none;
+    z-index: 15;
+}
+
+.hamburger .line{
+    width: 40px;
+    height: 3px;
+    background-color: #444444;
+    display: block;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #hamburger-3.is-active .line:nth-child(1),
+#hamburger-3.is-active .line:nth-child(3){
+  width: 15px;
+}
+#hamburger-3.is-active .line:nth-child(2){
+    width: 0px;
+}
+#hamburger-3.is-active{
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+#hamburger-3.is-active .line:nth-child(1){
+  -webkit-transform: translateY(5px) rotate(-45deg);
+  -ms-transform: translateY(5px) rotate(-45deg);
+  -o-transform: translateY(6px) rotate(-45deg);
+  transform: translateY(4px) rotate(-45deg);
+ 
+}
+
+#hamburger-3.is-active .line:nth-child(3){
+  -webkit-transform:  translateY(5px) rotate(45deg);
+  -ms-transform:  translateY(5px) rotate(45deg);
+  -o-transform: translateY(8px) rotate(45deg);
+  transform:  translateY(-4px) rotate(45deg);
+}
+
+
+
+/* Portrait mode*/
+@media (orientation:portrait) {
+
+    /* .whitespace{
+        height:8vw;
+    } */
+     nav{
+        height: 8vh;
+        position: sticky;
+    }
+
+    nav img{
+        height: 80%;
+        position: absolute;
+        right: 10%;
+        top:5px;
+    }
+
+    nav .nav-list{
+        height: 100%;
+        width: 60%;
+        position: fixed;
+        left:-100%;
+        top: 8%;
+        box-shadow: 1px 1px 5px 0px rgba(80, 80, 80, 0.144);
+        transition: all 0.3s ease-in-out;
+
+    }
+    nav .nav-list a{
+        /* display: block;
+        width: 100%;
+        height: 10%;
+        line-height: 5%;
+        text-align: center; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        margin-bottom: 5%;
+        padding-left: 10vw;
+        width: 80%;
+        
+    }
+
+
+    nav .nav-list a.active{
+        box-shadow: 1px 1px 5px 0px rgba(80, 80, 80, 0.144);
+        background: #DCE9FF;
+    }
+
+    nav .nav-list a.active::after{
+        content: "";
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+        margin-left: 58%;
+        background: #DCE9FF;
+    }
+
+
+    nav .nav-list.is-open{
+        left:-1%;
+        
+    }
+    
+    /* nav .nav-list a{
+        font-size: 0.8rem;
+        font-weight: 600;
+    } */
+
+    /* nav .nav-list a button{
+        font-size: 0.8rem;
+        height: 30px;
+        width:60px
+    } */
+
+    .hamburger{
+        display: inline-block;
+    }
+    
+>>>>>>> 789c8303137d3283a17c5466a0f17618117c29eb
 }

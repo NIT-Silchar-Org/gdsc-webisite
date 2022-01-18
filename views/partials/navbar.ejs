@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- <link rel="stylesheet" href="/css/index/font-awesome.css" /> -->
 <link
   rel="stylesheet"
@@ -27,4 +28,35 @@
         <% } %>
     </div>
 </nav>
+=======
+<!-- <link rel="stylesheet" href="/css/index/font-awesome.css" /> -->
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+/>
+
+<!-- JQuery for navbar -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<nav>
+  <div class="hamburger" id="hamburger-3">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+    <a href="/"><img src="/img/logo/DSC-trans-new.png"alt="favicon"/></a>
+    <div class="nav-list">
+        <a href="/" name="home">Home</a>
+        <a href="/events/" name="events">Events</a>
+         <a href="/project/" name="project">Projects</a>
+         <a href="/blog/" name="blog">Blogs</a>
+        <a href="/members" name="team">Team</a>
+        <% if(!user){ %>
+        <a href="/user/register?type=login"><button name="login">Login</button></a>
+        <% }else{ %>
+        <a href="/user/logout"><button name="logout">Logout</button></a>
+        <% } %>
+    </div>
+</nav>
+>>>>>>> 789c8303137d3283a17c5466a0f17618117c29eb
 <!-- <div class="whitespace"></div> -->

@@ -10,12 +10,12 @@ async function scrapeSite({ scrapeData }) {
         waitUntil: "networkidle2",
       }
     );
-    await page.waitForSelector("#upcoming-events .general-card h4");
+    // await page.waitForSelector("#upcoming-events");
 
     /**
      * Scraping various data from elements and adding that to an object
      */
-    scrapeData.data = await page.evaluate(() => {
+    scrapeData.data.upcomingEvents = await page.evaluate(() => {
       const events = [];
 
       const upcomingEventsElements = document.querySelectorAll(
@@ -26,12 +26,15 @@ async function scrapeSite({ scrapeData }) {
         const tags = [];
 
         upcomingEventsElements[i]
-          .querySelectorAll(".MuiChip-root .MuiChip-label")
+          .querySelectorAll(".MuiChip-label")
           .forEach((node, index) => {
             tags[index] = node.innerHTML;
           });
 
         events[i] = {
+          img:
+            upcomingEventsElements[i].parentElement.querySelector("a img").src ??
+            "",
           date:
             upcomingEventsElements[i].querySelector(".date strong").innerHTML ??
             "",
@@ -47,10 +50,28 @@ async function scrapeSite({ scrapeData }) {
               .querySelector(".description")
               .innerHTML.trim() ?? "",
           tags,
+          link: upcomingEventsElements[i].querySelector("a").href,
         };
       }
       return events;
     });
+
+    scrapeData.data.pastEvents = await page.evaluate(() => {
+      const events = [];
+      let list = document.querySelectorAll("#past-events .past-event-list a");
+      for (let i = 0; i < list.length; i++) {
+        events[i] = {
+          link: list[i].href,
+          img: list[i].querySelector("img").src,
+          date: list[i].querySelectorAll("p")[0].innerText.trim(),
+          heading: list[i].querySelectorAll("p")[1].innerText.trim(),
+          description: list[i].querySelectorAll("p")[2].innerText.trim(),
+        }
+
+      }
+      return events;
+    })
+
     console.log(scrapeData);
     browser.close();
   } catch (err) {
@@ -58,4 +79,6 @@ async function scrapeSite({ scrapeData }) {
   }
 }
 
-module.exports = { scrapeSite };
+
+
+module.exports = { scrapeSite};

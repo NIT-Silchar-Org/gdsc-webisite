@@ -9,6 +9,7 @@ $(document).ready(()=>{
  const getPageName = (pathname) => {
    switch(pathname){
       case '/': return 'home';
+      case '/events/': return 'events';
       case '/blog/': return 'blog';
       case '/project/': return 'project';
       case '/members': return 'team';

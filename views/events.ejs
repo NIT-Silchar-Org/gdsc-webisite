@@ -30,18 +30,13 @@
     <!-- Stylings -->
     <link rel="stylesheet" href="/css/index/colors.css" />
     <link rel="stylesheet" href="/css/index/index_animation.css" />
-    <!-- <link rel="stylesheet" href="/css/index/index_dashboard.css" /> -->
-    <link rel="stylesheet" href="/css/index/counters.css" />
-    <link rel="stylesheet" href="/css/index/index_about.css" />
-    <link rel="stylesheet" href="/css/index/index_videos.css" />
-    <link rel="stylesheet" href="/css/index/index_contactus.css" />
-    <link rel="stylesheet" href="/css/index/font-awesome.css" />
-    <link rel="stylesheet" href="/css/index/index_faq.css" />
-    <link rel="stylesheet" href="/css/index/index_event_schedule.css" />
-    <link rel="stylesheet" href="/css/index/index_feature.css" />
-    <link rel="stylesheet" href="/css/index/footer.css" />
+
+
     <link rel="stylesheet" href="/css/events/upcoming_events.css" />
-    
+    <link rel="stylesheet" href="/css/events/events.css" />
+    <link rel="stylesheet" href="/css/index/font-awesome.css" />
+    <link rel="stylesheet" href="/css/index/footer.css" />
+  
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
 
     <link rel="stylesheet" href="/css/index/flashMessage.css" />
@@ -80,51 +75,47 @@
     <%-include('partials/flashMessage')%>
 
     <main class="main">
-        <div class="animated-banner" style="height:100vh">
-            <div class="text-animation">
-              <span class="static text-animation-items">Together We</span>
-              <span class="dynamic text-animation-items" id="dynamic"></span>
-            </div>
-            <canvas class="banner-canvas"></canvas>
-            <button><i class="fas fa-chevron-down"></i></button>
-        </div>
-        <div class="about" id="about_us">
-            <div class="about-header">
-                <img src="/img/logo/logo_text.svg" class="live">
-                <p class="live">GDSC NIT Silchar is under Google Developer Students Club, which is a worldwide developers community initiated by Google. Our GDSC prioritizes solving real life problems that we as part of a society face in our daily lives. Solving such problems brings opportunities for the budding developer communities to showcase their talents and, improve and gain new skillsets.
-                </p>
-            </div>
-            <div class="sponsors">
-                <h2>OUR SPONSORS</h2>
-                <ul>
-                    <li class="live"><a href="https://egghead.io/" target="_blank" rel="noopener noreferrer"><img src="/img/logo/egghead.png"></a></li>
-                    <li class="live"><a href="https://givemycertificate.com/" target="_blank" rel="noopener noreferrer"><img src="/img/logo/gmc.png"></a></li>
-                    <li class="live"><a href="https://sparkar.reskilll.com/" target="_blank" rel="noopener noreferrer"><img src="/img/logo/reskill-spark-logo.png"></a></li>
-                </ul>
-                <h2>Community Partners</h2>
-                <ul>
-                    <li class="live"><a href="https://finflee.co/" target="_blank" rel="noopener noreferrer"><img src="/img/logo/finflee.svg"></a></li>
-                </ul>
-            </div>
-        </div>
-        <%- include("partials/counter.ejs") %>
+      <h2 id="upcoming_events">Upcoming Events</h2>
+      <%-include('partials/upcoming-events')%>
+      <h2 id="past_events">Past Events</h2>
+      <select name="tags">
+        <option value= "" disabled selected>Filter Events</option>
+        <option value = "Android">Android</option>
+        <option value="AR/VR">AR/VR</option>
+        <option value="Assistant">Assistant / Actions on Google</option>
+        <option value="Career">Career Development</option>
+        <option value="Firebase">Firebase</option>
+        <option value="Flutter">Flutter</option>
+        <option value="Cloud">Google Cloud Platform</option>
+        <option value="Solution">Solution Challenge</option>
+        <option value="UI/UX">UI/UX</option>
+        <option value="Web">Web</option>
+      </select>
 
-        <div class="events">
-          <h2>UPCOMING EVENTS</h2>
-        <%- include("partials/upcoming-events.ejs")%>
+      <ul class= "active-tags">
+     
+      </ul>
+      <div class="past-events-list-box">
+          <!-- <span class="past-events-list-item">
+              <img src="/img/profile/profile_demo.png">
+              <div class="past-event-date">SEP 28, 2021 </div>
+              <h4>Info session - virtual</h4>
+              <p>Info Session : 30 Days of
+                Google Cloud
+                National Institute of
+                Technology(NIT) - Silchar</p>
+            </span> -->
+            
+            <% if( pastEvents[0]) pastEvents.forEach(event=>{%>
+              <div class="past-events-list-item" onclick="window.open('<%=event.link%>', '_blank')">
+                <img src="<%=event.img%>">
+                <div class="past-event-date"><%=event.date%></div>
+                <h4><%=event.heading%></h4>
+                <p><%=event.description%></p>
+              </div>
+            <%})%>
         </div>
-      
-      <!-- Features End -->
-      <!-- ##############################EVENT SCHEDULE#################################### -->
 
-      <%- include('partials/Timeline.ejs') %> 
-      <!-- ################################/Event Schedule #####################################-->
-      
-      <!-- faq starts -->
-      <%- include('partials/FAQ.ejs') %>  
-      <!-- faq ends -->
-      
-      
     </main>
     <%-include('partials/footer')%>
     <!---Contact Us Section Ends-->
@@ -164,13 +155,9 @@
         RegisterModal.style.pointerEvents = "none";
       });
     </script>
+    <script src="/js/events/events.js"></script>
     <script src="/js/loader.js"></script>
     <script src="/js/index/index_progressbar.js"></script>
-    <script src="/js/index/index_faq.js"></script>
-    <script src="/js/index/index_feature.js"></script>
-    <script src="/js/index/index.js"></script>
-    <script src="/js/index/index_banner.js" type="module"></script>
-    <script src="/js/index/index_contactus.js"></script>
     <script src="/js/navbar.js"></script>
     <script src="/js/profile/modal.js"></script>
     <script>
@@ -183,17 +170,6 @@
       //   search_list2.style.display = "none";
       // }
     </script>
-    <script>
-        const scrollButton = document.querySelector('.animated-banner button');
-        scrollButton.addEventListener('click', ()=>{
-          window.scrollTo({
-            top:document.querySelector('.animated-banner').scrollHeight,
-            left:0,
-            behavior:'smooth'
-          });
-        });
-    </script>
 
-    </script>
   </body>
 </html>

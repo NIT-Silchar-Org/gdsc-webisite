@@ -7,7 +7,6 @@ const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
 const session = require("express-session");
 const app = express();
-const { scrapeData } = require('./scraping/eventsData');
 app.use(express.json());
 
 // using dotenv module for environment
@@ -72,13 +71,15 @@ var indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/user");
 const blogRoutes = require("./routes/blog");
 const ProjectRoutes = require("./routes/project");
-const webBlitzRouter = require('./routes/web-blitz')
+const webBlitzRouter = require('./routes/web-blitz');
+const eventsRouter = require('./routes/events');
 
 app.use("/", indexRoutes);
 app.use("/user", userRoutes);
 app.use("/blog", blogRoutes);
 app.use("/project", ProjectRoutes);
-app.use('/web-blitz', webBlitzRouter)
+app.use('/web-blitz', webBlitzRouter);
+app.use('/events', eventsRouter);
 
 app.get("/404", (req, res) => {
   res.render("404-page");

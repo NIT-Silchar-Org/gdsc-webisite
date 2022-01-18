@@ -7,6 +7,7 @@
   background-color: white;
   z-index: 99;
   transition: 0.2s ease-in-out;
+  overflow: hidden;
 }
 
 .loader-container lottie-player {
@@ -16,6 +17,13 @@
   transform: translate(-50%, -50%);
   height: 50%;
   width: 50%;
+}
+
+@media (orientation: portrait) {
+  .loader-container lottie-player {
+    height: 95%;
+    width: 95%;
+  }
 }
 
 @keyframes fade {

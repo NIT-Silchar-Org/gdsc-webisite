@@ -1956,7 +1956,18 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-changeTab(0);
+// Change Tab based on hash
+const hash = window.location.hash;
+console.log(hash);
+let changed = false;
+years.forEach((year, index) => {
+  if (year.substring(0, 4) == hash.substring(1, 5)) {
+    changeTab(index);
+    changed = true;
+  }
+})
+if(!changed)
+  changeTab(0);
 
 
 function changeTab(index) {

@@ -73,7 +73,7 @@
               <a href="/user/public-profile/<%= blog.author.dscHandle %>"><%=blog.author.name%></a>
             </div>
             <div class="blog-title"><a href="/blog/view/<%=blog.slug%>">
-                <%=blog.title.slice(0,30) + (blog.title.length>30?'...':'')%>
+                <%=blog.title.slice(0,60) + (blog.title.length>60?'...':'')%>
             </a></div>
             <div class="blog-date"><%=blog.createdAt.toUTCString().slice(5, 16)%></div>
           </div>

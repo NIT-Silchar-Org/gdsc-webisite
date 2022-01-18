@@ -1,0 +1,54 @@
+.counter-up {
+  position: relative;
+  height: 40vh;
+  width: 100%;
+
+  .content {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .counter {
+        font-size: 3rem;
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .counter-up {
+    height: 40vh;
+  
+    .content {
+      height: 100%;
+      width: 90%;
+  
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+  
+        .counter {
+          font-size: 2rem;
+          font-weight: bolder;
+        }
+
+        .text {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
