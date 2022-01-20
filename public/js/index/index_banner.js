@@ -3,8 +3,6 @@ import { OrbitControls } from 'https://cdn.skypack.dev/three@0.136.0/examples/js
 import {GLTFLoader} from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/DRACOLoader';
 
-let dynamic = document.getElementById("dynamic");
-
 // Loaders
 const gltfLoader = new GLTFLoader();
 const dracoLoader = new DRACOLoader();
@@ -170,6 +168,8 @@ let typingText = ["Learn", "Build", "Solve", "Transcend"];
 let typingColor = ["#EA4335", "#FBBC04", "#4285F4", "#0F9D58"];
 let typingTextIndex = 0;
 let typeTiming = 3 * 1000; // No. of secondstype();
+let dynamic = document.getElementById("dynamic");
+
 dynamic.style.color = typingColor[typingTextIndex];
 
 function type() {
@@ -180,6 +180,7 @@ function type() {
     typingTextIndex%=typingText.length;
 };
 
+dynamic.classList.add("dynamic");
 type();
 setInterval(() => {
     type();
