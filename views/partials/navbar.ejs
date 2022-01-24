@@ -1,11 +1,17 @@
 <!-- <link rel="stylesheet" href="/css/index/font-awesome.css" /> -->
+
 <link
   rel="stylesheet"
   href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <!-- JQuery for navbar -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <nav>
   <div class="hamburger" id="hamburger-3">
@@ -22,9 +28,29 @@
         <a href="/members" name="team">Team</a>
         <% if(!user){ %>
         <a href="/user/register?type=login"><button name="login">Login</button></a>
+        <div class="dropdown">
         <% }else{ %>
-        <a href="/user/logout"><button name="logout">Logout</button></a>
+          
+          <!-- <button class="dropbtn">
+          <i class="fas fa-user-circle fa-2x"></i>
+          </button>
+          <div class="dropdown-content">
+      <a href="/user/profile"><button name="profile">View Profile</button></a>
+      <a href="/user/logout"><button name="logout">Logout <i class="fas fa-sign-out-alt"></i></button></a>
+          </div> -->
+        
+          <!-- <div class="dropdown"> -->
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user-circle fa-2x"></i>
+            </button>
+            <div id="dropmenu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a id="dropdowns" class="dropdown-item" href="/user/profile"><button name="profile">My Profile</button></a>
+              <a id="dropdowns" class="dropdown-item" href="/user/logout"><button name="logout">Logout <i class="fas fa-sign-out-alt"></i></button></a>
+              <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+            </div>
+          <!-- </div> -->
         <% } %>
+      </div>
     </div>
 </nav>
 <!-- <div class="whitespace"></div> -->

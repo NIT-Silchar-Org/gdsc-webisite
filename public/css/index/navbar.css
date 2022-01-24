@@ -48,7 +48,7 @@ nav img{
 nav .nav-list{
     position: relative;
     text-align: right;
-    width: auto;
+    /* width: auto; */
     height: 100%;
     float: right;
     padding: 1vh 1vw 1vh 1vw;
@@ -64,7 +64,7 @@ nav .nav-list a{
 }
 
 nav .nav-list a button{
- background-color: #F9EFEF;
+ /* background-color: #F9EFEF; */
   border: none;
   color: rgb(75, 75, 75);
   height: 40px;
@@ -72,7 +72,7 @@ nav .nav-list a button{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border-radius: 10px;
+  border-radius: 4px;
   font-size: 16px;
 }
 
@@ -89,9 +89,91 @@ nav .nav-list a button:hover[name=logout]{
     cursor: pointer;
     transition: 0.1s;
 }
+nav .nav-list a button:hover[name=profile]{
+    background-color: #d63c37;
+    color:aliceblue;
+    cursor: pointer;
+    transition: 0.1s;
+}
+#dropdownMenuButton{
+    color: black;
+    background-color: white;
+    border: none;
+}
+a #dropdowns .dropdown-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#dropdowns{
+    text-align: right;
+    padding: auto;
+}
+#dropmenu{
+    width: 100px;
+    transform: translate3d(300px, 52px,);
+}
+/* nav .nav-list a .dropdown {
+    overflow: hidden;
+  }
+  
+  nav .nav-list a .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  
+  nav .nav-list a .dropdown-content {
+    display: none; */
+    /* position: absolute; */
+    /* background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow: hidden;
+  }
+   */
+  /* nav .nav-list .dropdown-content a {
+  
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+    overflow: hidden;
+  }
+  
+  nav .nav-list .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  nav .nav-list a .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
 
-
+nav .nav-list a button:hover[name=profile]{
+   
+    color:aliceblue;
+    cursor: pointer;
+    transition: 0.1s;
+}
+nav .nav-list a button[name=profile]{
+    background-color: black;
+    color:aliceblue;
+    cursor: pointer;
+    transition: 0.1s;
+    border: none;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    border-width: 0px;
+} */
 /* HAMBURGER */
 
 .hamburger{
