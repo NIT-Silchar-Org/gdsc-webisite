@@ -28,7 +28,7 @@ nav{
     position: sticky;
     top:0;
     height:auto;
-    height: 75px;
+    /* height: 75px; */
     z-index: 10;
     background: #ffffff;
     width: 100%;
@@ -63,7 +63,7 @@ nav .nav-list a{
     /* font-size: 1.2rem; */
 }
 
-nav .nav-list a button{
+nav .nav-list a button[name=login]{
  /* background-color: #F9EFEF; */
   border: none;
   color: rgb(75, 75, 75);
@@ -74,6 +74,14 @@ nav .nav-list a button{
   display: inline-block;
   border-radius: 4px;
   font-size: 16px;
+}
+
+nav .nav-list a button[name=logout], button[name=profile]{
+    width: auto;
+    padding:10%;
+    height: 6vh;
+    border: 0;
+    background-color: #00000000;
 }
 
 nav .nav-list a button:hover[name=login]{
@@ -90,7 +98,7 @@ nav .nav-list a button:hover[name=logout]{
     transition: 0.1s;
 }
 nav .nav-list a button:hover[name=profile]{
-    background-color: #d63c37;
+    background-color: blue;
     color:aliceblue;
     cursor: pointer;
     transition: 0.1s;
@@ -100,17 +108,22 @@ nav .nav-list a button:hover[name=profile]{
     background-color: white;
     border: none;
 }
+
+#dropdownMenuButton:focus{
+    outline: none;
+    border: 0;
+    color: blue;
+    /* background-color: #ccc; */
+    opacity: 0.7;
+}
+
 a #dropdowns .dropdown-item{
-    padding-left: 10px;
-    padding-right: 10px;
+    width:100%;
 }
-#dropdowns{
-    text-align: right;
-    padding: auto;
-}
+
 #dropmenu{
-    width: 100px;
-    transform: translate3d(300px, 52px,);
+    width: 20%;
+    transform: translate3d(5%, 5%,);
 }
 /* nav .nav-list a .dropdown {
     overflow: hidden;
@@ -304,5 +317,12 @@ nav .nav-list a button[name=profile]{
     .hamburger{
         display: inline-block;
     }
+    .dropdown-toggle{
+        width:30%;
+        margin-right: 35%;
+    }
     
+    .dropdown-menu{
+        margin-right: 5%;
+    }
 }
