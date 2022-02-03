@@ -29,8 +29,8 @@ body {
 
 /* ---------------- Global Classes ---------------*/
 
-a {
-  text-decoration: none;
+a, a:hover {
+  text-decoration: none !important;
   color: var(--text-gray);
 }
 

@@ -22,8 +22,8 @@ body::-webkit-scrollbar {
 }
 
 a{
-    color:inherit;
-    text-decoration: none;
+    color: #272727 !important;
+    text-decoration: none !important;
 }
 
 .blog-banner{
