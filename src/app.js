@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const path = require("path");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
 const session = require("express-session");
@@ -60,7 +60,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 //Setup for rendering static pages
 //for static page
 const publicDirectory = path.join(__dirname, "../public");
@@ -71,13 +70,13 @@ var indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/user");
 const blogRoutes = require("./routes/blog");
 const ProjectRoutes = require("./routes/project");
-const webBlitzRouter = require('./routes/web-blitz')
+const webBlitzRouter = require("./routes/web-blitz");
 
 app.use("/", indexRoutes);
 app.use("/user", userRoutes);
 app.use("/blog", blogRoutes);
 app.use("/project", ProjectRoutes);
-app.use('/web-blitz', webBlitzRouter)
+app.use("/web-blitz", webBlitzRouter);
 
 app.get("/404", (req, res) => {
   res.render("404-page");
@@ -106,3 +105,5 @@ app.listen(PORT, () => {
 // }
 
 // fun()
+
+module.exports = app;
