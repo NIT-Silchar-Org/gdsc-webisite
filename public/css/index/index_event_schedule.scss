@@ -1,0 +1,341 @@
+/*
+  Timeline width = timeline-itm * no. of items + some padding.
+  TODO: Make this calculation in js
+*/
+$no-of-items: 11;
+
+section#schedule {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+
+  div.title {
+    width: 100%;
+    font-size: 5vh;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.navigation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .navigation-item {
+      height: 100%;
+      width: 15vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10vh;
+      font-weight: lighter;
+      padding: 0 0 0 3vh;
+      color: rgba(153, 153, 153, 0.25);
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(153, 153, 153, 0.25);
+        color: rgba(153, 153, 153, 0.80);
+        transition: 0.2s ease-in-out;
+      }
+    }
+  }
+
+  div#timeline-wrapper {
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* IE, Firefox, Safari */
+  
+    &::-webkit-scrollbar {
+      display: none; /* Chromium */
+    }
+  }
+
+  div.timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: calc(15vw * #{$no-of-items});
+    padding: 0 10vw;
+
+    .timeline-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+
+    .timeline-item {
+      position: relative;
+      min-width: 12vw;
+      max-width: 12vw;
+      height: 22vh;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 3vh 1vh;
+      box-sizing: border-box;
+
+      .line-to-timeline {
+        position: absolute;
+        z-index: 1;
+        height: 16vh;
+        width: 0.5vh;
+        border-radius: 3vh;
+      }
+
+      .logo {
+        position: relative;
+        height: 50%;
+        width: 100%;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-height: 100%;
+          max-width: 100%;
+          overflow: hidden;
+        }
+      }
+
+      .text {
+        text-align: center;
+
+        .name {
+          font-size: 2.4vh;
+        }
+        .small {
+          font-size: 2.2vh !important;
+        }
+
+        .duration {
+          font-size: 2vh;
+        }
+      }
+    }
+
+    .up-item {
+      .line-to-timeline {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    .down-item {
+      .line-to-timeline {
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+      }
+    }
+
+    .line {
+      position: relative;
+      height: 3vh;
+      width: calc(13vw * #{$no-of-items});
+      border-radius: 5vh;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+      margin: 15vh 0;
+      background-color: #C6C6C6;
+
+      .new-session {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 15vh;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        box-sizing: content-box;
+        border: 2vh solid #C6C6C6;
+        background-color: white;
+        z-index: 1;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-height: 90%;
+          max-width: 90%;
+        }
+
+        .text {
+          position: absolute;
+          top: 120%;
+          height: 3vh;
+          left: 50%;
+          transform: translate(-50%, 0);
+          font-size: 2.5vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          white-space: nowrap;
+        }
+      }
+
+      .line-item {
+        position: relative;
+        width: 12vw;
+
+        .line-circle {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 4vh;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          border: 1.5vh solid white;
+          box-sizing: content-box;
+        }
+      }
+    }
+
+    .android {
+      background-color: #3CBA54;
+    }
+
+    .flutter {
+      background-color: #4885ED;
+    }
+
+    .web {
+      background-color: #F4C20D;
+    }
+
+    .uiux {
+      background-color: #DB3236;
+    }
+
+    .gcp {
+      background-color: #4885ED;
+    }
+
+    .misc {
+      background-color: #434343;
+    }
+
+  }
+}
+
+@media screen and (max-width: 875px) {
+  section#schedule {
+    position: relative;
+    height: 70vh;
+
+    div.title {
+      font-size: 8vw;
+      height: 10vw;
+      margin-bottom: 2vh;
+    }
+  
+    div.navigation {
+      display: none;
+    }
+  
+    div.timeline {
+      width: calc(30vw * #{$no-of-items});
+      padding: 0 25vw;
+      box-sizing: content-box;
+
+      .timeline-item {
+        min-width: 25vw;
+        max-width: 25vw;
+        height: 20vh;
+        padding: 3vw 1vw;
+        box-sizing: border-box;
+  
+        .line-to-timeline {
+          position: absolute;
+          height: 10vh;
+          width: 0.5vw;
+          border-radius: 3vw;
+        }
+  
+        .logo {
+          height: 50%;
+          width: 50%;
+          margin: 0 auto;
+  
+          img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-height: 100%;
+            max-width: 100%;
+            overflow: hidden;
+          }
+        }
+        .logo-uiux {
+          width: 100%; /* It was too small for 50% width */
+        }
+  
+        .text {
+  
+          .name {
+            font-size: 3vw;
+          }
+          .small {
+            font-size: 1.8vw !important;
+          }
+  
+          .duration {
+            font-size: 2vw;
+          }
+        }
+      }
+  
+      .line {
+        height: 3vw;
+        width: calc(28vw * #{$no-of-items});
+        margin: 10vh 0;
+  
+        .new-session {
+          height: 7.5vh;
+          border: 2vw solid #C6C6C6;
+  
+          .text {
+            font-size: 3vw;
+          }
+        }
+  
+        .line-item {
+          min-width: 25vw;
+          max-width: 25vw;
+  
+          .line-circle {
+            height: 4vw;
+            border: 1.5vw solid white;
+          }
+        }
+      }
+    }
+  }  
+}

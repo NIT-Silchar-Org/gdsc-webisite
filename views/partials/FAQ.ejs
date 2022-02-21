@@ -1,0 +1,54 @@
+<%
+  // Questions for FAQ
+  let faq = [
+    {
+      question: "How can we help you?",
+      answer: "You can also browse the topics below to find what you are looking for."
+    },
+    {
+      question: "How to add, edit or delete details from the profile?",
+      answer: "Go to the respective tabs on the profile page. You will find an option stating 'Click here' from where you can add a new detail. Also, every skill, experience, project or achievement will have an delete button to help you with the same."
+    },
+    {
+      question: "How do I create a blog?",
+      answer: "To create a blog, you first need to signin to your account and then go to the 'Blog' page. On the right hand corner, you'll find the option to create a new blog and also you can see all your bookmarked blogs there."
+    },
+    {
+      question: "How to check any other profile?",
+      answer: "Click on the search button present on the navigation bar at the top of each page. Type the name of the user you want to search and then click on the names that appear. You will be redirected to the profile of that user."
+    },
+    {
+      question: "How to view the DSC Member Page and Website Developer page?",
+      answer: "Go to the footer section, on Team and Developers you can find DSC Member page and Website Developers page."
+    },
+    {
+      question: "How are views on Blogs counted?",
+      answer: "Whenever a user visits a blog, the view count is incremented by one and displayed"
+    },
+    {
+      question: "How do I login if I forgot my password?",
+      answer: "Just click on the forgot password option given on the Login Page. You have to enter your email and then a mail will be sent to your registered email address. Click on that link before it expires and update your password"
+    },
+  ]
+%> 
+
+<section class="faq-section live" id="faq-section">
+  <div class="title">FAQ</div>
+  
+  
+  <div class="faq-container">
+    <% for(let i = 0; i<faq.length; i++) { %> 
+      <div class="faq">
+
+        <div class="question">
+          <i class="fas fa-chevron-down button"></i>
+
+          Q: <%= faq[i].question %>
+        </div>
+        
+        
+        <div class="answer">A: <%= faq[i].answer %></div>
+      </div>
+    <% } %> 
+  </div>
+</section>

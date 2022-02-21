@@ -2,5 +2,6 @@
   "liveServer.settings.port": 5501,
   "emmet.includeLanguages": {
     "ejs": "html"
-  }
+  },
+  "editor.formatOnSave": false
 }

@@ -719,13 +719,13 @@
     <!-- addAchievementModal Modal  -->
     <!-- Main Content Starts -->
     <div class="container">
-      <section class="accountbar">
+      <!-- <section class="accountbar">
         <p></p>
-        <div class="accountbar__shortcut">
+         <div class="accountbar__shortcut">
           <div class="fndp" id="editbtn">Edit Profile</div>
           <a href="/user/logout" style="text-decoration: none">
             <div class="fndp">Log Out</div>
-          </a>
+          </a> -->
           <!-- <div class="edit" id="editbtn" ></div> -->
           <!-- <% if(user.profileImageLocation!=null){ %>
           <img
@@ -741,28 +741,9 @@
           />
           <% }%>
           <img class="bell" src="/img/logo/bell.png" alt="Notification Logo" /> -->
-        </div>
-      </section>
+         <!-- </div>
+      </section> -->
       <section class="accountdetails">
-        <section class="dashboard__navbar">
-          <ul class="side-nav">
-            <!-- <li class="side-nav__item side-nav__item--active">
-              <a href="#" class="side-nav__link">
-                <span>Home</span>
-              </a>
-            </li>
-            <li class="side-nav__item side-nav__item">
-              <a href="#" class="side-nav__link">
-                <span>Projects</span>
-              </a>
-            </li>
-            <li class="side-nav__item side-nav__item">
-              <a href="#" class="side-nav__link">
-                <span>Achievements</span>
-              </a>
-            </li> -->
-          </ul>
-        </section>
         <section class="dashboard__main">
           <section class="main__profileinfo">
             <div class="pictureandbasic">
@@ -784,6 +765,7 @@
                   %> | <%= user.batch %> <br />
                   <%= user.branch %> <% }else{%> Your profile details are empty.
                   <% }%>
+                  <!-- B.Tech | 2024 <br> Computer Science and Engineering <br> Web Developer -->
                 </p>
                 <p>
                   <% if(user.bio!=null){ %> <%= user.bio%> <% }else{%> <% }%>
@@ -793,11 +775,14 @@
                     <% if(user.socialLinks["github"]!== undefined) { %> <%
                     if(user.socialLinks["github"].length !== 0){ %>
                     <a href='<%=user.socialLinks["github"]%>' target="_blank">
-                      <img
-                        class="s"
-                        src="/img/logo/githubPng.png"
-                        alt="github logo"
-                      />
+                      <div class="_icon">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="_icon_path" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.1265 6C8.2941 6 6 8.29409 6 11.1265C6 13.3949 7.46745 15.3109 9.50522 15.9902C9.76155 16.0351 9.85767 15.8813 9.85767 15.7467C9.85767 15.6249 9.85126 15.2212 9.85126 14.7919C8.56323 15.029 8.23001 14.4779 8.12748 14.1895C8.06981 14.0421 7.8199 13.5872 7.60202 13.4654C7.4226 13.3693 7.16627 13.1322 7.59561 13.1258C7.99932 13.1194 8.28769 13.4975 8.38381 13.6513C8.84519 14.4266 9.58212 14.2088 9.87689 14.0742C9.92175 13.741 10.0563 13.5167 10.2037 13.3885C9.06307 13.2604 7.87116 12.8182 7.87116 10.8573C7.87116 10.2998 8.06981 9.83844 8.39662 9.47959C8.34536 9.35143 8.16593 8.82597 8.44789 8.12108C8.44789 8.12108 8.87723 7.98651 9.85767 8.64654C10.2678 8.53119 10.7035 8.47352 11.1393 8.47352C11.575 8.47352 12.0108 8.53119 12.4209 8.64654C13.4013 7.9801 13.8307 8.12108 13.8307 8.12108C14.1126 8.82597 13.9332 9.35143 13.8819 9.47959C14.2088 9.83844 14.4074 10.2934 14.4074 10.8573C14.4074 12.8246 13.2091 13.2604 12.0685 13.3885C12.2543 13.5487 12.4145 13.8563 12.4145 14.3369C12.4145 15.0226 12.4081 15.5737 12.4081 15.7467C12.4081 15.8813 12.5042 16.0415 12.7605 15.9902C13.7782 15.6466 14.6625 14.9925 15.289 14.1201C15.9155 13.2476 16.2526 12.2006 16.2529 11.1265C16.2529 8.29409 13.9588 6 11.1265 6Z"
+                                fill="black" />
+                            <rect class="_icon_border" x="1" y="1" width="20" height="20" rx="10" stroke="black" />
+                        </svg>
+                    </div>
                     </a>
                     <% } %> <% } %>
                   </div>
@@ -805,11 +790,14 @@
                     <% if(user.socialLinks["facebook"]!== undefined) { %> <%
                     if(user.socialLinks["facebook"].length !== 0){ %>
                     <a href='<%=user.socialLinks["facebook"]%>' target="_blank">
-                      <img
-                        class="s"
-                        src="/img/logo/fb.png"
-                        alt="facebook logo"
-                      />
+                      <div class="_icon">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="_icon_path"
+                                d="M11.5 11.75H12.75L13.25 9.75H11.5V8.75C11.5 8.235 11.5 7.75 12.5 7.75H13.25V6.07C13.087 6.0485 12.4715 6 11.8215 6C10.464 6 9.5 6.8285 9.5 8.35V9.75H8V11.75H9.5V16H11.5V11.75Z"
+                                fill="#4267B2" />
+                            <rect class="_icon_border" x="1" y="1" width="20" height="20" rx="10" stroke="#4267B2" />
+                        </svg>
+                    </div>
                     </a>
                     <% } %> <% } %>
                   </div>
@@ -817,20 +805,28 @@
                     <% if(user.socialLinks["linkedin"]!== undefined) { %> <%
                     if(user.socialLinks["linkedin"].length !== 0){ %>
                     <a href='<%=user.socialLinks["linkedin"]%>' target="_blank">
-                      <img
-                        class="s"
-                        src="/img/logo/link.png"
-                        alt="linkedin logo"
-                      />
+                      <div class="_icon">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="_icon_path"
+                                d="M15.4444 6H6.55556C6.40821 6 6.26691 6.05853 6.16272 6.16272C6.05853 6.26691 6 6.40821 6 6.55556V15.4444C6 15.5918 6.05853 15.7331 6.16272 15.8373C6.26691 15.9415 6.40821 16 6.55556 16H15.4444C15.5918 16 15.7331 15.9415 15.8373 15.8373C15.9415 15.7331 16 15.5918 16 15.4444V6.55556C16 6.40821 15.9415 6.26691 15.8373 6.16272C15.7331 6.05853 15.5918 6 15.4444 6ZM8.96611 14.5206H7.48167V9.74833H8.96611V14.5206ZM8.22389 9.09667C7.9958 9.09667 7.77706 9.00606 7.61578 8.84478C7.4545 8.6835 7.36389 8.46475 7.36389 8.23667C7.36389 8.00858 7.4545 7.78984 7.61578 7.62856C7.77706 7.46727 7.9958 7.37667 8.22389 7.37667C8.45198 7.37667 8.67072 7.46727 8.832 7.62856C8.99328 7.78984 9.08389 8.00858 9.08389 8.23667C9.08389 8.46475 8.99328 8.6835 8.832 8.84478C8.67072 9.00606 8.45198 9.09667 8.22389 9.09667ZM14.5211 14.5206H13.0383V12.2C13.0383 11.6467 13.0283 10.935 12.2672 10.935C11.495 10.935 11.3778 11.5383 11.3778 12.1611V14.5211H9.89611V9.74889H11.3183V10.4011H11.3389C11.5361 10.0261 12.0206 9.63056 12.7411 9.63056C14.2433 9.63056 14.5206 10.6183 14.5206 11.9039V14.5206H14.5211Z"
+                                fill="#0A66C2" />
+                            <rect class="_icon_border" x="1" y="1" width="20" height="20" rx="10" stroke="#0A66C2" />
+                        </svg>
+                    </div>
                     </a>
                     <% } %> <% } %>
                   </div>
                 </div>
-                <div id="faint-handle" class="faint">
+                <!-- <div id="faint-handle" class="faint">
                   <% if(user.dscHandle!=null){ %> <%= user.dscHandle%>
                   <%}else{}%>
-                </div>
+                </div> -->
               </div>
+              <section class="accountbar">
+                <div class="accountbar__shortcut">
+                  <div class="fndp" id="editbtn">Edit Profile</div>
+                </div>
+            </section>
             </div>
           </section>
           <section class="main__detailedinfo">
@@ -891,12 +887,16 @@
                       <div class="flexRow">
                         <p>Want to add more Blogs ? &nbsp; &nbsp;</p>
 
-                        <a
+                        <!-- <a
                           style="color: var(--Grey-dark-1)"
                           href="/blog/create"
                         >
                           Click here</a
-                        >
+                        > -->
+                        <a style="color: var(--Grey-dark-1)" href="/blog/create">
+                          <button class="addExperience">
+                            Click here
+                          </button></a>
                       </div>
                     </div>
                     <% if(user.blogs.length==0){%>
@@ -1287,75 +1287,6 @@
               </div>
             </div>
           </section>
-        </section>
-        <section class="contests">
-          <h1>Contests</h1>
-          <div class="container">
-            <div class="card">
-              <p class="type">Hackathon</p>
-              <hr />
-              <p class="topic">Campus 101</p>
-              <p class="details">
-                HackerEarth wants to help you bridge this gap by starting off a
-                2 months journey of learning with you - The Campus 101.
-              </p>
-              <div class="timings">
-                <div class="time">
-                  <p class="stat">START</p>
-                  <p>Nov 06, 2020</p>
-                </div>
-                <div class="time">
-                  <p class="stat">END</p>
-                  <p>Nov 06, 2020</p>
-                </div>
-              </div>
-              <hr />
-              <div class="timings">
-                <a
-                  href="https://campus101.hackerearth.com/"
-                  style="text-decoration: none"
-                >
-                  <button onclick="">Register</button>
-                </a>
-                <!-- <a
-                href="https://campus101.hackerearth.com/"
-                style="text-decoration: none"
-              >
-                <button onclick="">Enter</button>
-              </a> -->
-              </div>
-            </div>
-            <div class="card">
-              <p class="type">Hackathon</p>
-              <hr />
-              <p class="topic">Hackccelerate 2020</p>
-              <p class="details">
-                HackerEarth presents Hackccelerate 2020, a 72-hour hackathon
-                that will put your skills to the test! So grab your coffee,
-                snacks, and code your way to deliver an innovative tech product
-                within 72 hours.
-              </p>
-              <div class="timings">
-                <div class="time">
-                  <p class="stat">START</p>
-                  <p>Oct 15, 2020</p>
-                </div>
-                <div class="time">
-                  <p class="stat">END</p>
-                  <p>Oct 18, 2020</p>
-                </div>
-              </div>
-              <hr />
-              <div class="timings">
-                <a
-                  href="https://www.hackerearth.com/challenges/hackathon/hackccelerate-2020/"
-                  style="text-decoration: none"
-                >
-                  <button onclick="">Register</button>
-                </a>
-              </div>
-            </div>
-          </div>
         </section>
       </section>
     </div>

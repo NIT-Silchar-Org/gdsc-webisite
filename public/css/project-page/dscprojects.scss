@@ -1,0 +1,542 @@
+.projects {
+  min-height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding-top: 3vh;
+
+  .project-card {
+    min-height: 60vh;
+    min-width: 54vh;
+    margin: 2vh;
+    overflow: hidden;
+    border: 0.2vh solid #D9D9D9;
+
+    border-radius: 2vh;
+    position: relative;
+
+    &:hover {
+      box-shadow: 0 0 1.5vh #D9D9D9;
+      transition: 0.2s ease-in-out;
+    }
+
+    .sub-card {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: blue;
+
+      transition: 0.4s ease-in-out;
+    }
+    .intro {
+      z-index: 1;
+      opacity: 1;
+      background-color: #FFFFFF;
+    }
+    .info {
+      z-index: -1;
+      opacity: 0;
+      background-color: #FFE9E9;
+    }
+    .members {
+      z-index: -1;
+      opacity: 0;
+      background-color: #F1FCFF;
+    }
+    .tech-stack {
+      z-index: -1;
+      opacity: 0;
+      background-color: #FFFADD;
+    }
+
+    .bottom {
+      height: 15%;
+      margin: 2.5% auto;
+      width: 80%;
+      border-top: 0.2vh solid #D9D9D9;       
+    }
+
+    .go-back {
+      position: absolute;
+      top: 5vh;
+      right: 5vh;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .intro {
+
+      .top {
+        position: relative;
+        height : 40%;
+        width: 100%;
+        overflow: hidden;
+  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 0 6.5%;
+  
+        .left {
+          position: relative;
+  
+          /* Title */
+          .title {
+            font-size: 2rem;
+            line-height: 1.8rem;
+          }
+  
+          .small {
+            font-size: 1.5rem;
+            line-height: 1.3rem;
+          }
+  
+          /* Status */
+          .status {
+            color: white;
+            margin: 2.5vh 0 0 0;
+            padding: 0.75vh 2vh;
+            width: fit-content;
+            border-radius: 1vh;
+            font-size: 0.75rem;
+          }
+  
+          .completed {
+            background-color: #4A90E2;
+          }
+  
+          .ongoing {
+            background-color: #3CBA54;
+          }
+        }
+  
+        .right {
+          position: relative;
+          height: 100%;
+          width: 50%;
+  
+          img {
+            position: absolute;
+            max-height: 70%;
+            max-width: 90%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+  
+      }
+
+      .mid {
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow-y: auto;
+        padding: 2vh 3vh;
+        text-align: justify;
+        font-size: 0.9rem;
+      }
+
+    }
+
+    .info {
+      
+      .top {
+        position: relative;
+        height : 30%;
+        width: 100%;
+        overflow: hidden;
+  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 0 6.5%;
+  
+        .left {
+          position: relative;
+  
+          .title {
+            font-size: 1.6rem;
+            line-height: 1.4rem;
+          }
+        }  
+      }
+
+      .mid {
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow-y: auto;
+        padding: 2vh 3vh;
+        text-align: justify;
+        font-size: 0.9rem;
+      }
+    }
+
+    .members {
+      
+      .top {
+        position: relative;
+        height : 25%;
+        width: 100%;
+        overflow: hidden;
+  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 0 6.5%;
+  
+        .left {
+          position: relative;
+  
+          .title {
+            font-size: 1.6rem;
+            line-height: 1.4rem;
+          }
+        }  
+      }
+
+      .mid {
+        height: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: auto;
+        padding: 2vh 3vh;
+        text-align: center;
+
+        .mentors .title, .developers .title {
+          font-size: 1.2rem;
+          font-weight: bolder;
+          margin-top: 2vh;
+        }
+
+        .mentors, .developers {
+          font-size: 0.8rem;
+
+          a {
+            text-decoration: none;
+            color: #292929;
+          }
+
+        }
+      }
+    }
+
+    .tech-stack {
+      
+      .top {
+        position: relative;
+        height : 25%;
+        width: 100%;
+        overflow: hidden;
+  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 0 6.5%;
+  
+        .left {
+          position: relative;
+  
+          .title {
+            font-size: 1.6rem;
+            line-height: 1.4rem;
+          }
+        }  
+      }
+
+      .mid {
+        height: 55%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        overflow-y: auto;
+        padding: 2vh 3vh;
+        text-align: center;
+        flex-wrap: wrap;
+
+        .tech {
+          height: 45%;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          font-size: 0.7rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1vh;
+          margin: 0.5vh;
+        }
+
+        /* Tech Colors */
+        .nodejs {
+          background-color: #D9FF80;
+        }
+
+        .mongodb {
+          background-color: #99E6AF;
+        }
+
+        .html {
+          background-color: #F1A28E;
+        }
+
+        .css {
+          background-color: #8EA2F1;
+        }
+
+        .js, .python {
+          background-color: #FBED84;
+        }
+
+        .sql, .sqlite {
+          background-color: #82D4FD;
+        }
+
+        .firebase {
+          background-color: #FFE080;
+        }
+
+        .java, .expressjs {
+          background-color: #F58A8C;
+        }
+
+        .kotlin {
+          background-color: #92BDEC;
+        }
+
+        .reactjs {
+          background-color: #80EBFF;
+        }
+
+        .flutter {
+          background-color: #84D5FB;
+        }
+
+        .ts {
+          background-color: #99BDE6;
+        }
+      }
+    }
+
+    .icons {
+      position: absolute;
+      z-index: +4;
+      top: 82.5%;
+      width: 100%;
+      height: 15%;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .icons-container {
+        position: absolute;
+        height: 70%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .icon {
+          height: 100%;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          z-index: 1;
+  
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.3rem;
+  
+          margin-right: 1vh;
+  
+          cursor: pointer;
+  
+          a {
+            text-decoration: none;
+            color: #292929;
+          }
+        }
+
+        .icon-hover {
+          position: absolute;
+          height: 100%;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          z-index: 0;
+          background-color: #FFF3CA;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+          display: none;
+          transition: 0.4s ease-in-out;
+        }
+
+      }
+    }
+  }
+
+  .animate {
+    -webkit-animation: reveal 0.6s forwards;
+    animation: reveal 0.6s forwards;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+      -webkit-transform: translateX(-100px);
+      transform: translateX(-100px);
+    }
+    to {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (orientation: portrait) {
+
+  .projects {
+    width: 95%;
+    padding-top: 3vw;
+  
+    .project-card {
+      min-height: 100vw !important;
+      min-width: 95vw !important;
+      margin: 3vw;
+      border: 0.2vw solid #D9D9D9;
+      border-radius: 2vw;
+  
+      &:hover {
+        box-shadow: 0 0 1.5vw #D9D9D9;
+      }
+
+      .bottom {
+        border-top: 0.3vw solid #D9D9D9;       
+      }
+      .go-back {
+        top: 5vw;
+        right: 5vw;
+        font-size: 1rem;
+      }
+  
+      .intro {
+  
+        .top {
+          .left {
+
+            /* Title */
+            .title {
+              font-size: 1.5rem;
+              line-height: 1.2rem;
+            }
+    
+            .small {
+              font-size: 1.2rem;
+              line-height: 1rem;
+            }
+    
+            /* Status */
+            .status {
+              margin: 3.5vw 0 0 0;
+              padding: 1vw 2vw;
+              width: fit-content;
+              border-radius: 1vh;
+              font-size: 0.5rem;
+            }
+          }
+        }
+  
+        .mid {
+          padding: 3vw 4vw;
+          text-align: justify;
+          font-size: 0.8rem;
+        }
+  
+      }
+  
+      .info {
+        
+        .top {
+          .left {
+            .title {
+              font-size: 1.5rem;
+              line-height: 1.2rem;
+            }
+          }  
+        }
+  
+        .mid {
+          padding: 3vw 4vw;
+          text-align: justify;
+          font-size: 0.8rem;
+        }
+      }
+  
+      .members {
+        
+        .top {
+          .left {
+            .title {
+              font-size: 1.5rem;
+              line-height: 1.2rem;
+            }
+          }  
+        }
+  
+        .mid {
+          padding: 3vw 4vw;
+          font-size: 0.8rem;
+  
+          .mentors .title, .developers .title {
+            font-size: 0.9rem;
+            margin-top: 2vw;
+          }
+  
+          .mentors, .developers {
+            font-size: 0.7rem;
+          }
+        }
+      }
+  
+      .tech-stack {
+        
+        .top {
+          .left {
+            .title {
+              font-size: 1.5rem;
+              line-height: 1.2rem;
+            }
+          }  
+        }
+  
+        .mid {
+          padding: 3vw 4vw;
+          font-size: 0.8rem;
+  
+          .tech {
+            font-size: 0.5rem;
+            padding: 2vw;
+            margin: 1vw;
+          }
+        }
+      }
+    }
+  }
+}

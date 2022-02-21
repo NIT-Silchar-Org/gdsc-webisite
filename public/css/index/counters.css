@@ -1,0 +1,72 @@
+.counter-up {
+  position: relative;
+  height: 40vh;
+  width: 100%;
+}
+
+.counter-up .content {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  height: 100%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.counter-up .content .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.counter-up .content .box .counter {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+@media (orientation: portrait) {
+  .counter-up {
+    height: 40vh;
+  }
+  .counter-up .content {
+    height: 100%;
+    width: 90%;
+  }
+  .counter-up .content .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .counter-up .content .box .counter {
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+  .counter-up .content .box .text {
+    font-size: 0.8rem;
+  }
+}
+/*# sourceMappingURL=counters.css.map */

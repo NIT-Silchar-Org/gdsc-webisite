@@ -1,6 +1,6 @@
 const awsServerlessExpress = require("aws-serverless-express");
 
-const app = require("./app");
+const app = require("./src/app");
 const warmer = require("lambda-warmer");
 
 const server = awsServerlessExpress.createServer(app);

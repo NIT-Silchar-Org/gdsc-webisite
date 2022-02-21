@@ -18,22 +18,7 @@
     Profile, Forum, Events, Developers, NIT Silchar"
     />
     <title>DSC NITS | Blogs</title>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/img/logo/dsc_trans_logo.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    />
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="/css/blogs/all.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+ 
 
     <!-- Custom Style   -->
     <link rel="stylesheet" href="/css/profile/profile_dashboard.css" />
@@ -41,292 +26,138 @@
     <link rel="stylesheet" href="/css/blogs/blogs.css" />
     <link rel="stylesheet" type="text/css" href="/css/index/navbar.css" />
     <link rel="stylesheet" href="/css/index/footer.css" />
-    <style>
-      .pointer {
-        cursor: pointer;
-      }
-      .clapper {
-        width: 30px !important;
-      }
-      @media screen and (max-width: 740px) {
-        .clapper {
-          width: 20px !important;
-        }
-        .cards .card .socialactivity {
-          padding: 15px;
-        }
-      }
-      /* .cards .card .content .images .image-container img {
-        height: 100%;
-      }
-      .cards .card .content .images {
-        width: 90%;
-      } */
-      .pagination {
-        padding: 3rem 0;
-        text-align: center;
-        color: var(--Grey-light-1);
-      }
-
-      .pagination a {
-        padding: 1rem 0.8rem;
-        color: var(--primary-dark);
-        background-color: var(--Grey-dark-1);
-        transition: all 0.2s;
-      }
-
-      .pagination a:hover {
-        opacity: 0.8;
-      }
-      @media (max-width: 700px) {
-      .cards .card {
-        margin: 1rem 0;
-
-      }
-    }
-    @media screen and (max-width: 740px) {
-        .cards .card .content p {
-          font-size: 16px;
-        }
-      }
-    </style>
+    
+    <!--Lottie Player-->
+    <link rel="stylesheet" href="/css/index/loader.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+ 
   </head>
 
-  <body
-    style="
-      font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial,
-        sans-serif;
-    "
-  >
+  <body>
+    <%-include('partials/Loader')%>
     <!-- ----------------------------  Navigation ---------------------------------------------- -->
     <%-include('partials/navbar')%>
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
     <!----------------------------- Main Site Section ------------------------------>
-    <main>
-      <section class="cards">
-        <% if(newBlogs.length==0){%>
 
-        <div class="card-container" style="justify-content: center">
-          <div class="card-details">
-            <div class="card-text">
-              <p style="text-align: center">
-                Community Blogs will be shown here.
-              </p>
-            </div>
-          </div>
+    <div class="blog-banner">
+        <img class="blog-backdrop" src="/img/illustrations/blogs-backdrop.svg">
+        <div class="blog-search-bar">
+          <img src="/img/icons/search-2.png">
+          <input type=text placeholder="Search Blogs">
         </div>
-        <% }%> <% var num =0 %> <% newBlogs.forEach(function(blog){%>
-        <div class="card">
-          <div class="socialactivity">
-            <% if(blog.author.profileImageLocation){ %>
-            <a href="/user/public-profile/<%= blog.author.dscHandle %>">
-              <img
-                src="/upload/<%= blog.author.profileImageLocation%>"
-                alt="author image"
-                style="cursor: pointer"
-              />
-            </a>
-            <% }else{%>
-          <a href="/user/public-profile/<%= blog.author.dscHandle %>">
-            <img src="/img/profile/person.png" alt="default avatar" style="cursor: pointer"/>
-          </a>
-            <% }%>
-
-            <form action="/blog/appreciate/<%=blog._id%>" method="POST">
-              <button
-                type="submit"
-                style="
-                  border: none;
-                  outline: none !important;
-                  cursor: pointer;
-                  background-color: transparent;
-                  font-size: 18px;
-                  color: var(--Grey-dark-1);
-                "
-              >
-                <% if (user) {%> <% if (user.likes &&
-                user.likes.includes(blog._id)) {%>
-                <img src="/img/logo/clap.png" style="width: 30px" alt="" />
-                <br /><%= blog.appreciateCount || 0%> <% } else {%>
-                <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
-                <br /><%= blog.appreciateCount || 0%> <% } %> <% } else{%>
-                <img src="/img/logo/noclap.png" style="width: 30px" alt="" />
-                <br /><%= blog.appreciateCount || 0%> <% } %>
-              </button>
-            </form>
-          </div>
-          <div class="content">
-            <h3 class="topic"><%= blog.title %></h3>
-            <p style="margin-top: 0.2rem">by <a href="/user/public-profile/<%= blog.author.dscHandle %>" style="color:inherit;text-decoration: none !important;outline: none !important;"><%= blog.author.name%></a></p>
-            <p>
-              <% if(blog.tags.length!=0){%>
-              <div class="tagsss">
-               <% for(var i=0;i<blog.tags.length;i++){ %>
-                <button class="display-tags"><%= blog.tags[i] %></button>
-               <% } %>
-             </div>
-             <%}else{%>
-              <br>
-              <button class="display-tags"> <%- blog.category.split(' ')[0]%></button>
-             <% } %>
-            </p>
-            <p class="place">
-              <%- blog.author.createdAt.toString().substring(0,16)%>
-            </p>
-
-            <div class="description"><%- blog.summary%>...</div>
-            <a href="/blog/view/<%= blog.slug%>">Read more</a>
-            <div class="images">
-              <div class="image-container">
-                <img
-                  class="post-images"
-                  src="<%= blog.cover%>"
-                  alt="blog cover"
-                  data-original="<%= blog.cover%>"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="sidebarblog">
-            <% if (user) {%>
-            <div class="moreblogoption">
-              <form action="/blog/bookmark/<%= blog._id %>" method="POST">
-                <button
-                  type="submit"
-                  style="
-                    background-color: transparent;
-                    border: none;
-                    outline: none !important;
-                    cursor: pointer;
-                  "
-                >
-                  <% if (user.bookmarkBlogs
-                  &&user.bookmarkBlogs.includes(blog._id)) {%>
-                  <i
-                    class="fas fa-bookmark pointer"
-                    style="font-size: 20px; color: var(--Grey-dark-1)"
-                  ></i>
-                  <% } else {%>
-                  <i
-                    class="far fa-bookmark pointer"
-                    style="font-size: 20px; color: var(--Grey-dark-1)"
-                  ></i>
-                  <% } %>
-                </button>
-              </form>
-            </div>
-            <% } %>
-
-            <i
-              class="fas fa-eye"
-              style="font-size: 15px; color: var(--Grey-dark-1)"
-            >
-              <%= blog.views %></i
-            >
-          </div>
-        </div>
-        <%})%>
-      </section>
-      <section class="blog-search">
-        <% if(user){ %>
-        <div class="inner-search">
-          <div class="blog-search-row">
-            <a href="/blog/bookmarks" style="text-decoration: none">
-              <div class="fndp">Your Bookmarks</div>
-            </a>
-          </div>
-          <div class="blog-search-row">
-            <a href="/blog/create" style="text-decoration: none">
-              <div class="fndp">Create Blog</div>
-            </a>
-          </div>
-        </div>
-        <% }else{ %>
-        <div class="inner-search">
-          <div class="blog-search-row">
-            <a href="/user/register?type=login" style="text-decoration: none">
-              <div class="fndp">Login to Add a Blog</div>
-            </a>
-          </div>
-        </div>
-        <% } %>
-      </section>
-      <section class="popular">
-        <% var i=1 %>
-        <div id="popular-post">
-          <h2 id="heading">Popular Posts</h2>
-          <div>
-            <hr />
-            <br />
-            <% if(popularBlogs.length==0){%>
-            <div class="popular-posts">
-              <div class="content">
-                <p>Nothing to show.</p>
-              </div>
-            </div>
-
-            <% }%> <% popularBlogs.forEach(function(blog){%>
-            <div class="popular-posts">
-              <div class="content">
-                <div class="title">
-                  <span class="numbering"> <%= i++ %> </span>
-                  <a
-                    style="font-family: 'Open Sans', sans-serif"
-                    href="/blog/view/<%= blog.slug%>"
-                  >
-                    <%= blog.title%>
-                  </a>
-                </div>
-                <br />
-                <span class="intro"> <%- blog.summary%>...</span>
-                <a href="/blog/view/<%= blog.slug%>">Read more</a>
-                <br />
-                <span class="date"> 20 sept, 2020 </span>
-              </div>
-            </div>
-            <%})%>
-          </div>
-        </div>
-      </section>
-    </main>
-    <div class="pagination">
-      <% if(page !== 1) {%>
-      <a href="/blog/?page=<%= page-1 %>"> Prev Page</a>
-      <% } %> <% if (nextPageExists) { %>
-      <a href="/blog/?page=<%= page + 1 %>">Next Page</a>
-      <% } %>
     </div>
-    <!---------------x------------- Main Site Section ---------------x-------------->
+    <div class="best-blogs-container">
+      <div class="best-blogs-header">
+          <a href="/blog/create"><img src="/img/icons/create.png"></a>
+          <h3>Best Blogs</h3>
+      </div>  
+      <div class="best-blogs-list-box">
+<!-- 
+        <div class="best-blogs-list-item">
+          <div class="blog-rank">01</div>
+          <div class="blog-profile">
+            <img src="/img/profile/profile_demo.png">
+            <a>Profile 1</a>
+          </div>
+          <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vero error corrupti expedita sunt saepe quisquam architecto sint nemo odit.</a></div>
+          <div class="blog-date">7 Oct 2021</div>
+        </div> -->
 
+        <% popularBlogs.forEach((blog, index)=>{%>
+          <div class="best-blogs-list-item">
+            <div class="blog-rank"><%='0' + (index+1)%></div>
+            <div class="blog-profile">
+              <img src="<%=blog.author.profileImageLocation?('/upload/'+blog.author.profileImageLocation):'/img/profile/person.png'%>">
+              <a href="/user/public-profile/<%= blog.author.dscHandle %>"><%=blog.author.name%></a>
+            </div>
+            <div class="blog-title"><a href="/blog/view/<%=blog.slug%>">
+                <%=blog.title.slice(0,60) + (blog.title.length>60?'...':'')%>
+            </a></div>
+            <div class="blog-date"><%=blog.createdAt.toUTCString().slice(5, 16)%></div>
+          </div>
+        <%}) %>
+
+      </div>
+    </div>
+    <hr class="end-line"/>
+    <div class="blog-container">
+      <div class="blog-sort">
+        <h4>
+          Sort by:
+        </h4>
+        <ul>
+          <li><button name="most-popular">Most Popular</button></li>
+          <li><button name="most-viewed">Most Viewed</button></li>
+          <li><button name="latest">Latest</button></li>
+          <li><button name="oldest">Oldest</button></li>
+        </ul>
+      </div>
+      <div class="blog-list-box" id="blog-list">
+        <!-- <div class="blog-list-item">
+          <div class="blog-profile">
+            <img src="/img/profile/profile_demo.png">
+            <a>Profile 1</a>
+          </div>
+          <div class="blog-title"><a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vero error corrupti expedita sunt saepe quisquam architecto sint nemo odit.</a></div>
+          <div class="blog-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis laborum iusto, aliquid quis excepturi quia cupiditate nulla et cum officiis, ut exercitationem quam minima fuga neque!</div>
+          <div class="blog-date">7 Oct 2021</div>
+          <img src = "/img/illustrations/about.jpg" class="blog-thumbnail">
+        </div> -->
+        <!-- <% newBlogs.forEach((blog, index)=>{%>
+         <div class="blog-list-item">
+          <div class="blog-profile">
+            <img src="/img/profile/profile_demo.png">
+            <a><%=blog.author.name%></a>
+          </div>
+          <div class="blog-title"><a><%=blog.title.slice(0,50) + (blog.title.length>50?'...':'')%></a></div 
+          <div class="blog-text"><%=blog.body.slice(0,150) + (blog.body.length>150?'...':'')%></div>
+          <div class="blog-date">7 Oct 2021</div>
+          <img src = "<%=blog.cover%>" class="blog-thumbnail">
+        </div>
+        <%}) %> -->
+
+  
+      </div>
+        
+      <div class="blog-tags">
+          <h4>Search by Tags</h4>
+          <ul>
+            <li><button>Kotlin</button></li>
+            <li><button>Java</button></li>
+            <li><button>Data Science</button></li>
+            <li><button>Quantum Computer</button></li>
+            <li><button>HTML</button></li>
+            <li><button>CSS</button></li>
+            <li><button>Javascript</button></li>
+            <li><button>Android</button></li>
+            <li><button>UI/UX</button></li>
+          </ul>
+      </div>
+    </div>
+
+
+    <!---------------x------------- Main Site Section ---------------x-------------->
+   
     <!-- --------------------------- Footer ---------------------------------------- -->
     <%-include('partials/footer')%>
 
     <!-- -------------x------------- Footer --------------------x------------------- -->
 
-    <!-- Jquery Library file -->
-    <script src="/js/blogs/Jquery3.4.1.min.js"></script>
+    <!-- Jquery Library file
+    <script src="/js/blogs/Jquery3.4.1.min.js"></script> -->
 
     <!-- --------- Owl-Carousel js ------------------->
-    <script src="/js/blogs/owl.carousel.min.js"></script>
+    <!-- <script src="/js/blogs/owl.carousel.min.js"></script> -->
 
     <!-- ------------ AOS js Library  ------------------------- -->
-    <script src="/js/blogs/aos.js"></script>
+    <!-- <script src="/js/blogs/aos.js"></script> -->
 
     <!-- Custom Javascript file -->
     <script src="/js/navbar.js"></script>
-    <script src="/js/blogs/main.js"></script>
-    <script src="/js/darkmode.js"></script>
-    <script>
-      var bodydiv = document.getElementById("bodydiv");
-      bodydiv.addEventListener("click", closeSearch);
-
-      function closeSearch() {
-        let search_list1 = document.getElementById("search_list1");
-        search_list1.style.display = "none";
-        let search_list2 = document.getElementById("search_list2");
-        search_list2.style.display = "none";
-      }
-    </script>
+    <script src="/js/blogs/blogs_search.js"></script>
+    <script src="/js/blogs/blogs_main.js"></script>
+    <script src="/js/loader.js"></script>
   </body>
 </html>
